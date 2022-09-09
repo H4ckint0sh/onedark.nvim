@@ -305,6 +305,15 @@ theme.set_highlights = function(opts)
 	hl(0, "xmlTagName", { fg = c.onedarkBlue, bg = "NONE" })
 	hl(0, "xmlEndTag", { fg = c.onedarkBlue, bg = "NONE" })
 
+	-- TS Rainbow
+	hl(0, "rainbowcol1", { fg = c.onedarkYellow, bg = "NONE" })
+	hl(0, "rainbowcol2", { fg = c.onedarkPurple, bg = "NONE" })
+	hl(0, "rainbowcol3", { fg = c.onedarkBlue, bg = "NONE" })
+	hl(0, "rainbowcol4", { fg = c.onedarkOrange, bg = "NONE" })
+	hl(0, "rainbowcol5", { fg = c.onedarkFront, bg = "NONE" })
+	hl(0, "rainbowcol6", { fg = c.onedarkGreen, bg = "NONE" })
+	hl(0, "rainbowcol7", { fg = c.onedarkRed, bg = "NONE" })
+
 	-- Ruby
 	hl(0, "rubyClassNameTag", { fg = c.onedarkBlueGreen, bg = "NONE" })
 	hl(0, "rubyClassName", { fg = c.onedarkBlueGreen, bg = "NONE" })
