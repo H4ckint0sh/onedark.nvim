@@ -51,7 +51,7 @@ if vim.o.background == "dark" then
 		onedarkViolet = "#646695",
 		onedarkBlue = "#52adf2",
 		onedarkDarkBlue = "#223E55",
-		onedarkCyan = "#2bbac5",
+		onedarkMediumBlue = "#2bbac5",
 		onedarkLightBlue = "#89ddff",
 		onedarkGreen = "#98c378",
 		onedarkBlueGreen = "#89ddff",
