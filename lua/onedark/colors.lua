@@ -38,8 +38,8 @@ if vim.o.background == "dark" then
 		onedarkDiffRedLightLight = "#FB0101",
 		onedarkDiffGreenDark = "#373D29",
 		onedarkDiffGreenLight = "#4B5632",
-		onedarkSearchCurrent = "#515c6a",
-		onedarkSearch = "#613315",
+		onedarkSearchCurrent = "#42557b",
+		onedarkSearch = "#484e5b",
 
 		onedarkContext = "#003535",
 		onedarkContextCurrent = "#335d5d",
