@@ -146,7 +146,7 @@ theme.set_highlights = function(opts)
 	hl(0, "TSStrong", { fg = isDark and c.onedarkBlue or c.onedarkViolet, bold = true })
 	hl(0, "TSURI", { fg = c.onedarkFront, bg = "NONE" })
 	hl(0, "TSTextReference", { fg = isDark and c.onedarkOrange or c.onedarkYellowOrange })
-	hl(0, "TSPunctDelimiter", { fg = c.onedarkMediumBlue, bg = "NONE" })
+	hl(0, "TSPunctDelimiter", { fg = c.onedarkPurple, bg = "NONE" })
 	hl(0, "TSStringEscape", { fg = isDark and c.onedarkGreen or c.onedarkGreen, bold = true })
 
 	hl(0, "TSNote", { fg = c.onedarkBlueGreen, bg = "NONE", bold = true })
