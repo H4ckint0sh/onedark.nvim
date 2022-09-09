@@ -134,7 +134,7 @@ theme.set_highlights = function(opts)
 	hl(0, "TSText", { fg = c.onedarkFront, bg = "NONE" })
 	hl(0, "TSUnderline", { fg = c.onedarkYellowOrange, bg = "NONE" })
 	hl(0, "TSTag", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "TSTagDelimiter", { fg = c.onedarkDisabled, bg = "NONE" })
+	hl(0, "TSTagDelimiter", { fg = c.onedarkFront, bg = "NONE" })
 	hl(0, "TSNone", { fg = c.onedarkFront, bg = "NONE" })
 	hl(0, "TSTagAttribute", { fg = c.onedarkOrange, bg = "NONE", italic = true })
 
