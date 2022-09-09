@@ -460,11 +460,11 @@ theme.set_highlights = function(opts)
 	hl(0, "BufferTabpagesFill", { fg = c.onedarkFront, bg = c.onedarkTabOther })
 
 	-- IndentBlankLine
-	hl(0, "IndentBlanklineContextChar", { fg = c.onedarkContextCurrent, bg = "NONE", nocombine = true })
-	hl(0, "IndentBlanklineContextStart", { fg = c.onedarkContextCurrent, bg = "NONE", nocombine = true })
-	hl(0, "IndentBlanklineChar", { fg = c.onedarkContext, bg = "NONE", nocombine = true })
-	hl(0, "IndentBlanklineSpaceChar", { fg = c.onedarkContext, bg = "NONE", nocombine = true })
-	hl(0, "IndentBlanklineSpaceCharBlankline", { fg = c.onedarkContext, bg = "NONE", nocombine = true })
+	hl(0, "IndentBlanklineContextChar", { fg = c.onedarkPurple, bg = "NONE", nocombine = true })
+	hl(0, "IndentBlanklineContextStart", { fg = c.onedarkPurple, bg = "NONE", nocombine = true })
+	hl(0, "IndentBlanklineChar", { fg = c.onedarkDisabled, bg = "NONE", nocombine = true })
+	hl(0, "IndentBlanklineSpaceChar", { fg = c.onedarkDisabled, bg = "NONE", nocombine = true })
+	hl(0, "IndentBlanklineSpaceCharBlankline", { fg = c.onedarkDisabled, bg = "NONE", nocombine = true })
 
 	-- LSP
 	hl(0, "DiagnosticError", { fg = c.onedarkRed, bg = "NONE" })
