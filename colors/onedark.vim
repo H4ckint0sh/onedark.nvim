@@ -1,4 +1,4 @@
 lua << EOF
-local material = require("onedark")
-material.setup({})
+local onedark = require("onedark")
+onedark.setup({})
 EOF
