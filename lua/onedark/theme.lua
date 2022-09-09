@@ -417,37 +417,6 @@ theme.set_highlights = function(opts)
 	hl(0, "GitSignsChangeLn", { fg = c.onedarkBack, bg = c.onedarkYellow })
 	hl(0, "GitSignsDeleteLn", { fg = c.onedarkBack, bg = c.onedarkRed })
 
-	-- NvimTree
-	--[[ hl(0, "NvimTreeRootFolder", { fg = c.onedarkFront, bg = "NONE", bold = true }) ]]
-	--[[ hl(0, "NvimTreeGitDirty", { fg = c.onedarkYellow, bg = "NONE" }) ]]
-	--[[ hl(0, "NvimTreeGitNew", { fg = c.onedarkGreen, bg = "NONE" }) ]]
-	--[[ hl(0, "NvimTreeImageFile", { fg = c.onedarkViolet, bg = "NONE" }) ]]
-	--[[ hl(0, "NvimTreeEmptyFolderName", { fg = c.onedarkGray, bg = "NONE" }) ]]
-	--[[ hl(0, "NvimTreeFolderName", { fg = c.onedarkFront, bg = "NONE" }) ]]
-	--[[ hl(0, "NvimTreeSpecialFile", { fg = c.onedarkPurple, bg = "NONE", underline = true }) ]]
-	--[[ hl( ]]
-	--[[ 	0, ]]
-	--[[ 	"NvimTreeNormal", ]]
-	--[[ 	{ fg = c.onedarkFront, bg = opts.disable_nvimtree_bg and c.onedarkBack or c.onedarkLeftDark } ]]
-	--[[ ) ]]
-	--[[ hl( ]]
-	--[[ 	0, ]]
-	--[[ 	"NvimTreeCursorLine", ]]
-	--[[ 	{ fg = "NONE", bg = opts.disable_nvimtree_bg and c.onedarkCursorDarkDark or c.onedarkLeftMid } ]]
-	--[[ ) ]]
-	--[[ hl( ]]
-	--[[ 	0, ]]
-	--[[ 	"NvimTreeVertSplit", ]]
-	--[[ 	{ fg = opts.disable_nvimtree_bg and c.onedarkSplitDark or c.onedarkBack, bg = c.onedarkBack } ]]
-	--[[ ) ]]
-	--[[ hl(0, "NvimTreeEndOfBuffer", { fg = opts.disable_nvimtree_bg and c.onedarkCursorDarkDark or c.onedarkLeftDark }) ]]
-	--[[ hl( ]]
-	--[[ 	0, ]]
-	--[[ 	"NvimTreeOpenedFolderName", ]]
-	--[[ 	{ fg = "NONE", bg = opts.disable_nvimtree_bg and c.onedarkCursorDarkDark or c.onedarkLeftDark } ]]
-	--[[ ) ]]
-	--[[]]
-	-- Bufferline
 	hl(0, "BufferLineIndicatorSelected", { fg = c.onedarkLeftDark, bg = "NONE" })
 	hl(0, "BufferLineFill", { fg = "NONE", bg = c.onedarkLeftDark })
 
@@ -547,14 +516,14 @@ theme.set_highlights = function(opts)
 		hl(0, "LspSagaRenameBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
 		hl(0, "LspSagaLspFinderBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
 
-		hl(0, "TelescopePromptBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
-		hl(0, "TelescopeResultsBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
-		hl(0, "TelescopePreviewBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
-		hl(0, "TelescopeNormal", { fg = c.onedarkFront, bg = "NONE" })
-		hl(0, "TelescopeSelection", { fg = c.onedarkFront, bg = c.onedarkPopupHighlightBlue })
-		hl(0, "TelescopeMultiSelection", { fg = c.onedarkFront, bg = c.onedarkPopupHighlightBlue })
-		hl(0, "TelescopeMatching", { fg = c.onedarkMediumBlue, bg = "NONE", bold = true })
-		hl(0, "TelescopePromptPrefix", { fg = c.onedarkFront, bg = "NONE" })
+		--[[ hl(0, "TelescopePromptBorder", { fg = c.onedarkLineNumber, bg = "NONE" }) ]]
+		--[[ hl(0, "TelescopeResultsBorder", { fg = c.onedarkLineNumber, bg = "NONE" }) ]]
+		--[[ hl(0, "TelescopePreviewBorder", { fg = c.onedarkLineNumber, bg = "NONE" }) ]]
+		--[[ hl(0, "TelescopeNormal", { fg = c.onedarkFront, bg = "NONE" }) ]]
+		--[[ hl(0, "TelescopeSelection", { fg = c.onedarkFront, bg = c.onedarkPopupHighlightBlue }) ]]
+		--[[ hl(0, "TelescopeMultiSelection", { fg = c.onedarkFront, bg = c.onedarkPopupHighlightBlue }) ]]
+		--[[ hl(0, "TelescopeMatching", { fg = c.onedarkMediumBlue, bg = "NONE", bold = true }) ]]
+		--[[ hl(0, "TelescopePromptPrefix", { fg = c.onedarkFront, bg = "NONE" }) ]]
 
 		-- symbols-outline
 		-- white fg and lualine blue bg
@@ -581,15 +550,6 @@ theme.set_highlights = function(opts)
 		hl(0, "LspSagaDocTruncateLine", { fg = c.onedarkTabOther, bg = "NONE" })
 		hl(0, "LspSagaRenameBorder", { fg = c.onedarkTabOther, bg = "NONE" })
 		hl(0, "LspSagaLspFinderBorder", { fg = c.onedarkTabOther, bg = "NONE" })
-
-		hl(0, "TelescopePromptBorder", { fg = c.onedarkTabOther, bg = "NONE" })
-		hl(0, "TelescopeResultsBorder", { fg = c.onedarkTabOther, bg = "NONE" })
-		hl(0, "TelescopePreviewBorder", { fg = c.onedarkTabOther, bg = "NONE" })
-		hl(0, "TelescopeNormal", { fg = c.onedarkFront, bg = "NONE" })
-		hl(0, "TelescopeSelection", { fg = c.onedarkBack, bg = c.onedarkPopupHighlightBlue })
-		hl(0, "TelescopeMultiSelection", { fg = c.onedarkBack, bg = c.onedarkPopupHighlightBlue })
-		hl(0, "TelescopeMatching", { fg = c.onedarkDarkBlue, bg = "NONE", bold = true, nil })
-		hl(0, "TelescopePromptPrefix", { fg = c.onedarkFront, bg = "NONE" })
 
 		-- symbols-outline
 		-- white fg and lualine blue bg
