@@ -26,14 +26,16 @@ theme.set_highlights = function(opts)
 	hl(0, "IncSearch", { fg = c.onedarkNone, bg = c.onedarkSearchCurrent })
 	hl(0, "LineNr", { fg = c.onedarkDisabled, bg = c.onedarkBack })
 	hl(0, "CursorLineNr", { fg = c.onedarkPurple, bg = c.onedarkBack, bold = true })
+	hl(0, "FloatBorder", { fg = c.onedarkPopupFront, bg = "NONE" })
+	hl(0, "NomalFloat", { fg = c.onedarkPopupFront, bg = "NONE" })
 	hl(0, "MatchParen", { fg = c.onedarkNone, bg = c.onedarkCursorDark })
 	hl(0, "ModeMsg", { fg = c.onedarkFront, bg = c.onedarkLeftDark })
 	hl(0, "MoreMsg", { fg = c.onedarkFront, bg = c.onedarkLeftDark })
 	hl(0, "NonText", { fg = (isDark and c.onedarkLineNumber or c.onedarkTabOther), bg = c.onedarkBack })
-	hl(0, "Pmenu", { fg = c.onedarkPopupFront, bg = c.onedarkPopupBack })
-	hl(0, "PmenuSel", { fg = isDark and c.onedarkPopupFront or c.onedarkBack, bg = c.onedarkPopupHighlightGreen })
-	hl(0, "PmenuSbar", { fg = "NONE", bg = c.onedarkPopupBack })
-	hl(0, "PmenuThumb", { fg = "NONE", bg = c.onedarkPopupFront })
+	hl(0, "Pmenu", { fg = c.onedarkPopupFront, bg = "NONE" })
+	hl(0, "PmenuSel", { fg = c.onedarkPopupFront, bg = "NONE"})
+	hl(0, "PmenuSbar", { fg = c.onedarkPopupFront bg = "NONE" })
+	hl(0, "PmenuThumb", { fg = c.onedarkPopupFront bg = "NONE" })
 	hl(0, "Question", { fg = c.onedarkBlue, bg = c.onedarkBack })
 	hl(0, "Search", { fg = c.onedarkNone, bg = c.onedarkSearch })
 	hl(0, "SpecialKey", { fg = c.onedarkBlue, bg = c.onedarkNone })
@@ -53,7 +55,7 @@ theme.set_highlights = function(opts)
 	hl(0, "Character", { fg = c.onedarkOrange, bg = "NONE" })
 	hl(0, "Number", { fg = c.onedarkLightGreen, bg = "NONE" })
 	hl(0, "Boolean", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "Float", { fg = c.onedarkLightGreen, bg = "NONE" })
+	hl(0, "Float", { fg = c.onedarkYellow, bg = "NONE" })
 	hl(0, "Identifier", { fg = c.onedarkLightBlue, bg = "NONE" })
 	hl(0, "Function", { fg = c.onedarkBlue, bg = "NONE" })
 	hl(0, "Statement", { fg = c.onedarkPink, bg = "NONE" })
@@ -103,7 +105,7 @@ theme.set_highlights = function(opts)
 	hl(0, "TSCharacter", { fg = c.onedarkOrange, bg = "NONE" })
 	hl(0, "TSNumber", { fg = c.onedarkLightGreen, bg = "NONE" })
 	hl(0, "TSBoolean", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "TSFloat", { fg = c.onedarkLightGreen, bg = "NONE" })
+	hl(0, "TSFloat", { fg = c.onedarkYellow, bg = "NONE" })
 	hl(0, "TSAnnotation", { fg = c.onedarkYellow, bg = "NONE" })
 	hl(0, "TSAttribute", { fg = c.onedarkOrange, bg = "NONE" })
 	hl(0, "TSNamespace", { fg = c.onedarkBlueGreen, bg = "NONE" })
@@ -501,20 +503,20 @@ theme.set_highlights = function(opts)
 	)
 
 	-- Nvim compe
-	--[[ hl(0, "CmpItemKindVariable", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
-	--[[ hl(0, "CmpItemKindInterface", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
-	--[[ hl(0, "CmpItemKindText", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
-	--[[ hl(0, "CmpItemKindFunction", { fg = c.onedarkPink, bg = "NONE" }) ]]
-	--[[ hl(0, "CmpItemKindMethod", { fg = c.onedarkPink, bg = "NONE" }) ]]
-	--[[ hl(0, "CmpItemKindKeyword", { fg = c.onedarkFront, bg = "NONE" }) ]]
-	--[[ hl(0, "CmpItemKindProperty", { fg = c.onedarkFront, bg = "NONE" }) ]]
-	--[[ hl(0, "CmpItemKindUnit", { fg = c.onedarkFront, bg = "NONE" }) ]]
-	--[[ hl(0, "CmpItemKindConstructor", { fg = c.onedarkUiOrange, bg = "NONE" }) ]]
-	--[[ hl(0, "CmpItemMenu", { fg = c.onedarkPopupFront, bg = "NONE" }) ]]
-	--[[ hl(0, "CmpItemAbbr", { fg = c.onedarkFront, bg = "NONE" }) ]]
-	--[[ hl(0, "CmpItemAbbrDeprecated", { fg = c.onedarkCursorDark, bg = c.onedarkPopupBack, strikethrough = true }) ]]
-	--[[ hl(0, "CmpItemAbbrMatch", { fg = isDark and c.onedarkYellow or c.onedarkYellow, bg = "NONE", bold = true }) ]]
-	--[[ hl(0, "CmpItemAbbrMatchFuzzy", { fg = isDark and c.onedarkYellow or c.onedarkYellow, bg = "NONE", bold = true }) ]]
+	hl(0, "CmpItemKindVariable", { fg = c.onedarkLightBlue, bg = "NONE" })
+	hl(0, "CmpItemKindInterface", { fg = c.onedarkLightBlue, bg = "NONE" })
+	hl(0, "CmpItemKindText", { fg = c.onedarkLightBlue, bg = "NONE" })
+	hl(0, "CmpItemKindFunction", { fg = c.onedarkPink, bg = "NONE" })
+	hl(0, "CmpItemKindMethod", { fg = c.onedarkPink, bg = "NONE" })
+	hl(0, "CmpItemKindKeyword", { fg = c.onedarkFront, bg = "NONE" })
+	hl(0, "CmpItemKindProperty", { fg = c.onedarkFront, bg = "NONE" })
+	hl(0, "CmpItemKindUnit", { fg = c.onedarkFront, bg = "NONE" })
+	hl(0, "CmpItemKindConstructor", { fg = c.onedarkUiOrange, bg = "NONE" })
+	hl(0, "CmpItemMenu", { fg = c.onedarkPopupFront, bg = "NONE" })
+	hl(0, "CmpItemAbbr", { fg = c.onedarkFront, bg = "NONE" })
+	hl(0, "CmpItemAbbrDeprecated", { fg = c.onedarkCursorDark, bg = c.onedarkPopupBack, strikethrough = true })
+	hl(0, "CmpItemAbbrMatch", { fg = isDark and c.onedarkYellow or c.onedarkYellow, bg = "NONE", bold = true })
+	hl(0, "CmpItemAbbrMatchFuzzy", { fg = isDark and c.onedarkYellow or c.onedarkYellow, bg = "NONE", bold = true })
 
 	-- Dashboard
 	hl(0, "DashboardHeader", { fg = c.onedarkBlue, bg = "NONE" })
@@ -528,7 +530,7 @@ theme.set_highlights = function(opts)
 		hl(0, "NvimTreeIndentMarker", { fg = c.onedarkLineNumber, bg = "NONE" })
 
 		hl(0, "LspFloatWinNormal", { fg = c.onedarkFront, bg = "NONE" })
-		hl(0, "LspFloatWinBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
+		hl(0, "LspFloatWinBorder", { fg = c.onedarkFront, bg = "NONE" })
 		hl(0, "LspSagaHoverBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
 		hl(0, "LspSagaSignatureHelpBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
 		hl(0, "LspSagaCodeActionBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
