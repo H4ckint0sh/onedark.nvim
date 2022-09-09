@@ -16,9 +16,9 @@ if vim.o.background == "dark" then
 		onedarkLeftMid = "#373737",
 		onedarkLeftLight = "#636369",
 
-		onedarkPopupFront = "#EEFFE3",
+		onedarkPopupFront = "#181a1f",
 		onedarkPopupBack = "#001B1A",
-		onedarkPopupHighlightBlue = "#005454",
+		onedarkPopupHighlightBlue = "#73b8f1",
 		onedarkPopupHighlightGray = "#002626",
 		onedarkPopupHighlightGreen = "#002626",
 
