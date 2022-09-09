@@ -383,10 +383,10 @@ theme.set_highlights = function(opts)
 	hl(0, "gitcommitBlank", { fg = c.onedarkPink, bg = "NONE" })
 
 	-- Lua
-	hl(0, "luaFuncCall", { fg = c.onedarkYellow, bg = "NONE" })
+	hl(0, "luaFuncCall", { fg = c.onedarkPurple, bg = "NONE" })
 	hl(0, "luaFuncArgName", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "luaFuncKeyword", { fg = c.onedarkPink, bg = "NONE" })
-	hl(0, "luaLocal", { fg = c.onedarkPink, bg = "NONE" })
+	hl(0, "luaFuncKeyword", { fg = c.onedarkPurple, bg = "NONE" })
+	hl(0, "luaLocal", { fg = c.onedarkPurple, bg = "NONE" })
 	hl(0, "luaBuiltIn", { fg = c.onedarkBlue, bg = "NONE" })
 
 	-- SH
@@ -416,35 +416,35 @@ theme.set_highlights = function(opts)
 	hl(0, "GitSignsDeleteLn", { fg = c.onedarkBack, bg = c.onedarkRed })
 
 	-- NvimTree
-	hl(0, "NvimTreeRootFolder", { fg = c.onedarkFront, bg = "NONE", bold = true })
-	hl(0, "NvimTreeGitDirty", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "NvimTreeGitNew", { fg = c.onedarkGreen, bg = "NONE" })
-	hl(0, "NvimTreeImageFile", { fg = c.onedarkViolet, bg = "NONE" })
-	hl(0, "NvimTreeEmptyFolderName", { fg = c.onedarkGray, bg = "NONE" })
-	hl(0, "NvimTreeFolderName", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "NvimTreeSpecialFile", { fg = c.onedarkPink, bg = "NONE", underline = true })
-	hl(
-		0,
-		"NvimTreeNormal",
-		{ fg = c.onedarkFront, bg = opts.disable_nvimtree_bg and c.onedarkBack or c.onedarkLeftDark }
-	)
-	hl(
-		0,
-		"NvimTreeCursorLine",
-		{ fg = "NONE", bg = opts.disable_nvimtree_bg and c.onedarkCursorDarkDark or c.onedarkLeftMid }
-	)
-	hl(
-		0,
-		"NvimTreeVertSplit",
-		{ fg = opts.disable_nvimtree_bg and c.onedarkSplitDark or c.onedarkBack, bg = c.onedarkBack }
-	)
-	hl(0, "NvimTreeEndOfBuffer", { fg = opts.disable_nvimtree_bg and c.onedarkCursorDarkDark or c.onedarkLeftDark })
-	hl(
-		0,
-		"NvimTreeOpenedFolderName",
-		{ fg = "NONE", bg = opts.disable_nvimtree_bg and c.onedarkCursorDarkDark or c.onedarkLeftDark }
-	)
-
+	--[[ hl(0, "NvimTreeRootFolder", { fg = c.onedarkFront, bg = "NONE", bold = true }) ]]
+	--[[ hl(0, "NvimTreeGitDirty", { fg = c.onedarkYellow, bg = "NONE" }) ]]
+	--[[ hl(0, "NvimTreeGitNew", { fg = c.onedarkGreen, bg = "NONE" }) ]]
+	--[[ hl(0, "NvimTreeImageFile", { fg = c.onedarkViolet, bg = "NONE" }) ]]
+	--[[ hl(0, "NvimTreeEmptyFolderName", { fg = c.onedarkGray, bg = "NONE" }) ]]
+	--[[ hl(0, "NvimTreeFolderName", { fg = c.onedarkFront, bg = "NONE" }) ]]
+	--[[ hl(0, "NvimTreeSpecialFile", { fg = c.onedarkPurple, bg = "NONE", underline = true }) ]]
+	--[[ hl( ]]
+	--[[ 	0, ]]
+	--[[ 	"NvimTreeNormal", ]]
+	--[[ 	{ fg = c.onedarkFront, bg = opts.disable_nvimtree_bg and c.onedarkBack or c.onedarkLeftDark } ]]
+	--[[ ) ]]
+	--[[ hl( ]]
+	--[[ 	0, ]]
+	--[[ 	"NvimTreeCursorLine", ]]
+	--[[ 	{ fg = "NONE", bg = opts.disable_nvimtree_bg and c.onedarkCursorDarkDark or c.onedarkLeftMid } ]]
+	--[[ ) ]]
+	--[[ hl( ]]
+	--[[ 	0, ]]
+	--[[ 	"NvimTreeVertSplit", ]]
+	--[[ 	{ fg = opts.disable_nvimtree_bg and c.onedarkSplitDark or c.onedarkBack, bg = c.onedarkBack } ]]
+	--[[ ) ]]
+	--[[ hl(0, "NvimTreeEndOfBuffer", { fg = opts.disable_nvimtree_bg and c.onedarkCursorDarkDark or c.onedarkLeftDark }) ]]
+	--[[ hl( ]]
+	--[[ 	0, ]]
+	--[[ 	"NvimTreeOpenedFolderName", ]]
+	--[[ 	{ fg = "NONE", bg = opts.disable_nvimtree_bg and c.onedarkCursorDarkDark or c.onedarkLeftDark } ]]
+	--[[ ) ]]
+	--[[]]
 	-- Bufferline
 	hl(0, "BufferLineIndicatorSelected", { fg = c.onedarkLeftDark, bg = "NONE" })
 	hl(0, "BufferLineFill", { fg = "NONE", bg = c.onedarkLeftDark })
@@ -501,20 +501,20 @@ theme.set_highlights = function(opts)
 	)
 
 	-- Nvim compe
-	hl(0, "CmpItemKindVariable", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "CmpItemKindInterface", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "CmpItemKindText", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "CmpItemKindFunction", { fg = c.onedarkPink, bg = "NONE" })
-	hl(0, "CmpItemKindMethod", { fg = c.onedarkPink, bg = "NONE" })
-	hl(0, "CmpItemKindKeyword", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "CmpItemKindProperty", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "CmpItemKindUnit", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "CmpItemKindConstructor", { fg = c.onedarkUiOrange, bg = "NONE" })
-	hl(0, "CmpItemMenu", { fg = c.onedarkPopupFront, bg = "NONE" })
-	hl(0, "CmpItemAbbr", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "CmpItemAbbrDeprecated", { fg = c.onedarkCursorDark, bg = c.onedarkPopupBack, strikethrough = true })
-	hl(0, "CmpItemAbbrMatch", { fg = isDark and c.onedarkYellow or c.onedarkYellow, bg = "NONE", bold = true })
-	hl(0, "CmpItemAbbrMatchFuzzy", { fg = isDark and c.onedarkYellow or c.onedarkYellow, bg = "NONE", bold = true })
+	--[[ hl(0, "CmpItemKindVariable", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "CmpItemKindInterface", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "CmpItemKindText", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "CmpItemKindFunction", { fg = c.onedarkPink, bg = "NONE" }) ]]
+	--[[ hl(0, "CmpItemKindMethod", { fg = c.onedarkPink, bg = "NONE" }) ]]
+	--[[ hl(0, "CmpItemKindKeyword", { fg = c.onedarkFront, bg = "NONE" }) ]]
+	--[[ hl(0, "CmpItemKindProperty", { fg = c.onedarkFront, bg = "NONE" }) ]]
+	--[[ hl(0, "CmpItemKindUnit", { fg = c.onedarkFront, bg = "NONE" }) ]]
+	--[[ hl(0, "CmpItemKindConstructor", { fg = c.onedarkUiOrange, bg = "NONE" }) ]]
+	--[[ hl(0, "CmpItemMenu", { fg = c.onedarkPopupFront, bg = "NONE" }) ]]
+	--[[ hl(0, "CmpItemAbbr", { fg = c.onedarkFront, bg = "NONE" }) ]]
+	--[[ hl(0, "CmpItemAbbrDeprecated", { fg = c.onedarkCursorDark, bg = c.onedarkPopupBack, strikethrough = true }) ]]
+	--[[ hl(0, "CmpItemAbbrMatch", { fg = isDark and c.onedarkYellow or c.onedarkYellow, bg = "NONE", bold = true }) ]]
+	--[[ hl(0, "CmpItemAbbrMatchFuzzy", { fg = isDark and c.onedarkYellow or c.onedarkYellow, bg = "NONE", bold = true }) ]]
 
 	-- Dashboard
 	hl(0, "DashboardHeader", { fg = c.onedarkBlue, bg = "NONE" })
