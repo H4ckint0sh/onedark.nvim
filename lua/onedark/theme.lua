@@ -516,16 +516,6 @@ theme.set_highlights = function(opts)
 		hl(0, "LspSagaDocTruncateLine", { fg = c.onedarkLineNumber, bg = "NONE" })
 		hl(0, "LspSagaRenameBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
 		hl(0, "LspSagaLspFinderBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
-
-		--[[ hl(0, "TelescopePromptBorder", { fg = c.onedarkLineNumber, bg = "NONE" }) ]]
-		--[[ hl(0, "TelescopeResultsBorder", { fg = c.onedarkLineNumber, bg = "NONE" }) ]]
-		--[[ hl(0, "TelescopePreviewBorder", { fg = c.onedarkLineNumber, bg = "NONE" }) ]]
-		--[[ hl(0, "TelescopeNormal", { fg = c.onedarkFront, bg = "NONE" }) ]]
-		--[[ hl(0, "TelescopeSelection", { fg = c.onedarkFront, bg = c.onedarkPopupHighlightBlue }) ]]
-		--[[ hl(0, "TelescopeMultiSelection", { fg = c.onedarkFront, bg = c.onedarkPopupHighlightBlue }) ]]
-		--[[ hl(0, "TelescopeMatching", { fg = c.onedarkMediumBlue, bg = "NONE", bold = true }) ]]
-		--[[ hl(0, "TelescopePromptPrefix", { fg = c.onedarkFront, bg = "NONE" }) ]]
-
 		-- symbols-outline
 		-- white fg and lualine blue bg
 		hl(0, "FocusedSymbol", { fg = "#ffffff", bg = c.onedarkUiBlue })
