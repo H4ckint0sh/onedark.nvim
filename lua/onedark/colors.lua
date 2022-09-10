@@ -34,7 +34,7 @@ if vim.o.background == "dark" then
 		onedarkLineNumber = "#005454",
 
 		onedarkDiffRedDark = "#4B1818",
-		onedarkDiffRedLight = "#6F1313",
+		onedarkDiffRedLight = "#e05252",
 		onedarkDiffRedLightLight = "#FB0101",
 		onedarkDiffGreenDark = "#373D29",
 		onedarkDiffGreenLight = "#4B5632",
@@ -61,7 +61,7 @@ if vim.o.background == "dark" then
 		onedarkLightRed = "#FF9CAC",
 		onedarkYellowOrange = "#d19a66",
 		onedarkYellow = "#e5c07b",
-		onedarkPink = "#C586C0",
+		onedarkPink = "#c679dd",
 		onedarkPurple = "#d55fde",
 	}
 end
