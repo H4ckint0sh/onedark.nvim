@@ -304,7 +304,7 @@ theme.set_highlights = function(opts)
 	--[[ hl(0, "typescriptPromiseMethod", { fg = c.onedarkYellow, bg = "NONE" }) ]]
 
 	-- TypeScript
-	hl(0, "typescriptIdentifierName", { fg = c.onedarkFront, bg = "NONE" })
+	--[[ hl(0, "typescriptIdentifierName", { fg = c.onedarkFront, bg = "NONE" }) ]]
 
 	-- XML
 	hl(0, "xmlTag", { fg = c.onedarkBlue, bg = "NONE" })
@@ -577,6 +577,9 @@ theme.link_highlight = function()
 	hl(0, "CmpItemKindConstant", { link = "TSConstant" })
 	hl(0, "CmpItemKindStruct", { link = "TSStructure" })
 	hl(0, "CmpItemKindTypeParameter", { link = "TSParameter" })
+
+	-- TypeScript
+	hl(0, "typescriptIdentifierName", { link = "TSText" })
 end
 
 return theme
