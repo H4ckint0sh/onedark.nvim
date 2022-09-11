@@ -303,6 +303,9 @@ theme.set_highlights = function(opts)
 	--[[ hl(0, "typescriptGlobalMethod", { fg = c.onedarkYellow, bg = "NONE" }) ]]
 	--[[ hl(0, "typescriptPromiseMethod", { fg = c.onedarkYellow, bg = "NONE" }) ]]
 
+	-- TypeScript
+	hl(0, "typescriptIdentifierName", { fg = c.onedarkFront, bg = "NONE" })
+
 	-- XML
 	hl(0, "xmlTag", { fg = c.onedarkBlue, bg = "NONE" })
 	hl(0, "xmlTagName", { fg = c.onedarkBlue, bg = "NONE" })
