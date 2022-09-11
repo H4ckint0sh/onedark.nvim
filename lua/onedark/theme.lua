@@ -555,7 +555,6 @@ end
 theme.link_highlight = function()
 	-- Legacy groups for official git.vim and diff.vim syntax
 	hl(0, "diffAdded", { link = "DiffAdd" })
-	hl(0, "typescriptIdentifierName", { link = "TSField" })
 	hl(0, "diffChanged", { link = "DiffChange" })
 	hl(0, "diffRemoved", { link = "DiffDelete" })
 	-- Nvim compe
