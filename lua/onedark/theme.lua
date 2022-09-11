@@ -215,93 +215,93 @@ theme.set_highlights = function(opts)
 	hl(0, "cssImportant", { fg = c.onedarkBlue, bg = "NONE" })
 
 	-- JavaScript
-	hl(0, "jsVariableDef", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "jsFuncArgs", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "jsFuncBlock", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "jsRegexpString", { fg = c.onedarkLightRed, bg = "NONE" })
-	hl(0, "jsThis", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "jsOperatorKeyword", { fg = c.onedarkMediumBlue, bg = "NONE" })
-	hl(0, "jsDestructuringBlock", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "jsObjectKey", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "jsGlobalObjects", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "jsModuleKeyword", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "jsClassDefinition", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "jsClassKeyword", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "jsExtendsKeyword", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "jsExportDefault", { fg = c.onedarkPink, bg = "NONE" })
-	hl(0, "jsFuncCall", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "jsObjectValue", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "jsParen", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "jsObjectProp", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "jsIfElseBlock", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "jsParenIfElse", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "jsSpreadOperator", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "jsSpreadExpression", { fg = c.onedarkLightBlue, bg = "NONE" })
-
-	-- Typescript
-	hl(0, "typescriptLabel", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "typescriptExceptions", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptBraces", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "typescriptEndColons", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptParens", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "typescriptDocTags", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "typescriptDocComment", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "typescriptLogicSymbols", { fg = c.onedarkPurple, bg = "NONE" })
-	hl(0, "typescriptImport", { fg = c.onedarkPink, bg = "NONE" })
-	hl(0, "typescriptBOM", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptVariableDeclaration", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptVariable", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "typescriptExport", { fg = c.onedarkPink, bg = "NONE" })
-	hl(0, "typescriptAliasDeclaration", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "typescriptAliasKeyword", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "typescriptClassName", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "typescriptAccessibilityModifier", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "typescriptOperator", { fg = c.onedarkMediumBlue, bg = "NONE" })
-	hl(0, "typescriptArrowFunc", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "typescriptMethodAccessor", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "typescriptMember", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "typescriptTypeReference", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "typescriptTemplateSB", { fg = c.onedarkYellowOrange, bg = "NONE" })
-	hl(0, "typescriptArrowFuncArg", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptParamImpl", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptFuncComma", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptCastKeyword", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptCall", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "typescriptCase", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptReserved", { fg = c.onedarkPink, bg = "NONE" })
-	hl(0, "typescriptDefault", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptDecorator", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "typescriptPredefinedType", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "typescriptClassHeritage", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "typescriptClassExtends", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "typescriptClassKeyword", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "typescriptBlock", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptDOMDocProp", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptTemplateSubstitution", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptClassBlock", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptFuncCallArg", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptIndexExpr", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptConditionalParen", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptArray", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "typescriptES6SetProp", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptObjectLiteral", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptTypeParameter", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "typescriptEnumKeyword", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "typescriptEnum", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "typescriptLoopParen", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptParenExp", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptModule", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "typescriptAmbientDeclaration", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "typescriptFuncTypeArrow", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "typescriptInterfaceHeritage", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "typescriptInterfaceName", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "typescriptInterfaceKeyword", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "typescriptInterfaceExtends", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "typescriptGlobal", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "typescriptAsyncFuncKeyword", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "typescriptFuncKeyword", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "typescriptGlobalMethod", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "typescriptPromiseMethod", { fg = c.onedarkYellow, bg = "NONE" })
+	--[[ hl(0, "jsVariableDef", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "jsFuncArgs", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "jsFuncBlock", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "jsRegexpString", { fg = c.onedarkLightRed, bg = "NONE" }) ]]
+	--[[ hl(0, "jsThis", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "jsOperatorKeyword", { fg = c.onedarkMediumBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "jsDestructuringBlock", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "jsObjectKey", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "jsGlobalObjects", { fg = c.onedarkBlueGreen, bg = "NONE" }) ]]
+	--[[ hl(0, "jsModuleKeyword", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "jsClassDefinition", { fg = c.onedarkBlueGreen, bg = "NONE" }) ]]
+	--[[ hl(0, "jsClassKeyword", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "jsExtendsKeyword", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "jsExportDefault", { fg = c.onedarkPink, bg = "NONE" }) ]]
+	--[[ hl(0, "jsFuncCall", { fg = c.onedarkYellow, bg = "NONE" }) ]]
+	--[[ hl(0, "jsObjectValue", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "jsParen", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "jsObjectProp", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "jsIfElseBlock", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "jsParenIfElse", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "jsSpreadOperator", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "jsSpreadExpression", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[]]
+	--[[ -- Typescript ]]
+	--[[ hl(0, "typescriptLabel", { fg = c.onedarkRed, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptExceptions", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptBraces", { fg = c.onedarkFront, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptEndColons", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptParens", { fg = c.onedarkFront, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptDocTags", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptDocComment", { fg = c.onedarkBlueGreen, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptLogicSymbols", { fg = c.onedarkPurple, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptImport", { fg = c.onedarkPink, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptBOM", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptVariableDeclaration", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptVariable", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptExport", { fg = c.onedarkPink, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptAliasDeclaration", { fg = c.onedarkBlueGreen, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptAliasKeyword", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptClassName", { fg = c.onedarkBlueGreen, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptAccessibilityModifier", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptOperator", { fg = c.onedarkMediumBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptArrowFunc", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptMethodAccessor", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptMember", { fg = c.onedarkYellow, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptTypeReference", { fg = c.onedarkYellow, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptTemplateSB", { fg = c.onedarkYellowOrange, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptArrowFuncArg", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptParamImpl", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptFuncComma", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptCastKeyword", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptCall", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptCase", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptReserved", { fg = c.onedarkPink, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptDefault", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptDecorator", { fg = c.onedarkYellow, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptPredefinedType", { fg = c.onedarkYellow, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptClassHeritage", { fg = c.onedarkBlueGreen, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptClassExtends", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptClassKeyword", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptBlock", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptDOMDocProp", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptTemplateSubstitution", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptClassBlock", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptFuncCallArg", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptIndexExpr", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptConditionalParen", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptArray", { fg = c.onedarkYellow, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptES6SetProp", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "ypescriptObjectLiteral", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptTypeParameter", { fg = c.onedarkYellow, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptEnumKeyword", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptEnum", { fg = c.onedarkBlueGreen, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptLoopParen", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptParenExp", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptModule", { fg = c.onedarkLightBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptAmbientDeclaration", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptFuncTypeArrow", { fg = c.onedarkYellow, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptInterfaceHeritage", { fg = c.onedarkBlueGreen, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptInterfaceName", { fg = c.onedarkBlueGreen, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptInterfaceKeyword", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptInterfaceExtends", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptGlobal", { fg = c.onedarkBlueGreen, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptAsyncFuncKeyword", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptFuncKeyword", { fg = c.onedarkBlue, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptGlobalMethod", { fg = c.onedarkYellow, bg = "NONE" }) ]]
+	--[[ hl(0, "typescriptPromiseMethod", { fg = c.onedarkYellow, bg = "NONE" }) ]]
 
 	-- XML
 	hl(0, "xmlTag", { fg = c.onedarkBlue, bg = "NONE" })
