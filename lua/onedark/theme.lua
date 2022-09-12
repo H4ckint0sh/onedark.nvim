@@ -92,7 +92,7 @@ theme.set_highlights = function(opts)
 
 	-- Treesitter
 	hl(0, "TSError", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "TSPunctBracket", { fg = c.onedarkPurple, bg = "NONE" })
+	hl(0, "TSPunctBracket", { fg = c.onedarkFront, bg = "NONE" })
 	hl(0, "TSPunctSpecial", { fg = c.onedarkPurple, bg = "NONE" })
 	hl(0, "markdownTSPunctSpecial", { fg = isDark and c.onedarkBlue or c.onedarkYellowOrange, bold = true })
 	hl(0, "TSComment", { fg = c.onedarkDisabled, bg = "NONE", italic = opts.italic_comments })
