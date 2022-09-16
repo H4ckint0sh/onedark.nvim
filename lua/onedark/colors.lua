@@ -19,14 +19,14 @@ if vim.o.background == "dark" then
 		onedarkPopupFront = "#f8fafd",
 		onedarkPopupBack = "#1d1f23",
 		onedarkPopupHighlightBlue = "#73b8f1",
-		onedarkPopupHighlightGray = "#00809b",
+		onedarkPopupHighlightGray = "#2d3139",
 		onedarkPopupHighlightGreen = "#677696",
 
 		onedarkSplitLight = "#898989",
 		onedarkSplitDark = "#48425b",
 		onedarkSplitThumb = "#404754",
 
-		onedarkCursorDarkDark = "#3f5de6",
+		onedarkCursorDarkDark = "#2d3139",
 		onedarkCursorDark = "#51504F",
 		onedarkCursorLight = "#c8c8c8",
 		onedarkSelection = "#383e4a",
