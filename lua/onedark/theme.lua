@@ -501,7 +501,7 @@ theme.set_highlights = function(opts)
 	if isDark then
 		hl(0, "NvimTreeFolderIcon", { fg = c.onedarkBlue, bg = "NONE" })
 		hl(0, "NvimTreeIndentMarker", { fg = c.onedarkDisabled, bg = "NONE" })
-
+		hl(0, "NvimTreeCursorLine", { fg = "NONE", bg = c.onedarkDisabled })
 		hl(0, "LspFloatWinNormal", { fg = c.onedarkFront, bg = "NONE" })
 		hl(0, "LspFloatWinBorder", { fg = c.onedarkFront, bg = "NONE" })
 		hl(0, "LspSagaHoverBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
@@ -526,6 +526,7 @@ theme.set_highlights = function(opts)
 	else
 		hl(0, "NvimTreeFolderIcon", { fg = c.onedarkDarkBlue, bg = "NONE" })
 		hl(0, "NvimTreeIndentMarker", { fg = c.onedarkDisabled, bg = "NONE" })
+		hl(0, "NvimTreeCursorLine", { fg = "NONE", bg = c.onedarkDisabled })
 
 		hl(0, "LspFloatWinNormal", { fg = c.onedarkFront, bg = "NONE" })
 		hl(0, "LspFloatWinBorder", { fg = c.onedarkTabOther, bg = "NONE" })
