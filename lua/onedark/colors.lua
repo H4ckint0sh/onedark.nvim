@@ -31,7 +31,7 @@ if vim.o.background == "dark" then
 		onedarkCursorLight = "#AEAFAD",
 		onedarkSelection = "#383e4a",
 		onedarkSelectioNFg = "#FFFFFF",
-		onedarkLineNumber = "#005454",
+		onedarkLineNumber = "#c679dd",
 
 		onedarkDiffRedDark = "#4B1818",
 		onedarkDiffRedLight = "#e05252",
