@@ -33,8 +33,8 @@ if vim.o.background == "dark" then
 		onedarkSelectioNFg = "#FFFFFF",
 		onedarkLineNumber = "#c679dd",
 
-		onedarkDiffRedDark = "#be4f44",
-		onedarkDiffRedLight = "#c24038",
+		onedarkDiffRedDark = "#e05252",
+		onedarkDiffRedLight = "#c22020",
 		onedarkDiffRedLightLight = "#f44747",
 		onedarkDiffGreenDark = "#004545",
 		onedarkDiffGreenLight = "#006060",
@@ -48,7 +48,7 @@ if vim.o.background == "dark" then
 
 		-- Syntax colors
 		onedarkGray = "#65717d",
-		onedarkViolet = "#66017a",
+		onedarkViolet = "#7e0097",
 		onedarkBlue = "#61afef",
 		onedarkDarkBlue = "#223E55",
 		onedarkMediumBlue = "#2bbac5",
@@ -56,13 +56,13 @@ if vim.o.background == "dark" then
 		onedarkGreen = "#89ca78",
 		onedarkBlueGreen = "#89ddff",
 		onedarkLightGreen = "#98c379",
-		onedarkRed = "#ef596f",
-		onedarkOrange = "#e06c60",
-		onedarkLightRed = "#FF9CAC",
-		onedarkYellowOrange = "#d19a66",
+		onedarkRed = "#f44747",
+		onedarkOrange = "#d18c4e",
+		onedarkLightRed = "#ff2020",
+		onedarkYellowOrange = "#cd9731",
 		onedarkYellow = "#e5c07b",
-		onedarkPink = "#c679dd",
-		onedarkPurple = "#d55fde",
+		onedarkPink = "#66017a",
+		onedarkPurple = "#c687dd",
 	}
 end
 
