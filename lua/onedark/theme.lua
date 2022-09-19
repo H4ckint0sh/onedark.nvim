@@ -377,6 +377,7 @@ theme.set_highlights = function(opts)
 
 	-- Git
 	hl(0, "gitcommitHeader", { fg = c.onedarkGray, bg = "NONE" })
+	hl(0, "GitNvimBlameHash", { fg = c.onedarkDisabled, bg = "NONE" })
 	hl(0, "gitcommitOnBranch", { fg = c.onedarkGray, bg = "NONE" })
 	hl(0, "gitcommitBranch", { fg = c.onedarkPink, bg = "NONE" })
 	hl(0, "gitcommitComment", { fg = c.onedarkGray, bg = "NONE" })
