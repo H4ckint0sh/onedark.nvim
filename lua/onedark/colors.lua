@@ -48,7 +48,7 @@ if vim.o.background == "dark" then
 
 		-- Syntax colors
 		onedarkGray = "#65717d",
-		onedarkViolet = "#7e0097",
+		onedarkViolet = "#c678dd",
 		onedarkBlue = "#61afef",
 		onedarkDarkBlue = "#223E55",
 		onedarkMediumBlue = "#2bbac5",
@@ -61,7 +61,7 @@ if vim.o.background == "dark" then
 		onedarkLightRed = "#f44747",
 		onedarkYellowOrange = "#cd9731",
 		onedarkYellow = "#e5c07b",
-		onedarkPink = "#66017a",
+		onedarkPink = "#c678dd",
 		onedarkPurple = "#c678dd",
 	}
 end
