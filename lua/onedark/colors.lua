@@ -33,11 +33,11 @@ if vim.o.background == "dark" then
 		onedarkSelectioNFg = "#FFFFFF",
 		onedarkLineNumber = "#c679dd",
 
-		onedarkDiffRedDark = "#e05252",
-		onedarkDiffRedLight = "#c22020",
-		onedarkDiffRedLightLight = "#f44747",
-		onedarkDiffGreenDark = "#004545",
-		onedarkDiffGreenLight = "#006060",
+		onedarkDiffRedDark = "#CF222E",
+		onedarkDiffRedLight = "#fe4747",
+		onedarkDiffRedLightLight = "#ffebe9",
+		onedarkDiffGreenDark = "#2da44e",
+		onedarkDiffGreenLight = "#E6FFEC",
 		onedarkSearchCurrent = "#5c6370",
 		onedarkSearch = "#484e5b",
 
