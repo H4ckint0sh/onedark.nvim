@@ -1,6 +1,7 @@
 local c = require("onedark.colors")
 
 local hl = vim.api.nvim_set_hl
+
 local theme = {}
 
 theme.set_highlights = function(opts)
