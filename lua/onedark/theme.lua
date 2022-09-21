@@ -502,6 +502,7 @@ theme.set_highlights = function(opts)
 
 	if isDark then
 		hl(0, "NvimTreeFolderIcon", { fg = c.onedarkBlue, bg = "NONE" })
+		hl(0, "NvimTreeFolderName", { fg = c.onedarkDarkBlue, bg = "NONE" })
 		hl(0, "NvimTreeIndentMarker", { fg = c.onedarkDisabled, bg = "NONE" })
 		hl(0, "NvimTreeCursorLine", { fg = "NONE", bg = "NONE" })
 		hl(0, "LspFloatWinNormal", { fg = c.onedarkFront, bg = "NONE" })
@@ -527,6 +528,7 @@ theme.set_highlights = function(opts)
 		hl(0, "SymbolsOutlineConnector", { fg = c.onedarkLineNumber, bg = "NONE" })
 	else
 		hl(0, "NvimTreeFolderIcon", { fg = c.onedarkDarkBlue, bg = "NONE" })
+		hl(0, "NvimTreeFolderName", { fg = c.onedarkDarkBlue, bg = "NONE" })
 		hl(0, "NvimTreeIndentMarker", { fg = c.onedarkDisabled, bg = "NONE" })
 		hl(0, "NvimTreeCursorLine", { fg = "NONE", bg = "NONE" })
 
