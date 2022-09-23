@@ -22,7 +22,7 @@ theme.set_highlights = function(opts)
 	hl(0, "ErrorMsg", { fg = c.onedarkRed, bg = c.onedarkBack })
 	hl(0, "VertSplit", { fg = c.onedarkSplitDark, bg = c.onedarkBack })
 	hl(0, "Folded", { fg = "NONE", bg = c.onedarkFoldBackground })
-	hl(0, "FoldColumn", { fg = c.onedarkLineNumber, bg = c.onedarkBack })
+	hl(0, "FoldColumn", { fg = c.onedarkPurple, bg = c.onedarkBack })
 	hl(0, "SignColumn", { fg = "NONE", bg = c.onedarkBack })
 	hl(0, "IncSearch", { fg = c.onedarkNone, bg = c.onedarkSearchCurrent })
 	hl(0, "LineNr", { fg = c.onedarkDisabled, bg = c.onedarkBack })
@@ -32,9 +32,9 @@ theme.set_highlights = function(opts)
 	hl(0, "MatchParen", { fg = c.onedarkNone, bg = c.onedarkCursorDark })
 	hl(0, "ModeMsg", { fg = c.onedarkFront, bg = c.onedarkLeftDark })
 	hl(0, "MoreMsg", { fg = c.onedarkFront, bg = c.onedarkLeftDark })
-	hl(0, "NonText", { fg = (isDark and c.onedarkLineNumber or c.onedarkTabOther), bg = c.onedarkBack })
+	hl(0, "NonText", { fg = (isDark and c.onedarkPurple or c.onedarkTabOther), bg = c.onedarkBack })
 	hl(0, "Pmenu", { fg = c.onedarkFront, bg = c.onedarkBack })
-	hl(0, "PmenuSel", { fg = c.onedarkBack, bg = c.onedarkPopupHighlightBlue })
+	hl(0, "PmenuSel", { fg = c.onedarkBack, bg = c.onedarkDisabled })
 	hl(0, "PmenuSbar", { fg = "NONE", bg = c.onedarkPopupBack })
 	hl(0, "PmenuThumb", { fg = "NONE", bg = c.onedarkFront })
 	hl(0, "Question", { fg = c.onedarkBlue, bg = c.onedarkBack })
@@ -464,17 +464,17 @@ theme.set_highlights = function(opts)
 	hl(
 		0,
 		"LspReferenceText",
-		{ fg = "NONE", bg = isDark and c.onedarkPopupHighlightGray or c.onedarkPopupHighlightLightBlue }
+		{ fg = "NONE", bg = isDark and c.onedarkDisabled or c.onedarkDisabled }
 	)
 	hl(
 		0,
 		"LspReferenceRead",
-		{ fg = "NONE", bg = isDark and c.onedarkPopupHighlightGray or c.onedarkPopupHighlightLightBlue }
+		{ fg = "NONE", bg = isDark and c.onedarkDisabled or c.onedarkDisabled}
 	)
 	hl(
 		0,
 		"LspReferenceWrite",
-		{ fg = "NONE", bg = isDark and c.onedarkPopupHighlightGray or c.onedarkPopupHighlightLightBlue }
+		{ fg = "NONE", bg = isDark and c.onedarkDisabled or c.onedarkDisabled }
 	)
 
 	-- Nvim compe
@@ -507,25 +507,25 @@ theme.set_highlights = function(opts)
 		hl(0, "NvimTreeCursorLine", { fg = "NONE", bg = "NONE" })
 		hl(0, "LspFloatWinNormal", { fg = c.onedarkFront, bg = "NONE" })
 		hl(0, "LspFloatWinBorder", { fg = c.onedarkFront, bg = "NONE" })
-		hl(0, "LspSagaHoverBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
-		hl(0, "LspSagaSignatureHelpBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
-		hl(0, "LspSagaCodeActionBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
-		hl(0, "LspSagaDefPreviewBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
-		hl(0, "LspLinesDiagBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
-		hl(0, "LspSagaRenameBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
+		hl(0, "LspSagaHoverBorder", { fg = c.onedarkPurple, bg = "NONE" })
+		hl(0, "LspSagaSignatureHelpBorder", { fg = c.onedarkPurple, bg = "NONE" })
+		hl(0, "LspSagaCodeActionBorder", { fg = c.onedarkPurple, bg = "NONE" })
+		hl(0, "LspSagaDefPreviewBorder", { fg = c.onedarkPurple, bg = "NONE" })
+		hl(0, "LspLinesDiagBorder", { fg = c.onedarkPurple, bg = "NONE" })
+		hl(0, "LspSagaRenameBorder", { fg = c.onedarkPurple, bg = "NONE" })
 		hl(0, "LspSagaBorderTitle", { fg = c.onedarkCursorDark, bg = "NONE" })
-		hl(0, "LSPSagaDiagnosticTruncateLine", { fg = c.onedarkLineNumber, bg = "NONE" })
-		hl(0, "LspSagaDiagnosticBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
-		hl(0, "LspSagaDiagnosticBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
-		hl(0, "LspSagaShTruncateLine", { fg = c.onedarkLineNumber, bg = "NONE" })
-		hl(0, "LspSagaShTruncateLine", { fg = c.onedarkLineNumber, bg = "NONE" })
-		hl(0, "LspSagaDocTruncateLine", { fg = c.onedarkLineNumber, bg = "NONE" })
-		hl(0, "LspSagaRenameBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
-		hl(0, "LspSagaLspFinderBorder", { fg = c.onedarkLineNumber, bg = "NONE" })
+		hl(0, "LSPSagaDiagnosticTruncateLine", { fg = c.onedarkPurple, bg = "NONE" })
+		hl(0, "LspSagaDiagnosticBorder", { fg = c.onedarkPurple, bg = "NONE" })
+		hl(0, "LspSagaDiagnosticBorder", { fg = c.onedarkPurple, bg = "NONE" })
+		hl(0, "LspSagaShTruncateLine", { fg = c.onedarkPurple, bg = "NONE" })
+		hl(0, "LspSagaShTruncateLine", { fg = c.onedarkPurple, bg = "NONE" })
+		hl(0, "LspSagaDocTruncateLine", { fg = c.onedarkPurple, bg = "NONE" })
+		hl(0, "LspSagaRenameBorder", { fg = c.onedarkPurple, bg = "NONE" })
+		hl(0, "LspSagaLspFinderBorder", { fg = c.onedarkPurple, bg = "NONE" })
 		-- symbols-outline
 		-- white fg and lualine blue bg
 		hl(0, "FocusedSymbol", { fg = "#ffffff", bg = c.onedarkUiBlue })
-		hl(0, "SymbolsOutlineConnector", { fg = c.onedarkLineNumber, bg = "NONE" })
+		hl(0, "SymbolsOutlineConnector", { fg = c.onedarkPurple, bg = "NONE" })
 	else
 		hl(0, "NvimTreeFolderIcon", { fg = c.onedarkDarkBlue, bg = "NONE" })
 		hl(0, "NvimTreeFolderName", { fg = c.onedarkDarkBlue, bg = "NONE" })

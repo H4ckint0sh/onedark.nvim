@@ -18,9 +18,6 @@ if vim.o.background == "dark" then
 
 		onedarkPopupFront = "#f8fafd",
 		onedarkPopupBack = "#1d1f23",
-		onedarkPopupHighlightBlue = "#73b8f1",
-		onedarkPopupHighlightGray = "#2d3139",
-		onedarkPopupHighlightGreen = "#677696",
 
 		onedarkSplitLight = "#898989",
 		onedarkSplitDark = "#48425b",
@@ -31,19 +28,14 @@ if vim.o.background == "dark" then
 		onedarkCursorLight = "#c8c8c8",
 		onedarkSelection = "#383e4a",
 		onedarkSelectioNFg = "#FFFFFF",
-		onedarkLineNumber = "#c679dd",
 
 		onedarkDiffRedDark = "#9a353d",
-		onedarkDiffRedLight = "#fe4747",
 		onedarkDiffRedLightLight = "#ffebe9",
 		onedarkDiffGreenDark = "#109868",
 		onedarkDiffGreenLight = "#E6FFEC",
+        onedarkDiffOrande = "#e0af68",
 		onedarkSearchCurrent = "#5c6370",
 		onedarkSearch = "#484e5b",
-
-		onedarkContext = "#314365",
-		onedarkContextCurrent = "#42557b",
-
 		onedarkFoldBackground = "#202d39",
 
 		-- Syntax colors
