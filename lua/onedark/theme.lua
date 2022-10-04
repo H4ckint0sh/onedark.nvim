@@ -8,7 +8,7 @@ theme.set_highlights = function(opts)
 	c = vim.tbl_extend("force", c, opts["color_overrides"])
 	local isDark = vim.o.background == "dark"
 
-	hl(0, "Normal", { fg = c.onedarkFront, bg = c.onedarkBack })
+	hl(0, "Normal", { fg = c.onedarkFront, bg = "NONE" })
 	hl(0, "ColorColumn", { fg = "NONE", bg = c.onedarkCursorDarkDark })
 	hl(0, "Cursor", { fg = c.onedarkCursorDark, bg = c.onedarkCursorLight })
 	hl(0, "CursorLine", { bg = c.onedarkCursorDarkDark })
@@ -26,7 +26,7 @@ theme.set_highlights = function(opts)
 	hl(0, "SignColumn", { fg = "NONE", bg = c.onedarkBack })
 	hl(0, "IncSearch", { fg = c.onedarkNone, bg = c.onedarkSearchCurrent })
 	hl(0, "LineNr", { fg = c.onedarkDisabled, bg = c.onedarkBack })
-	hl(0, "CursorLineNr", { fg = c.onedarkPurple, bg = c.onedarkBack})
+	hl(0, "CursorLineNr", { fg = c.onedarkPurple, bg = c.onedarkBack })
 	hl(0, "FloatBorder", { fg = c.onedarkFront, bg = "NONE" })
 	hl(0, "NomalFloat", { fg = c.onedarkFront, bg = "NONE" })
 	hl(0, "MatchParen", { fg = c.onedarkNone, bg = c.onedarkCursorDark })
@@ -34,7 +34,7 @@ theme.set_highlights = function(opts)
 	hl(0, "MoreMsg", { fg = c.onedarkFront, bg = c.onedarkLeftDark })
 	hl(0, "NonText", { fg = (isDark and c.onedarkPurple or c.onedarkTabOther), bg = c.onedarkBack })
 	hl(0, "Pmenu", { fg = c.onedarkFront, bg = c.onedarkBack })
-	hl(0, "PmenuSel", { fg = "NONE", bg = c.onedarkLightBlue})
+	hl(0, "PmenuSel", { fg = "NONE", bg = c.onedarkLightBlue })
 	hl(0, "PmenuSbar", { fg = "NONE", bg = c.onedarkPopupBack })
 	hl(0, "PmenuThumb", { fg = "NONE", bg = c.onedarkFront })
 	hl(0, "Question", { fg = c.onedarkBlue, bg = c.onedarkBack })
@@ -96,7 +96,7 @@ theme.set_highlights = function(opts)
 	hl(0, "TSPunctBracket", { fg = c.onedarkFront, bg = "NONE" })
 	hl(0, "TSPunctSpecial", { fg = c.onedarkPurple, bg = "NONE" })
 	hl(0, "markdownTSPunctSpecial", { fg = isDark and c.onedarkBlue or c.onedarkYellowOrange, bold = true })
-	hl(0, "TSComment", { fg = c.onedarkDisabled, bg = "NONE", italic = true})
+	hl(0, "TSComment", { fg = c.onedarkDisabled, bg = "NONE", italic = true })
 	hl(0, "TSConstant", { fg = c.onedarkOrange, bg = "NONE" })
 	hl(0, "TSConstBuiltin", { fg = c.onedarkOrange, bg = "NONE" })
 	hl(0, "TSPreProc", { fg = c.onedarkPurple, bg = "NONE", italic = true })
@@ -286,7 +286,7 @@ theme.set_highlights = function(opts)
 
 	-- Git
 	hl(0, "gitcommitHeader", { fg = c.onedarkGray, bg = "NONE" })
-	hl(0, "GitSignsCurrentLineBlame", { fg = c.onedarkDisabled, bg = "NONE", italic=true})
+	hl(0, "GitSignsCurrentLineBlame", { fg = c.onedarkDisabled, bg = "NONE", italic = true })
 	hl(0, "gitcommitOnBranch", { fg = c.onedarkGray, bg = "NONE" })
 	hl(0, "gitcommitBranch", { fg = c.onedarkpurple, bg = "NONE" })
 	hl(0, "gitcommitComment", { fg = c.onedarkGray, bg = "NONE" })
@@ -377,7 +377,7 @@ theme.set_highlights = function(opts)
 	hl(
 		0,
 		"LspReferenceRead",
-		{ fg = "NONE", bg = isDark and c.onedarkDisabled or c.onedarkDisabled}
+		{ fg = "NONE", bg = isDark and c.onedarkDisabled or c.onedarkDisabled }
 	)
 	hl(
 		0,
