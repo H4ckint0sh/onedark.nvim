@@ -220,6 +220,20 @@ theme.set_highlights = function(opts)
 	hl(0, "xmlTagName", { fg = c.onedarkBlue, bg = "NONE" })
 	hl(0, "xmlEndTag", { fg = c.onedarkBlue, bg = "NONE" })
 
+	-- statusline
+	hl(0, 'St_NormalMode', { fg = c.onedarkGreen, bold = true })
+	hl(0, 'St_InsertMode', { fg = c.onedarkOrange, bold = true })
+	hl(0, 'St_VisualMode', { fg = c.onedarkPurple, bold = true })
+	hl(0, 'St_ReplaceMode', { fg = c.onedarkRed, bold = true })
+	hl(0, 'St_CommandMode', { fg = c.onedarkYellow, bold = true })
+	hl(0, 'St_TerminalMode', { fg = c.onedarkYellowOrange, bold = true })
+	hl(0, 'St_NTerminalMode', { fg = c.onedarkGreen, bold = true })
+	hl(0, 'St_CurrentFile', { fg = c.onedarkBlue, bold = true })
+	hl(0, 'St_AlternateFile', { fg = c.onedarkMediumBlue, bold = true })
+	hl(0, 'St_git_add', { fg = c.onedarkGreen })
+	hl(0, 'St_git_change', { fg = c.onedarkOrange })
+	hl(0, 'St_git_delete', { fg = c.onedarkRed })
+
 	-- TS Rainbow
 	hl(0, "rainbowcol1", { fg = c.onedarkYellow, bg = "NONE" })
 	hl(0, "rainbowcol2", { fg = c.onedarkPurple, bg = "NONE" })
@@ -440,7 +454,6 @@ theme.set_highlights = function(opts)
 		hl(0, "NvimTreeFolderName", { fg = c.onedarkDarkBlue, bg = "NONE" })
 		hl(0, "NvimTreeIndentMarker", { fg = c.onedarkDisabled, bg = "NONE" })
 		hl(0, "NvimTreeCursorLine", { fg = "NONE", bg = "NONE" })
-
 		hl(0, "LspFloatWinNormal", { fg = c.onedarkFront, bg = "NONE" })
 		hl(0, "LspInlayHint", { fg = c.onedarkDisabled, bg = "NONE" })
 		hl(0, "LspFloatWinBorder", { fg = c.onedarkTabOther, bg = "NONE" })
