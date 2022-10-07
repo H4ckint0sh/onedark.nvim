@@ -8,7 +8,7 @@ theme.set_highlights = function(opts)
 	c = vim.tbl_extend("force", c, opts["color_overrides"])
 	local isDark = vim.o.background == "dark"
 
-	hl(0, "Normal", { fg = c.onedarkFront, bg = "NONE" })
+	hl(0, "Normal", { fg = c.onedarkFront, bg = c.onedarkBack })
 	hl(0, "ColorColumn", { fg = "NONE", bg = c.onedarkCursorDarkDark })
 	hl(0, "Cursor", { fg = c.onedarkCursorDark, bg = c.onedarkCursorLight })
 	hl(0, "CursorLine", { bg = "NONE" })
@@ -35,7 +35,7 @@ theme.set_highlights = function(opts)
 	hl(0, "NonText", { fg = (isDark and c.onedarkPurple or c.onedarkTabOther), bg = c.onedarkBack })
 	hl(0, "Pmenu", { fg = c.onedarkFront, bg = c.onedarkBack })
 	hl(0, "PmenuSel", { bg = c.onedarkLightBlue })
-	hl(0, "PmenuSbar", { fg = c.onedarkFront, bg = c.onedarkPopupBack })
+	hl(0, "PmenuSbar", { fg = "NONE", bg = "NONE" })
 	hl(0, "PmenuThumb", { fg = c.onedarkFront, bg = c.onedarkFront })
 	hl(0, "Question", { fg = c.onedarkBlue, bg = c.onedarkBack })
 	hl(0, "Search", { fg = c.onedarkNone, bg = c.onedarkSearch })
@@ -393,8 +393,12 @@ theme.set_highlights = function(opts)
 	hl(0, "CmpItemAbbrMatch", { fg = isDark and c.onedarkYellow or c.onedarkYellow, bg = "NONE", bold = true })
 	hl(0, "CmpItemAbbrMatchFuzzy", { fg = isDark and c.onedarkYellow or c.onedarkYellow, bg = "NONE", bold = true })
 
-	-- Telescope
-	hl(0, "TelescopeSelection", { fg = "NONE", bg = onedarkMediumBlue })
+	-- Dashboard
+	hl(0, "DashboardHeader", { fg = c.onedarkBlue, bg = "NONE" })
+	hl(0, "DashboardCenter", { fg = c.onedarkYellowOrange, bg = "NONE" })
+	hl(0, "DashboardCenterIcon", { fg = c.onedarkYellowOrange, bg = "NONE" })
+	hl(0, "DashboardShortCut", { fg = c.onedarkPink, bg = "NONE" })
+	hl(0, "DashboardFooter", { fg = c.onedarkBlue, bg = "NONE", italic = true })
 
 	hl(0, "NvimTreeFolderIcon", { fg = c.onedarkBlue, bg = "NONE" })
 	hl(0, "NvimTreeFolderName", { fg = c.onedarkBlue, bg = "NONE" })
