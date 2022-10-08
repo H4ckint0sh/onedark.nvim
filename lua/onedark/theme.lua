@@ -8,7 +8,7 @@ theme.set_highlights = function(opts)
 	c = vim.tbl_extend("force", c, opts["color_overrides"])
 	local isDark = vim.o.background == "dark"
 
-	hl(0, "Normal", { fg = c.onedarkFront, bg = c.onedarkBack })
+	hl(0, "Normal", { fg = c.onedarkFront, bg = "NONE" })
 	hl(0, "ColorColumn", { fg = "NONE", bg = c.onedarkCursorDarkDark })
 	hl(0, "Cursor", { fg = c.onedarkCursorDark, bg = c.onedarkCursorLight })
 	hl(0, "CursorLine", { bg = "NONE" })
