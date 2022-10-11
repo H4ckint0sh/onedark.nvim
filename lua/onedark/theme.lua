@@ -423,7 +423,7 @@ theme.set_highlights = function(opts)
 	hl(0, "DashboardFooter", { fg = c.onedarkBlue, bg = "NONE", italic = true })
 
 	if isDark then
-		hl(0, "NvimTreeFolderIcon", { fg = c.onedarkBlue, bg = "NONE" })
+		hl(0, "NvimTreeFolderIcon", { fg = c.onedarkYellow, bg = "NONE" })
 		hl(0, "NvimTreeFolderName", { fg = c.onedarkBlue, bg = "NONE" })
 		hl(0, "NvimTreeIndentMarker", { fg = c.onedarkDisabled, bg = "NONE" })
 		hl(0, "NvimTreeCursorLine", { fg = "NONE", bg = "NONE" })
