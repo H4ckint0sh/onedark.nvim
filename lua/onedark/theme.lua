@@ -234,11 +234,13 @@ theme.set_highlights = function(opts)
 	hl(0, 'St_git_change', { fg = c.onedarkOrange })
 	hl(0, 'St_git_delete', { fg = c.onedarkRed })
 
-
 	-- Noice
 	hl(0, "NoiceCmdlinePopupBorder", { fg = c.onedarkFront, bg = "NONE" })
 	hl(0, "NoiceCmdlinePopupSearchBorder", { fg = c.onedarkFront, bg = "NONE" })
 	hl(0, "NoiceConfirmBorder", { fg = c.onedarkFront, bg = "NONE" })
+	hl(0, "NoiceFormatLevelError", { fg = c.onedarkRed, bg = "NONE" })
+	hl(0, "NoiceFormatLevelInfo", { fg = c.onedarkGreen, bg = "NONE" })
+	hl(0, "NoiceFormatLevelWarn", { fg = c.onedarkYellow, bg = "NONE" })
 
 	-- TS Rainbow
 	hl(0, "rainbowcol1", { fg = c.onedarkYellow, bg = "NONE" })
