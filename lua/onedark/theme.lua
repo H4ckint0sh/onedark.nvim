@@ -333,6 +333,9 @@ function M.setup()
 		TelescopeBorder = { fg = c.Front, bg = c.None },
 		TelescopeNormal = { fg = c.Front, bg = c.None },
 
+		-- InlayHints
+		LspInlayHint = { fg = c.Comment, bg = c.None },
+
 		-- NvimTree
 		NvimTreeNormal = { fg = c.PopupFront, bg = c.Back },
 		NvimTreeWinSeparator = {
