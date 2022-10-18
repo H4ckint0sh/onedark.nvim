@@ -1,3 +1,4 @@
+local ts = require("tokyonight.treesitter")
 local M = {}
 
 M.bg = "#000000"
@@ -45,7 +46,11 @@ end
 
 ---@param group string
 function M.highlight(group, hl)
-  vim.api.nvim_set_hl(0, group, hl)
+	group = ts.get(group)
+	if not group then
+		return
+	end
+	vim.api.nvim_set_hl(0, group, hl)
 end
 
 function M.syntax(syntax)
@@ -112,19 +117,20 @@ end
 
 ---@param theme Theme
 function M.load(theme)
-  -- only needed to clear when not the default colorscheme
-  if vim.g.colors_name then
-    vim.cmd("hi clear")
-  end
+	-- only needed to clear when not the default colorscheme
+	if vim.g.colors_name then
+		vim.cmd("hi clear")
+	end
 
-  vim.o.termguicolors = true
-  vim.g.colors_name = "onedark"
+	vim.o.termguicolors = true
+	vim.g.colors_name = "onedark"
 
-  M.syntax(theme.highlights)
+	M.syntax(theme.highlights)
 
 
-  vim.defer_fn(function()
-    M.syntax(theme.defer)
-  end, 100)
+	vim.defer_fn(function()
+		M.syntax(theme.defer)
+	end, 100)
 end
+
 return M
