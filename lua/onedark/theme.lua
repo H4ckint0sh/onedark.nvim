@@ -12,7 +12,7 @@ local M = {}
 ---@alias Highlights table<string,Highlight>
 
 ---@return Theme
-function M.theme()
+function M.setup()
 	---@class Theme
 	---@field highlights Highlights
 	local theme = {
