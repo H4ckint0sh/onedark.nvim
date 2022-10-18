@@ -334,7 +334,7 @@ function M.setup()
 		TelescopeNormal = { fg = c.Front, bg = c.None },
 
 		-- NvimTree
-		NvimTreeNormal = { fg = c.PopupFront, bg = c.PopupBack },
+		NvimTreeNormal = { fg = c.PopupFront, bg = c.Back },
 		NvimTreeWinSeparator = {
 			fg = c.Comment,
 			bg = c.None,
