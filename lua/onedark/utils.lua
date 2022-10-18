@@ -1,5 +1,3 @@
-local ts = require("tokyonight.treesitter")
-
 local M = {}
 
 M.bg = "#000000"
@@ -36,67 +34,6 @@ function M.lighten(hex, amount, fg)
 	return M.blend(hex, fg or M.fg, amount)
 end
 
-function M.invert_color(color)
-	local hsluv = require("tokyonight.hsluv")
-	if color ~= "NONE" then
-		local hsl = hsluv.hex_to_hsluv(color)
-		hsl[3] = 100 - hsl[3]
-		if hsl[3] < 40 then
-			hsl[3] = hsl[3] + (100 - hsl[3]) * M.day_brightness
-		end
-		return hsluv.hsluv_to_hex(hsl)
-	end
-	return color
-end
-
----@param group string
-function M.highlight(group, hl)
-	group = ts.get(group)
-	if not group then
-		return
-	end
-	if hl.style then
-		if type(hl.style) == "table" then
-			hl = vim.tbl_extend("force", hl, hl.style)
-		elseif hl.style:lower() ~= "none" then
-			-- handle old string style definitions
-			for s in string.gmatch(hl.style, "([^,]+)") do
-				hl[s] = true
-			end
-		end
-		hl.style = nil
-	end
-	vim.api.nvim_set_hl(0, group, hl)
-end
-
---- Delete the autocmds when the theme changes to something else
-function M.onColorScheme()
-	if vim.g.colors_name ~= "tokyonight" then
-		vim.cmd([[autocmd! TokyoNight]])
-		vim.cmd([[augroup! TokyoNight]])
-	end
-end
-
----@param config Config
-function M.autocmds(config)
-	vim.cmd([[augroup TokyoNight]])
-	vim.cmd([[  autocmd!]])
-	vim.cmd([[  autocmd ColorScheme * lua require("tokyonight.util").onColorScheme()]])
-
-	vim.cmd(
-		[[  autocmd FileType ]]
-		.. table.concat(config.sidebars, ",")
-		.. [[ setlocal winhighlight=Normal:NormalSB,SignColumn:SignColumnSB]]
-	)
-	if vim.tbl_contains(config.sidebars, "terminal") then
-		vim.cmd([[  autocmd TermOpen * setlocal winhighlight=Normal:NormalSB,SignColumn:SignColumnSB]])
-	end
-	vim.cmd([[augroup end]])
-end
-
--- Simple string interpolation.
---
--- Example template: "${name} is ${value}"
 --
 ---@param str string template string
 ---@param table table key value pairs to replace in the string
@@ -167,33 +104,4 @@ function M.invert_highlights(hls)
 		end
 	end
 end
-
----@param theme Theme
-function M.load(theme)
-	-- only needed to clear when not the default colorscheme
-	if vim.g.colors_name then
-		vim.cmd("hi clear")
-	end
-
-	vim.o.termguicolors = true
-	vim.g.colors_name = "tokyonight"
-
-	if ts.new_style() then
-		M.syntax(ts.defaults)
-	end
-
-	M.syntax(theme.highlights)
-
-	-- vim.api.nvim_set_hl_ns(M.ns)
-	if theme.config.terminal_colors then
-		M.terminal(theme.colors)
-	end
-
-	M.autocmds(theme.config)
-
-	vim.defer_fn(function()
-		M.syntax(theme.defer)
-	end, 100)
-end
-
 return M
