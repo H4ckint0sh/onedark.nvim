@@ -100,7 +100,7 @@ function M.setup()
 		-- Boolean       = { }, --  a boolean constant: TRUE, false
 		-- Float         = { }, --    a floating point constant: 2.3e10
 
-		Identifier = { fg = c.Yellow }, -- (preferRed) any variable name
+		Identifier = { fg = c.Purple }, -- (preferRed) any variable name
 		Function = { fg = c.Blue }, -- function name (also: methods for classes)
 
 		Statement = { fg = c.Purple, italic = true }, -- (preferRed) any statement
@@ -111,7 +111,7 @@ function M.setup()
 		Keyword = { fg = c.Front }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
 
-		PreProc = { fg = c.Purple, italic = true }, -- (preferRed) generic Preprocessor
+		PreProc = { fg = c.Yellow, italic = true }, -- (preferRed) generic Preprocessor
 		-- Include       = { }, --  preprocessor #include
 		-- Define        = { }, --   preprocessor #define
 		-- Macro         = { }, --    same as Define
@@ -222,7 +222,7 @@ function M.setup()
 		-- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
 		-- TSFuncMacro         = { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
 		-- TSInclude           = { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-		["@keyword"] = { fg = c.Yellow, italic = true }, -- For keywords that don't fall in previous categories.
+		["@keyword"] = { fg = c.Purple, italic = true }, -- For keywords that don't fall in previous categories.
 		["@keyword.function"] = { fg = c.Purple, italic = true }, -- For keywords used to define a fuction.
 		["@label"] = { fg = c.Blue }, -- For labels: `label:` in C and `:label:` in Lua.
 		-- TSMethod            = { };    -- For method calls and definitions.
