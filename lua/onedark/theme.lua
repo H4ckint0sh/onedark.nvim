@@ -92,113 +92,6 @@ theme.set_highlights = function(opts)
 	hl(0, "Whitespace", { fg = c.onedarkDisabled })
 
 
-	-- -- New Treesittr fix
-	-- -- TODO: fix this permanently
-	-- -- Misc {{{
-	-- hl(0, '@comment', { link = 'Comment' })
-	-- -- 0,hl('@error', {link = 'Error'})
-	-- hl(0, '@none', { bg = 'NONE', fg = 'NONE' })
-	-- hl(0, '@preproc', { link = 'PreProc' })
-	-- hl(0, '@define', { link = 'Define' })
-	-- hl(0, '@operator', { link = 'Operator' })
-	-- -- 0,}}}
-	--
-	-- -- 0,Punctuation {{{
-	-- hl(0, '@punctuation.delimiter', { link = 'Delimiter' })
-	-- hl(0, '@punctuation.bracket', { link = 'Delimiter' })
-	-- hl(0, '@punctuation.special', { link = 'Delimiter' })
-	-- -- 0,}}}
-	--
-	-- -- 0,Literals {{{
-	-- hl(0, '@string', { link = 'String' })
-	-- hl(0, '@string.regex', { link = 'TSStringRegex' })
-	-- hl(0, '@string.escape', { link = 'SpecialChar' })
-	-- hl(0, '@string.special', { link = 'SpecialChar' })
-	--
-	-- hl(0, '@character', { link = 'Character' })
-	-- hl(0, '@character.special', { link = 'SpecialChar' })
-	--
-	-- hl(0, '@boolean', { link = 'Boolean' })
-	-- hl(0, '@number', { link = 'Number' })
-	-- hl(0, '@float', { link = 'Float' })
-	-- -- 0,}}}
-	--
-	-- -- 0,Functions {{{
-	-- hl(0, '@function', { link = 'Function' })
-	-- hl(0, '@function.call', { link = 'Function' })
-	-- hl(0, '@function.builtin', { link = 'Special' })
-	-- hl(0, '@function.macro', { link = 'Macro' })
-	--
-	-- hl(0, '@method', { link = 'Function' })
-	-- hl(0, '@method.call', { link = 'Function' })
-	--
-	-- hl(0, '@constructor', { link = 'Special' })
-	-- hl(0, '@parameter', { link = 'Identifier' })
-	-- -- 0,}}}
-	--
-	-- -- 0,Keywords {{{
-	-- hl(0, '@keyword', { link = 'Keyword' })
-	-- hl(0, '@keyword.function', { link = 'Keyword' })
-	-- hl(0, '@keyword.operator', { link = 'Keyword' })
-	-- hl(0, '@keyword.return', { link = 'Keyword' })
-	--
-	-- hl(0, '@conditional', { link = 'Conditional' })
-	-- hl(0, '@repeat', { link = 'Repeat' })
-	-- hl(0, '@debug', { link = 'Debug' })
-	-- hl(0, '@label', { link = 'Label' })
-	-- hl(0, '@include', { link = 'Include' })
-	-- hl(0, '@exception', { link = 'Exception' })
-	-- -- 0,}}}
-	--
-	-- -- 0,Types {{{
-	-- hl(0, '@type', { link = 'Type' })
-	-- hl(0, '@type.builtin', { link = 'Type' })
-	-- hl(0, '@type.qualifier', { link = 'Type' })
-	-- hl(0, '@type.definition', { link = 'Typedef' })
-	--
-	-- hl(0, '@storageclass', { link = 'StorageClass' })
-	-- hl(0, '@attribute', { link = 'PreProc' })
-	-- hl(0, '@field', { link = 'Identifier' })
-	-- hl(0, '@property', { link = 'TSField' })
-	-- -- 0,}}}
-	--
-	-- -- 0,Identifiers {{{
-	-- hl(0, '@variable', { link = 'Normal' })
-	-- hl(0, '@variable.builtin', { link = 'Special' })
-	--
-	-- hl(0, '@constant', { link = 'Constant' })
-	-- hl(0, '@constant.builtin', { link = 'Special' })
-	-- hl(0, '@constant.macro', { link = 'Define' })
-	--
-	-- hl(0, '@namespace', { link = 'Include' })
-	-- hl(0, '@symbol', { link = 'Identifier' })
-	-- -- 0,}}}
-	--
-	-- -- 0,Text {{{
-	-- hl(0, '@text', { link = 'Normal' })
-	-- hl(0, '@text.strong', { bold = true })
-	-- hl(0, '@text.emphasis', { italic = true })
-	-- hl(0, '@text.underline', { underline = true })
-	-- hl(0, '@text.strike', { strikethrough = true })
-	-- hl(0, '@text.title', { link = 'Title' })
-	-- hl(0, '@text.literal', { link = 'String' })
-	-- hl(0, '@text.uri', { link = 'Underlined' })
-	-- hl(0, '@text.math', { link = 'Special' })
-	-- hl(0, '@text.environment', { link = 'Macro' })
-	-- hl(0, '@text.environment.name', { link = 'Type' })
-	-- hl(0, '@text.reference', { link = 'Constant' })
-	--
-	-- hl(0, '@text.todo', { link = 'Todo' })
-	-- hl(0, '@text.note', { link = 'SpecialComment' })
-	-- hl(0, '@text.warning', { link = 'WarningMsg' })
-	-- hl(0, '@text.danger', { link = 'ErrorMsg' })
-	-- -- 0,}}}
-	--
-	-- -- 0,Tags {{{
-	-- hl(0, '@tag', { link = 'Tag' })
-	-- hl(0, '@tag.attribute', { link = 'Identifier' })
-	-- hl(0, '@tag.delimiter', { link = 'Delimiter' })
-	--
 
 	-- Treesitter
 	hl(0, "Note", { fg = c.onedarkBlueGreen, bg = "NONE", bold = true })
@@ -555,6 +448,113 @@ theme.link_highlight = function()
 
 	-- TypeScript
 	hl(0, "typescriptIdentifierName", { link = "Text" })
+
+	-- New Treesittr fix
+	-- TODO: fix this permanently
+	-- Misc {{{
+	hl(0, '@comment', { link = 'Comment' })
+	-- 0,hl('@error', {link = 'Error'})
+	hl(0, '@none', { bg = 'NONE', fg = 'NONE' })
+	hl(0, '@preproc', { link = 'PreProc' })
+	hl(0, '@define', { link = 'Define' })
+	hl(0, '@operator', { link = 'Operator' })
+	-- 0,}}}
+
+	-- 0,Punctuation {{{
+	hl(0, '@punctuation.delimiter', { link = 'Delimiter' })
+	hl(0, '@punctuation.bracket', { link = 'Delimiter' })
+	hl(0, '@punctuation.special', { link = 'Delimiter' })
+	-- 0,}}}
+
+	-- 0,Literals {{{
+	hl(0, '@string', { link = 'String' })
+	hl(0, '@string.regex', { link = 'TSStringRegex' })
+	hl(0, '@string.escape', { link = 'SpecialChar' })
+	hl(0, '@string.special', { link = 'SpecialChar' })
+
+	hl(0, '@character', { link = 'Character' })
+	hl(0, '@character.special', { link = 'SpecialChar' })
+
+	hl(0, '@boolean', { link = 'Boolean' })
+	hl(0, '@number', { link = 'Number' })
+	hl(0, '@float', { link = 'Float' })
+	-- 0,}}}
+
+	-- 0,Functions {{{
+	hl(0, '@function', { link = 'Function' })
+	hl(0, '@function.call', { link = 'Function' })
+	hl(0, '@function.builtin', { link = 'Special' })
+	hl(0, '@function.macro', { link = 'Macro' })
+
+	hl(0, '@method', { link = 'Function' })
+	hl(0, '@method.call', { link = 'Function' })
+
+	hl(0, '@constructor', { link = 'Special' })
+	hl(0, '@parameter', { link = 'Identifier' })
+	-- 0,}}}
+
+	-- 0,Keywords {{{
+	hl(0, '@keyword', { link = 'Keyword' })
+	hl(0, '@keyword.function', { link = 'Keyword' })
+	hl(0, '@keyword.operator', { link = 'Keyword' })
+	hl(0, '@keyword.return', { link = 'Keyword' })
+
+	hl(0, '@conditional', { link = 'Conditional' })
+	hl(0, '@repeat', { link = 'Repeat' })
+	hl(0, '@debug', { link = 'Debug' })
+	hl(0, '@label', { link = 'Label' })
+	hl(0, '@include', { link = 'Include' })
+	hl(0, '@exception', { link = 'Exception' })
+	-- 0,}}}
+
+	-- 0,Types {{{
+	hl(0, '@type', { link = 'Type' })
+	hl(0, '@type.builtin', { link = 'Type' })
+	hl(0, '@type.qualifier', { link = 'Type' })
+	hl(0, '@type.definition', { link = 'Typedef' })
+
+	hl(0, '@storageclass', { link = 'StorageClass' })
+	hl(0, '@attribute', { link = 'PreProc' })
+	hl(0, '@field', { link = 'Identifier' })
+	hl(0, '@property', { link = 'TSField' })
+	-- 0,}}}
+
+	-- 0,Identifiers {{{
+	hl(0, '@variable', { link = 'Normal' })
+	hl(0, '@variable.builtin', { link = 'Special' })
+
+	hl(0, '@constant', { link = 'Constant' })
+	hl(0, '@constant.builtin', { link = 'Special' })
+	hl(0, '@constant.macro', { link = 'Define' })
+
+	hl(0, '@namespace', { link = 'Include' })
+	hl(0, '@symbol', { link = 'Identifier' })
+	-- 0,}}}
+
+	-- 0,Text {{{
+	hl(0, '@text', { link = 'Normal' })
+	hl(0, '@text.strong', { bold = true })
+	hl(0, '@text.emphasis', { italic = true })
+	hl(0, '@text.underline', { underline = true })
+	hl(0, '@text.strike', { strikethrough = true })
+	hl(0, '@text.title', { link = 'Title' })
+	hl(0, '@text.literal', { link = 'String' })
+	hl(0, '@text.uri', { link = 'Underlined' })
+	hl(0, '@text.math', { link = 'Special' })
+	hl(0, '@text.environment', { link = 'Macro' })
+	hl(0, '@text.environment.name', { link = 'Type' })
+	hl(0, '@text.reference', { link = 'Constant' })
+
+	hl(0, '@text.todo', { link = 'Todo' })
+	hl(0, '@text.note', { link = 'SpecialComment' })
+	hl(0, '@text.warning', { link = 'WarningMsg' })
+	hl(0, '@text.danger', { link = 'ErrorMsg' })
+	-- 0,}}}
+
+	-- 0,Tags {{{
+	hl(0, '@tag', { link = 'Tag' })
+	hl(0, '@tag.attribute', { link = 'Identifier' })
+	hl(0, '@tag.delimiter', { link = 'Delimiter' })
 
 	-- }}}
 end
