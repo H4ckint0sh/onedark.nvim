@@ -22,7 +22,7 @@ function M.setup()
 	local c = theme.colors
 
 	theme.highlights = {
-		Foo = { bg = c.Purple, fg = c.Purple },
+		-- Foo = { bg = c.Purple, fg = c.Purple },
 
 		Comment = { fg = c.Comment, italic = true }, -- any comment
 		ColorColumn = { bg = c.Back }, -- used for the columns set with 'colorcolumn'
@@ -60,7 +60,7 @@ function M.setup()
 		NormalNC = { fg = c.Front, bg = c.Back }, -- normal text in non-current windows
 		NormalSB = { fg = c.Fron, bg = c.Back }, -- normal text in sidebar
 		NormalFloat = { fg = c.Front, bg = c.None }, -- Normal text in floating windows.
-		FloatBorder = { fg = c.Border, bg = c.None },
+		FloatBorder = { fg = c.Front, bg = c.None },
 		Pmenu = { bg = c.None, fg = c.Front }, -- Popup menu: normal item.
 		PmenuSel = { bg = util.darken(c.Blue, 0.8) }, -- Popup menu: selected item.
 		PmenuSbar = { bg = util.lighten(c.Blue, 0.95) }, -- Popup menu: scrollbar.
