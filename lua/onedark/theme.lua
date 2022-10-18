@@ -91,71 +91,117 @@ theme.set_highlights = function(opts)
 	hl(0, "SpellLocal", { fg = c.onedarkRed, bg = c.onedarkBack, undercurl = true, sp = c.onedarkRed })
 	hl(0, "Whitespace", { fg = c.onedarkDisabled })
 
+
+	-- -- New Treesittr fix
+	-- -- TODO: fix this permanently
+	-- -- Misc {{{
+	-- hl(0, '@comment', { link = 'Comment' })
+	-- -- 0,hl('@error', {link = 'Error'})
+	-- hl(0, '@none', { bg = 'NONE', fg = 'NONE' })
+	-- hl(0, '@preproc', { link = 'PreProc' })
+	-- hl(0, '@define', { link = 'Define' })
+	-- hl(0, '@operator', { link = 'Operator' })
+	-- -- 0,}}}
+	--
+	-- -- 0,Punctuation {{{
+	-- hl(0, '@punctuation.delimiter', { link = 'Delimiter' })
+	-- hl(0, '@punctuation.bracket', { link = 'Delimiter' })
+	-- hl(0, '@punctuation.special', { link = 'Delimiter' })
+	-- -- 0,}}}
+	--
+	-- -- 0,Literals {{{
+	-- hl(0, '@string', { link = 'String' })
+	-- hl(0, '@string.regex', { link = 'TSStringRegex' })
+	-- hl(0, '@string.escape', { link = 'SpecialChar' })
+	-- hl(0, '@string.special', { link = 'SpecialChar' })
+	--
+	-- hl(0, '@character', { link = 'Character' })
+	-- hl(0, '@character.special', { link = 'SpecialChar' })
+	--
+	-- hl(0, '@boolean', { link = 'Boolean' })
+	-- hl(0, '@number', { link = 'Number' })
+	-- hl(0, '@float', { link = 'Float' })
+	-- -- 0,}}}
+	--
+	-- -- 0,Functions {{{
+	-- hl(0, '@function', { link = 'Function' })
+	-- hl(0, '@function.call', { link = 'Function' })
+	-- hl(0, '@function.builtin', { link = 'Special' })
+	-- hl(0, '@function.macro', { link = 'Macro' })
+	--
+	-- hl(0, '@method', { link = 'Function' })
+	-- hl(0, '@method.call', { link = 'Function' })
+	--
+	-- hl(0, '@constructor', { link = 'Special' })
+	-- hl(0, '@parameter', { link = 'Identifier' })
+	-- -- 0,}}}
+	--
+	-- -- 0,Keywords {{{
+	-- hl(0, '@keyword', { link = 'Keyword' })
+	-- hl(0, '@keyword.function', { link = 'Keyword' })
+	-- hl(0, '@keyword.operator', { link = 'Keyword' })
+	-- hl(0, '@keyword.return', { link = 'Keyword' })
+	--
+	-- hl(0, '@conditional', { link = 'Conditional' })
+	-- hl(0, '@repeat', { link = 'Repeat' })
+	-- hl(0, '@debug', { link = 'Debug' })
+	-- hl(0, '@label', { link = 'Label' })
+	-- hl(0, '@include', { link = 'Include' })
+	-- hl(0, '@exception', { link = 'Exception' })
+	-- -- 0,}}}
+	--
+	-- -- 0,Types {{{
+	-- hl(0, '@type', { link = 'Type' })
+	-- hl(0, '@type.builtin', { link = 'Type' })
+	-- hl(0, '@type.qualifier', { link = 'Type' })
+	-- hl(0, '@type.definition', { link = 'Typedef' })
+	--
+	-- hl(0, '@storageclass', { link = 'StorageClass' })
+	-- hl(0, '@attribute', { link = 'PreProc' })
+	-- hl(0, '@field', { link = 'Identifier' })
+	-- hl(0, '@property', { link = 'TSField' })
+	-- -- 0,}}}
+	--
+	-- -- 0,Identifiers {{{
+	-- hl(0, '@variable', { link = 'Normal' })
+	-- hl(0, '@variable.builtin', { link = 'Special' })
+	--
+	-- hl(0, '@constant', { link = 'Constant' })
+	-- hl(0, '@constant.builtin', { link = 'Special' })
+	-- hl(0, '@constant.macro', { link = 'Define' })
+	--
+	-- hl(0, '@namespace', { link = 'Include' })
+	-- hl(0, '@symbol', { link = 'Identifier' })
+	-- -- 0,}}}
+	--
+	-- -- 0,Text {{{
+	-- hl(0, '@text', { link = 'Normal' })
+	-- hl(0, '@text.strong', { bold = true })
+	-- hl(0, '@text.emphasis', { italic = true })
+	-- hl(0, '@text.underline', { underline = true })
+	-- hl(0, '@text.strike', { strikethrough = true })
+	-- hl(0, '@text.title', { link = 'Title' })
+	-- hl(0, '@text.literal', { link = 'String' })
+	-- hl(0, '@text.uri', { link = 'Underlined' })
+	-- hl(0, '@text.math', { link = 'Special' })
+	-- hl(0, '@text.environment', { link = 'Macro' })
+	-- hl(0, '@text.environment.name', { link = 'Type' })
+	-- hl(0, '@text.reference', { link = 'Constant' })
+	--
+	-- hl(0, '@text.todo', { link = 'Todo' })
+	-- hl(0, '@text.note', { link = 'SpecialComment' })
+	-- hl(0, '@text.warning', { link = 'WarningMsg' })
+	-- hl(0, '@text.danger', { link = 'ErrorMsg' })
+	-- -- 0,}}}
+	--
+	-- -- 0,Tags {{{
+	-- hl(0, '@tag', { link = 'Tag' })
+	-- hl(0, '@tag.attribute', { link = 'Identifier' })
+	-- hl(0, '@tag.delimiter', { link = 'Delimiter' })
+	--
+
 	-- Treesitter
-	hl(0, "TSError", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "TSPunctBracket", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "TSPunctSpecial", { fg = c.onedarkPurple, bg = "NONE" })
-	hl(0, "markdownTSPunctSpecial", { fg = isDark and c.onedarkBlue or c.onedarkYellowOrange, bold = true })
-	hl(0, "TSComment", { fg = c.onedarkDisabled, bg = "NONE", italic = true })
-	hl(0, "TSConstant", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "TSConstBuiltin", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "TSPreProc", { fg = c.onedarkPurple, bg = "NONE", italic = true })
-	hl(0, "TSConstMacro", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "TSStringRegex", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "TSString", { fg = c.onedarkGreen, bg = "NONE" })
-	hl(0, "TSCharacter", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "TSNumber", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "TSBoolean", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "TSFloat", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "TSAnnotation", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "TSAttribute", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "TSNamespace", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "TSFuncBuiltin", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "TSFunction", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "TSFuncMacro", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "TSParameter", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "TSParameterReference", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "TSMethod", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "TSField", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "TSProperty", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "TSConstructor", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "TSConditional", { fg = c.onedarkPurple, bg = "NONE", italic = true })
-	hl(0, "TSRepeat", { fg = c.onedarkPurple, bg = "NONE", italic = true })
-	hl(0, "TSLabel", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "TSKeyword", { fg = c.onedarkPurple, bg = "NONE", italic = true })
-	hl(0, "TSKeywordFunction", { fg = c.onedarkPurple, bg = "NONE", italic = true })
-	hl(0, "TSKeywordOperator", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "TSKeywordReturn", { fg = c.onedarkPurple, bg = "NONE", italic = true })
-	hl(0, "TSOperator", { fg = c.onedarkMediumBlue, bg = "NONE" })
-	hl(0, "TSException", { fg = c.onedarkPurple, bg = "NONE" })
-	hl(0, "TSDefine", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "TSType", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "TSTypeBuiltin", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "TSStructure", { fg = c.onedarkPurple, bg = "NONE" })
-	hl(0, "TSInclude", { fg = c.onedarkPurple, bg = "NONE", italic = true })
-	hl(0, "TSVariable", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "TSVariableBuiltin", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "TSText", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "TSUnderline", { fg = c.onedarkYellowOrange, bg = "NONE" })
-	hl(0, "TSTag", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "TSTagDelimiter", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "TSNone", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "TSTagAttribute", { fg = c.onedarkOrange, bg = "NONE", italic = true })
-
-	hl(0, "TSTitle", { fg = isDark and c.onedarkBlue or c.onedarkYellowOrange, bold = true })
-	hl(0, "TSLiteral", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "markdownTSLiteral", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "markdown_inlineTSLiteral", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "TSEmphasis", { fg = c.onedarkFront, bg = "NONE", italic = true })
-	hl(0, "TSStrong", { fg = isDark and c.onedarkBlue or c.onedarkViolet, bold = true })
-	hl(0, "TSURI", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "TSTextReference", { fg = isDark and c.onedarkOrange or c.onedarkYellowOrange })
-	hl(0, "TSPunctDelimiter", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "TSStringEscape", { fg = isDark and c.onedarkGreen or c.onedarkGreen, bold = true })
-
-	hl(0, "TSNote", { fg = c.onedarkBlueGreen, bg = "NONE", bold = true })
-	hl(0, "TSWarning", { fg = c.onedarkYellowOrange, bg = "NONE", bold = true })
-	hl(0, "TSDanger", { fg = c.onedarkRed, bg = "NONE", bold = true })
+	hl(0, "Note", { fg = c.onedarkBlueGreen, bg = "NONE", bold = true })
 
 	-- Markdown
 	hl(0, "markdownBold", { fg = isDark and c.onedarkBlue or c.onedarkYellowOrange, bold = true })
@@ -242,7 +288,7 @@ theme.set_highlights = function(opts)
 	hl(0, "NoiceFormatLevelInfo", { fg = c.onedarkGreen, bg = "NONE" })
 	hl(0, "NoiceFormatLevelWarn", { fg = c.onedarkYellow, bg = "NONE" })
 
-	-- TS Rainbow
+	--  Rainbow
 	hl(0, "rainbowcol1", { fg = c.onedarkYellow, bg = "NONE" })
 	hl(0, "rainbowcol2", { fg = c.onedarkPurple, bg = "NONE" })
 	hl(0, "rainbowcol3", { fg = c.onedarkBlue, bg = "NONE" })
@@ -492,130 +538,24 @@ theme.link_highlight = function()
 	-- Nvim compe
 	hl(0, "CmpItemKindClass", { link = "CmpItemKindConstructor" })
 	hl(0, "CmpItemKindModule", { link = "CmpItemKindKeyword" })
-	hl(0, "CmpItemKindOperator", { link = "TSOperator" })
-	hl(0, "CmpItemKindReference", { link = "TSParameterReference" })
-	hl(0, "CmpItemKindValue", { link = "TSField" })
-	hl(0, "CmpItemKindField", { link = "TSField" })
-	hl(0, "CmpItemKindEnum", { link = "TSField" })
-	hl(0, "CmpItemKindSnippet", { link = "TSText" })
+	hl(0, "CmpItemKindOperator", { link = "Operator" })
+	hl(0, "CmpItemKindReference", { link = "ParameterReference" })
+	hl(0, "CmpItemKindValue", { link = "Field" })
+	hl(0, "CmpItemKindField", { link = "Field" })
+	hl(0, "CmpItemKindEnum", { link = "Field" })
+	hl(0, "CmpItemKindSnippet", { link = "Text" })
 	hl(0, "CmpItemKindColor", { link = "cssColor" })
-	hl(0, "CmpItemKindFile", { link = "TSURI" })
-	hl(0, "CmpItemKindFolder", { link = "TSURI" })
-	hl(0, "CmpItemKindEvent", { link = "TSConstant" })
-	hl(0, "CmpItemKindEnumMember", { link = "TSField" })
-	hl(0, "CmpItemKindConstant", { link = "TSConstant" })
-	hl(0, "CmpItemKindStruct", { link = "TSStructure" })
-	hl(0, "CmpItemKindTypeParameter", { link = "TSParameter" })
+	hl(0, "CmpItemKindFile", { link = "URI" })
+	hl(0, "CmpItemKindFolder", { link = "URI" })
+	hl(0, "CmpItemKindEvent", { link = "Constant" })
+	hl(0, "CmpItemKindEnumMember", { link = "Field" })
+	hl(0, "CmpItemKindConstant", { link = "Constant" })
+	hl(0, "CmpItemKindStruct", { link = "Structure" })
+	hl(0, "CmpItemKindTypeParameter", { link = "Parameter" })
 
 	-- TypeScript
-	hl(0, "typescriptIdentifierName", { link = "TSText" })
+	hl(0, "typescriptIdentifierName", { link = "Text" })
 
-	-- New Treesittr fix
-	-- TODO: fix this permanently
-	-- Misc {{{
-	hl(0, '@comment', { link = 'Comment' })
-	-- 0,hl('@error', {link = 'Error'})
-	hl(0, '@none', { bg = 'NONE', fg = 'NONE' })
-	hl(0, '@preproc', { link = 'PreProc' })
-	hl(0, '@define', { link = 'Define' })
-	hl(0, '@operator', { link = 'Operator' })
-	-- 0,}}}
-
-	-- 0,Punctuation {{{
-	hl(0, '@punctuation.delimiter', { link = 'Delimiter' })
-	hl(0, '@punctuation.bracket', { link = 'Delimiter' })
-	hl(0, '@punctuation.special', { link = 'Delimiter' })
-	-- 0,}}}
-
-	-- 0,Literals {{{
-	hl(0, '@string', { link = 'String' })
-	hl(0, '@string.regex', { link = 'TSStringRegex' })
-	hl(0, '@string.escape', { link = 'SpecialChar' })
-	hl(0, '@string.special', { link = 'SpecialChar' })
-
-	hl(0, '@character', { link = 'Character' })
-	hl(0, '@character.special', { link = 'SpecialChar' })
-
-	hl(0, '@boolean', { link = 'Boolean' })
-	hl(0, '@number', { link = 'Number' })
-	hl(0, '@float', { link = 'Float' })
-	-- 0,}}}
-
-	-- 0,Functions {{{
-	hl(0, '@function', { link = 'Function' })
-	hl(0, '@function.call', { link = 'Function' })
-	hl(0, '@function.builtin', { link = 'Special' })
-	hl(0, '@function.macro', { link = 'Macro' })
-
-	hl(0, '@method', { link = 'Function' })
-	hl(0, '@method.call', { link = 'Function' })
-
-	hl(0, '@constructor', { link = 'Special' })
-	hl(0, '@parameter', { link = 'Identifier' })
-	-- 0,}}}
-
-	-- 0,Keywords {{{
-	hl(0, '@keyword', { link = 'Keyword' })
-	hl(0, '@keyword.function', { link = 'Keyword' })
-	hl(0, '@keyword.operator', { link = 'Keyword' })
-	hl(0, '@keyword.return', { link = 'Keyword' })
-
-	hl(0, '@conditional', { link = 'Conditional' })
-	hl(0, '@repeat', { link = 'Repeat' })
-	hl(0, '@debug', { link = 'Debug' })
-	hl(0, '@label', { link = 'Label' })
-	hl(0, '@include', { link = 'Include' })
-	hl(0, '@exception', { link = 'Exception' })
-	-- 0,}}}
-
-	-- 0,Types {{{
-	hl(0, '@type', { link = 'Type' })
-	hl(0, '@type.builtin', { link = 'Type' })
-	hl(0, '@type.qualifier', { link = 'Type' })
-	hl(0, '@type.definition', { link = 'Typedef' })
-
-	hl(0, '@storageclass', { link = 'StorageClass' })
-	hl(0, '@attribute', { link = 'PreProc' })
-	hl(0, '@field', { link = 'Identifier' })
-	hl(0, '@property', { link = 'TSField' })
-	-- 0,}}}
-
-	-- 0,Identifiers {{{
-	hl(0, '@variable', { link = 'Normal' })
-	hl(0, '@variable.builtin', { link = 'Special' })
-
-	hl(0, '@constant', { link = 'Constant' })
-	hl(0, '@constant.builtin', { link = 'Special' })
-	hl(0, '@constant.macro', { link = 'Define' })
-
-	hl(0, '@namespace', { link = 'Include' })
-	hl(0, '@symbol', { link = 'Identifier' })
-	-- 0,}}}
-
-	-- 0,Text {{{
-	hl(0, '@text', { link = 'Normal' })
-	hl(0, '@text.strong', { bold = true })
-	hl(0, '@text.emphasis', { italic = true })
-	hl(0, '@text.underline', { underline = true })
-	hl(0, '@text.strike', { strikethrough = true })
-	hl(0, '@text.title', { link = 'Title' })
-	hl(0, '@text.literal', { link = 'String' })
-	hl(0, '@text.uri', { link = 'Underlined' })
-	hl(0, '@text.math', { link = 'Special' })
-	hl(0, '@text.environment', { link = 'Macro' })
-	hl(0, '@text.environment.name', { link = 'Type' })
-	hl(0, '@text.reference', { link = 'Constant' })
-
-	hl(0, '@text.todo', { link = 'Todo' })
-	hl(0, '@text.note', { link = 'SpecialComment' })
-	hl(0, '@text.warning', { link = 'WarningMsg' })
-	hl(0, '@text.danger', { link = 'ErrorMsg' })
-	-- 0,}}}
-
-	-- 0,Tags {{{
-	hl(0, '@tag', { link = 'Tag' })
-	hl(0, '@tag.attribute', { link = 'Identifier' })
-	hl(0, '@tag.delimiter', { link = 'Delimiter' })
 	-- }}}
 end
 
