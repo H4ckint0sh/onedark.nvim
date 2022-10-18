@@ -22,7 +22,7 @@ function M.setup()
 	local c = theme.colors
 
 	theme.highlights = {
-		-- Foo = { bg = c.Purple, fg = c.Purple },
+		Foo = { bg = c.Purple, fg = c.Purple },
 
 		Comment = { fg = c.Comment, italic = true }, -- any comment
 		ColorColumn = { bg = c.Back }, -- used for the columns set with 'colorcolumn'
@@ -244,7 +244,7 @@ function M.setup()
 		-- TSType              = { };    -- For types.
 		-- TSTypeBuiltin       = { };    -- For builtin types.
 		["@variable"]              = { fg = c.Front }, -- Any variable name that does not have another highlight.
-		["@variable.builtin"]      = { fg = c.Red }, -- Variable names that are defined by the languages, like `this` or `self`.
+		["@variable.builtin"]      = { fg = c.Front }, -- Variable names that are defined by the languages, like `this` or `self`.
 
 		-- TSTag               = { };    -- Tags like html tag names.
 		-- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
