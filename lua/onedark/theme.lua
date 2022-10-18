@@ -330,8 +330,8 @@ function M.setup()
 		GitSignsDelete = { fg = c.DiffDelete }, -- diff mode: Deleted line |diff.txt|
 
 		-- Telescope
-		TelescopeBorder = { fg = c.Border, bg = c.PopupBack },
-		TelescopeNormal = { fg = c.Front, bg = c.PopupBack },
+		TelescopeBorder = { fg = c.Front, bg = c.None },
+		TelescopeNormal = { fg = c.Front, bg = c.None },
 
 		-- NvimTree
 		NvimTreeNormal = { fg = c.PopupFront, bg = c.PopupBack },
