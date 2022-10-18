@@ -43,6 +43,11 @@ function M.template(str, table)
 	end))
 end
 
+---@param group string
+function M.highlight(group, hl)
+  vim.api.nvim_set_hl(0, group, hl)
+end
+
 function M.syntax(syntax)
 	for group, colors in pairs(syntax) do
 		M.highlight(group, colors)
