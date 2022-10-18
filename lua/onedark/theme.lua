@@ -610,7 +610,7 @@ function M.setup()
 		MiniStarterFooter = { fg = c.Yellow, italic = true },
 		MiniStarterHeader = { fg = c.Blue },
 		MiniStarterInactive = { fg = c.Comment, italic = true},
-		MiniStarterItem = { fg = c.Front, bg c.Back },
+		MiniStarterItem = { fg = c.Front, bg = c.Back },
 		MiniStarterItemBullet = { fg = c.Border },
 		MiniStarterItemPrefix = { fg = c.Warning },
 		MiniStarterSection = { fg = c.Blue1 },
