@@ -42,7 +42,7 @@ if vim.o.background == "dark" then
 		Gray      = "#65717d",
 		Violet    = "#c678dd",
 		Blue      = "#61afef",
-		DarkBlue  = "#223E55",
+		Dark      = "#223E55",
 		Cyan      = "#56b6c2",
 		Hint      = "#52adf2",
 		Green     = "#89ca78",

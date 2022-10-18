@@ -50,7 +50,7 @@ function M.setup()
 		Substitute = { bg = c.Red, fg = c.Front }, -- |:substitute| replacement text highlighting
 		LineNr = { fg = c.Purple }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		CursorLineNr = { fg = c.Back }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-		MatchParen = { fg = c.Orange, bold = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		MatchParen = { fg = c.Orange, bold = true }, -- The character under the cursor or just before it, if it is a paiRed bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = c.Front, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MsgArea = { fg = c.Fron }, -- Area for messages and cmdline
 		-- MsgSeparator= { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
@@ -89,21 +89,21 @@ function M.setup()
 
 		-- These groups are not listed as default vim groups,
 		-- but they are defacto standard group names for syntax highlighting.
-		-- commented out groups should chain up to their "preferred" group by
+		-- commented out groups should chain up to their "preferRed" group by
 		-- default,
 		-- Uncomment and edit if you want more specific syntax highlighting.
 
-		Constant = { fg = c.Yellow }, -- (preferred) any constant
+		Constant = { fg = c.Yellow }, -- (preferRed) any constant
 		String = { fg = c.Green }, --   a string constant: "this is a string"
 		Character = { fg = c.Green }, --  a character constant: 'c', '\n'
 		-- Number        = { }, --   a number constant: 234, 0xff
 		-- Boolean       = { }, --  a boolean constant: TRUE, false
 		-- Float         = { }, --    a floating point constant: 2.3e10
 
-		Identifier = { fg = c.Purple }, -- (preferred) any variable name
+		Identifier = { fg = c.Purple }, -- (preferRed) any variable name
 		Function = { fg = c.Blue }, -- function name (also: methods for classes)
 
-		Statement = { fg = c.Purple, italic = true }, -- (preferred) any statement
+		Statement = { fg = c.Purple, italic = true }, -- (preferRed) any statement
 		-- Conditional   = { }, --  if, then, else, endif, switch, etc.
 		-- Repeat        = { }, --   for, do, while, etc.
 		-- Label         = { }, --    case, default, etc.
@@ -111,33 +111,33 @@ function M.setup()
 		Keyword = { fg = c.Front }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
 
-		PreProc = { fg = c.Purple, italic = true }, -- (preferred) generic Preprocessor
+		PreProc = { fg = c.Purple, italic = true }, -- (preferRed) generic Preprocessor
 		-- Include       = { }, --  preprocessor #include
 		-- Define        = { }, --   preprocessor #define
 		-- Macro         = { }, --    same as Define
 		-- PreCondit     = { }, --  preprocessor #if, #else, #endif, etc.
 
-		Type = { fg = c.Yellow }, -- (preferred) int, long, char, etc.
+		Type = { fg = c.Yellow }, -- (preferRed) int, long, char, etc.
 		-- StorageClass  = { }, -- static, register, volatile, etc.
 		-- Structure     = { }, --  struct, union, enum, etc.
 		-- Typedef       = { }, --  A typedef
 
-		Special = { fg = c.cyan }, -- (preferred) any special symbol
+		Special = { fg = c.cyan }, -- (preferRed) any special symbol
 		-- SpecialChar   = { }, --  special character in a constant
 		-- Tag           = { }, --    you can use CTRL-] on this
 		-- Delimiter     = { }, --  character that needs attention
 		-- SpecialComment= { }, -- special things inside a comment
 		-- Debug         = { }, --    debugging statements
 
-		Underlined = { underline = true }, -- (preferred) text that stands out, HTML links
+		Underlined = { underline = true }, -- (preferRed) text that stands out, HTML links
 		Bold = { bold = true },
 		Italic = { italic = true },
 
 		-- ("Ignore", below, may be invisible...)
-		-- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
+		-- Ignore = { }, -- (preferRed) left blank, hidden  |hl-Ignore|
 
-		Error = { fg = c.Error }, -- (preferred) any erroneous construct
-		Todo = { bg = c.Yellow, fg = c.Back }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Error = { fg = c.Error }, -- (preferRed) any erroneous construct
+		Todo = { bg = c.Yellow, fg = c.Back }, -- (preferRed) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
 		qfLineNr = { fg = c.BackDark },
 		qfFileName = { fg = c.Blue },
@@ -146,7 +146,7 @@ function M.setup()
 		htmlH2 = { fg = c.Blue, bold = true },
 
 		-- mkdHeading = { fg = c.Orange, bold = true },
-		-- mkdCode = { bg = c.terminal_black, fg = c.Front },
+		-- mkdCode = { bg = c.terminal_Dark, fg = c.Front },
 		mkdCodeDelimiter = { bg = c.Border, fg = c.Front },
 		mkdCodeStart = { fg = c.Green, bold = true },
 		mkdCodeEnd = { fg = c.Green, bold = true },
@@ -248,7 +248,7 @@ function M.setup()
 
 		-- TSTag               = { };    -- Tags like html tag names.
 		-- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
-		-- TSText              = { };    -- For strings considered text in a markup language.
+		-- TSText              = { };    -- For strings consideRed text in a markup language.
 		["@text.reference"] = { fg = c.Green },
 		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
 		-- TSUnderline         = { };    -- For text to be represented with an underline.
@@ -258,7 +258,7 @@ function M.setup()
 		-- TSURI               = { };    -- Any URI like a link or email.
 
 		-- Lua
-		-- luaTSProperty = { fg = c.red }, -- Same as `TSField`.
+		-- luaTSProperty = { fg = c.Red }, -- Same as `TSField`.
 
 		-- ts-rainbow
 		rainbowcol1 = { fg = c.Purple },
@@ -294,16 +294,16 @@ function M.setup()
 		-- Neogit
 		NeogitBranch = { fg = c.Purple },
 		NeogitRemote = { fg = c.Purple },
-		NeogitHunkHeader = { bg = c.Back_highlight, fg = c.Front },
+		NeogitHunkHeader = { bg = c.Back, fg = c.Front },
 		NeogitHunkHeaderHighlight = { bg = c.Front, fg = c.Blue },
 		NeogitDiffContextHighlight = { bg = util.darken(c.Front, 0.5), fg = c.Front_dark },
 		NeogitDiffDeleteHighlight = { fg = c.DiffDelete, bg = c.DiffDelete},
-		NeogitDiffAddHighlight = { fg = c.DiffAdd, bg = c.diff.add },
+		NeogitDiffAddHighlight = { fg = c.DiffAdd, bg = c.DiffAdd },
 
 		-- Neotest
 		NeotestPassed = { fg = c.Green },
 		NeotestRunning = { fg = c.Yellow },
-		NeotestFailed = { fg = c.red },
+		NeotestFailed = { fg = c.Red },
 		NeotestSkipped = { fg = c.Blue },
 		NeotestTest = { fg = c.PopupFront },
 		NeotestNamespace = { fg = c.Green },
@@ -344,7 +344,7 @@ function M.setup()
 		NvimTreeGitDirty = { fg = c.DiffChange },
 		NvimTreeGitNew = { fg = c.DiffAdd },
 		NvimTreeGitDeleted = { fg = c.DiffDelete },
-		NvimTreeOpenedFile = { bg = c.Back_highlight },
+		NvimTreeOpenedFile = { bg = c.Back },
 		NvimTreeSpecialFile = { fg = c.Purple, underline = true },
 		NvimTreeIndentMarker = { fg = c.Front },
 		NvimTreeImageFile = { fg = c.PopupFront },
@@ -403,7 +403,7 @@ function M.setup()
 		LspSagaFinderSelection = { fg = c.Back_visual },
 		LspSagaCodeActionTitle = { fg = c.Blue1 },
 		LspSagaCodeActionContent = { fg = c.Purple },
-		LspSagaSignatureHelpBorder = { fg = c.red },
+		LspSagaSignatureHelpBorder = { fg = c.Red },
 		ReferencesCount = { fg = c.Purple },
 		DefinitionCount = { fg = c.Purple },
 		DefinitionIcon = { fg = c.Blue },
@@ -412,7 +412,7 @@ function M.setup()
 
 		-- NeoVim
 		healthError = { fg = c.Error },
-		healthSuccess = { fg = c.Green1 },
+		healthSuccess = { fg = c.Green },
 		healthWarning = { fg = c.Warning },
 
 		-- BufferLine
@@ -423,51 +423,51 @@ function M.setup()
 		BufferCurrentIndex = { bg = c.Front, fg = c.Info },
 		BufferCurrentMod = { bg = c.Front, fg = c.Warning },
 		BufferCurrentSign = { bg = c.Front, fg = c.Info },
-		BufferCurrentTarget = { bg = c.Front, fg = c.red },
+		BufferCurrentTarget = { bg = c.Front, fg = c.Red },
 		BufferVisible = { bg = c.Back_statusline, fg = c.Front },
 		BufferVisibleIndex = { bg = c.Back_statusline, fg = c.Info },
 		BufferVisibleMod = { bg = c.Back_statusline, fg = c.Warning },
 		BufferVisibleSign = { bg = c.Back_statusline, fg = c.Info },
-		BufferVisibleTarget = { bg = c.Back_statusline, fg = c.red },
+		BufferVisibleTarget = { bg = c.Back_statusline, fg = c.Red },
 		BufferInactive = { bg = c.Back_statusline, fg = c.BackDark },
 		BufferInactiveIndex = { bg = c.Back_statusline, fg = c.BackDark },
 		BufferInactiveMod = { bg = c.Back_statusline, fg = util.darken(c.Warning, 0.7) },
 		BufferInactiveSign = { bg = c.Back_statusline, fg = c.Border },
-		BufferInactiveTarget = { bg = c.Back_statusline, fg = c.red },
+		BufferInactiveTarget = { bg = c.Back_statusline, fg = c.Red },
 		BufferTabpages = { bg = c.Back_statusline, fg = c.none },
 		BufferTabpage = { bg = c.Back_statusline, fg = c.Border },
 
 		-- Sneak
-		Sneak = { fg = c.Back_highlight, bg = c.Purple },
+		Sneak = { fg = c.Back, bg = c.Purple },
 		SneakScope = { bg = c.Back_visual },
 
 		-- Hop
-		HopNextKey = { fg = c.Purple2, bold = true },
-		HopNextKey1 = { fg = c.Blue2, bold = true },
-		HopNextKey2 = { fg = util.darken(c.Blue2, 0.6) },
+		HopNextKey = { fg = c.Purple, bold = true },
+		HopNextKey1 = { fg = c.Blue, bold = true },
+		HopNextKey2 = { fg = util.darken(c.Blue, 0.6) },
 		HopUnmatched = { fg = c.dark3 },
 
-		TSNodeKey = { fg = c.Purple2, bold = true },
+		TSNodeKey = { fg = c.Purple, bold = true },
 		TSNodeUnmatched = { fg = c.dark3 },
 
-		LeapMatch = { bg = c.Purple2, fg = c.Front, bold = true },
-		LeapLabelPrimary = { fg = c.Purple2, bold = true },
-		LeapLabelSecondary = { fg = c.Green1, bold = true },
+		LeapMatch = { bg = c.Purple, fg = c.Front, bold = true },
+		LeapLabelPrimary = { fg = c.Purple, bold = true },
+		LeapLabelSecondary = { fg = c.Green, bold = true },
 		LeapBackdrop = { fg = c.dark3 },
 
 		LightspeedGreyWash = { fg = c.dark3 },
 		-- LightspeedCursor = { link = "Cursor" },
-		LightspeedLabel = { fg = c.Purple2, bold = true, underline = true },
-		LightspeedLabelDistant = { fg = c.Green1, bold = true, underline = true },
+		LightspeedLabel = { fg = c.Purple, bold = true, underline = true },
+		LightspeedLabelDistant = { fg = c.Green, bold = true, underline = true },
 		LightspeedLabelDistantOverlapped = { fg = c.Green2, underline = true },
-		LightspeedLabelOverlapped = { fg = c.Purple2, underline = true },
+		LightspeedLabelOverlapped = { fg = c.Purple, underline = true },
 		LightspeedMaskedChar = { fg = c.Orange },
-		LightspeedOneCharMatch = { bg = c.Purple2, fg = c.Front, bold = true },
-		LightspeedPendingOpArea = { bg = c.Purple2, fg = c.Front },
-		LightspeedShortcut = { bg = c.Purple2, fg = c.Front, bold = true, underline = true },
+		LightspeedOneCharMatch = { bg = c.Purple, fg = c.Front, bold = true },
+		LightspeedPendingOpArea = { bg = c.Purple, fg = c.Front },
+		LightspeedShortcut = { bg = c.Purple, fg = c.Front, bold = true, underline = true },
 		-- LightspeedShortcutOverlapped = { link = "LightspeedShortcut" },
 		-- LightspeedUniqueChar = { link = "LightspeedUnlabeledMatch" },
-		LightspeedUnlabeledMatch = { fg = c.Blue2, bold = true },
+		LightspeedUnlabeledMatch = { fg = c.Blue, bold = true },
 
 		-- Cmp
 		CmpDocumentation = { fg = c.Front, bg = c.PopupBack },
@@ -501,11 +501,11 @@ function M.setup()
 
 		CmpItemKindModule = { fg = c.Yellow, bg = c.none },
 
-		CmpItemKindProperty = { fg = c.Green1, bg = c.none },
-		CmpItemKindField = { fg = c.Green1, bg = c.none },
-		CmpItemKindTypeParameter = { fg = c.Green1, bg = c.none },
-		CmpItemKindEnumMember = { fg = c.Green1, bg = c.none },
-		CmpItemKindOperator = { fg = c.Green1, bg = c.none },
+		CmpItemKindProperty = { fg = c.Green, bg = c.none },
+		CmpItemKindField = { fg = c.Green, bg = c.none },
+		CmpItemKindTypeParameter = { fg = c.Green, bg = c.none },
+		CmpItemKindEnumMember = { fg = c.Green, bg = c.none },
+		CmpItemKindOperator = { fg = c.Green, bg = c.none },
 		CmpItemKindSnippet = { fg = c.BackDark, bg = c.none },
 
 		-- navic
@@ -515,8 +515,8 @@ function M.setup()
 		NavicIconsPackage = { fg = c.Front, bg = c.none },
 		NavicIconsClass = { fg = c.Orange, bg = c.none },
 		NavicIconsMethod = { fg = c.Blue, bg = c.none },
-		NavicIconsProperty = { fg = c.Green1, bg = c.none },
-		NavicIconsField = { fg = c.Green1, bg = c.none },
+		NavicIconsProperty = { fg = c.Green, bg = c.none },
+		NavicIconsField = { fg = c.Green, bg = c.none },
 		NavicIconsConstructor = { fg = c.Orange, bg = c.none },
 		NavicIconsEnum = { fg = c.Orange, bg = c.none },
 		NavicIconsInterface = { fg = c.Orange, bg = c.none },
@@ -531,11 +531,11 @@ function M.setup()
 		NavicIconsKey = { fg = c.Purple, bg = c.none },
 		NavicIconsKeyword = { fg = c.Purple, bg = c.none },
 		NavicIconsNull = { fg = c.Orange, bg = c.none },
-		NavicIconsEnumMember = { fg = c.Green1, bg = c.none },
+		NavicIconsEnumMember = { fg = c.Green, bg = c.none },
 		NavicIconsStruct = { fg = c.Orange, bg = c.none },
 		NavicIconsEvent = { fg = c.Orange, bg = c.none },
 		NavicIconsOperator = { fg = c.Front, bg = c.none },
-		NavicIconsTypeParameter = { fg = c.Green1, bg = c.none },
+		NavicIconsTypeParameter = { fg = c.Green, bg = c.none },
 		NavicText = { fg = c.Front, bg = c.none },
 		NavicSeparator = { fg = c.Front, bg = c.none },
 
@@ -543,24 +543,24 @@ function M.setup()
 		IndentBlanklineContextChar = { fg = c.Purple, nocombine = true },
 
 		-- Scrollbar
-		ScrollbarHandle = { fg = c.none, bg = c.Back_highlight },
+		ScrollbarHandle = { fg = c.none, bg = c.Back },
 
-		ScrollbarSearchHandle = { fg = c.Orange, bg = c.Back_highlight },
+		ScrollbarSearchHandle = { fg = c.Orange, bg = c.Back },
 		ScrollbarSearch = { fg = c.Orange, bg = c.none },
 
-		ScrollbarErrorHandle = { fg = c.Error, bg = c.Back_highlight },
+		ScrollbarErrorHandle = { fg = c.Error, bg = c.Back },
 		ScrollbarError = { fg = c.Error, bg = c.none },
 
-		ScrollbarWarnHandle = { fg = c.Warning, bg = c.Back_highlight },
+		ScrollbarWarnHandle = { fg = c.Warning, bg = c.Back },
 		ScrollbarWarn = { fg = c.Warning, bg = c.none },
 
-		ScrollbarInfoHandle = { fg = c.Info, bg = c.Back_highlight },
+		ScrollbarInfoHandle = { fg = c.Info, bg = c.Back },
 		ScrollbarInfo = { fg = c.Info, bg = c.none },
 
-		ScrollbarHintHandle = { fg = c.Hint, bg = c.Back_highlight },
+		ScrollbarHintHandle = { fg = c.Hint, bg = c.Back },
 		ScrollbarHint = { fg = c.Hint, bg = c.none },
 
-		ScrollbarMiscHandle = { fg = c.Purple, bg = c.Back_highlight },
+		ScrollbarMiscHandle = { fg = c.Purple, bg = c.Back },
 		ScrollbarMisc = { fg = c.Purple, bg = c.none },
 
 		-- Yanky
@@ -602,47 +602,47 @@ function M.setup()
 		MiniIndentscopeSymbol = { fg = c.Blue1 },
 		MiniIndentscopePrefix = { nocombine = true }, -- Make it invisible
 
-		MiniJump = { bg = c.Purple2, fg = "#ffffff" },
+		MiniJump = { bg = c.Purple, fg = "#ffffff" },
 
-		MiniJump2dSpot = { fg = c.Purple2, bold = true, nocombine = true },
+		MiniJump2dSpot = { fg = c.Purple, bold = true, nocombine = true },
 
 		MiniStarterCurrent = { nocombine = true },
 		MiniStarterFooter = { fg = c.Yellow, italic = true },
 		MiniStarterHeader = { fg = c.Blue },
-		MiniStarterInactive = { fg = c.Comment, style = options.styles.comments },
-		MiniStarterItem = { fg = c.Front, bg = options.transparent and c.none or c.Back },
+		MiniStarterInactive = { fg = c.Comment, italic = true},
+		MiniStarterItem = { fg = c.Front, bg c.Back },
 		MiniStarterItemBullet = { fg = c.Border },
 		MiniStarterItemPrefix = { fg = c.Warning },
 		MiniStarterSection = { fg = c.Blue1 },
 		MiniStarterQuery = { fg = c.Info },
 
-		MiniStatuslineDevinfo = { fg = c.Front_dark, bg = c.Back_highlight },
-		MiniStatuslineFileinfo = { fg = c.Front_dark, bg = c.Back_highlight },
+		MiniStatuslineDevinfo = { fg = c.Front_dark, bg = c.Back },
+		MiniStatuslineFileinfo = { fg = c.Front_dark, bg = c.Back },
 		MiniStatuslineFilename = { fg = c.Front_dark, bg = c.Front },
-		MiniStatuslineInactive = { fg = c.Blue, bg = c.Back_statusline },
-		MiniStatuslineModeCommand = { fg = c.black, bg = c.Yellow, bold = true },
-		MiniStatuslineModeInsert = { fg = c.black, bg = c.Green, bold = true },
-		MiniStatuslineModeNormal = { fg = c.black, bg = c.Blue, bold = true },
-		MiniStatuslineModeOther = { fg = c.black, bg = c.Green, bold = true },
-		MiniStatuslineModeReplace = { fg = c.black, bg = c.red, bold = true },
-		MiniStatuslineModeVisual = { fg = c.black, bg = c.Purple, bold = true },
+		MiniStatuslineInactive = { fg = c.Blue, bg = c.Back },
+		MiniStatuslineModeCommand = { fg = c.Dark, bg = c.Yellow, bold = true },
+		MiniStatuslineModeInsert = { fg = c.Dark, bg = c.Green, bold = true },
+		MiniStatuslineModeNormal = { fg = c.Dark, bg = c.Blue, bold = true },
+		MiniStatuslineModeOther = { fg = c.Dark, bg = c.Green, bold = true },
+		MiniStatuslineModeReplace = { fg = c.Dark, bg = c.Red, bold = true },
+		MiniStatuslineModeVisual = { fg = c.Dark, bg = c.Purple, bold = true },
 
-		MiniSurround = { bg = c.Orange, fg = c.black },
+		MiniSurround = { bg = c.Orange, fg = c.Dark },
 
 		MiniTablineCurrent = { fg = c.Front, bg = c.Front },
-		MiniTablineFill = { bg = c.black },
-		MiniTablineHidden = { fg = c.BackDark, bg = c.Back_statusline },
+		MiniTablineFill = { bg = c.Dark },
+		MiniTablineHidden = { fg = c.BackDark, bg = c.Front},
 		MiniTablineModifiedCurrent = { fg = c.Warning, bg = c.Front },
-		MiniTablineModifiedHidden = { bg = c.Back_statusline, fg = util.darken(c.Warning, 0.7) },
-		MiniTablineModifiedVisible = { fg = c.Warning, bg = c.Back_statusline },
-		MiniTablineTabpagesection = { bg = c.Back_statusline, fg = c.none },
-		MiniTablineVisible = { fg = c.Front, bg = c.Back_statusline },
+		MiniTablineModifiedHidden = { bg = c.Back, fg = util.darken(c.Warning, 0.7) },
+		MiniTablineModifiedVisible = { fg = c.Warning, bg = c.Back},
+		MiniTablineTabpagesection = { bg = c.Back, fg = c.none },
+		MiniTablineVisible = { fg = c.Front, bg = c.Back },
 
 		MiniTestEmphasis = { bold = true },
-		MiniTestFail = { fg = c.red, bold = true },
+		MiniTestFail = { fg = c.Red, bold = true },
 		MiniTestPass = { fg = c.Green, bold = true },
 
-		MiniTrailspace = { bg = c.red },
+		MiniTrailspace = { bg = c.Red },
 	}
 
 	if not vim.diagnostic then
