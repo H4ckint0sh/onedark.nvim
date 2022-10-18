@@ -104,4 +104,22 @@ function M.invert_highlights(hls)
 		end
 	end
 end
+
+---@param theme Theme
+function M.load(theme)
+  -- only needed to clear when not the default colorscheme
+  if vim.g.colors_name then
+    vim.cmd("hi clear")
+  end
+
+  vim.o.termguicolors = true
+  vim.g.colors_name = "onedark"
+
+  M.syntax(theme.highlights)
+
+
+  vim.defer_fn(function()
+    M.syntax(theme.defer)
+  end, 100)
+end
 return M
