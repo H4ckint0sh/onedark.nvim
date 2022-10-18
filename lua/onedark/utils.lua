@@ -1,4 +1,4 @@
-local ts = require("tokyonight.treesitter")
+local ts = require("onedark.treesitter")
 local M = {}
 
 M.bg = "#000000"
