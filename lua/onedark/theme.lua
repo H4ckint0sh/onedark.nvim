@@ -111,8 +111,8 @@ function M.setup()
 		Keyword = { fg = c.Front }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
 
-		PreProc = { fg = c.Yellow, italic = true }, -- (preferRed) generic Preprocessor
-		-- Include       = { }, --  preprocessor #include
+		PreProc = { fg = c.Purple, italic = true }, -- (preferRed) generic Preprocessor
+		Include = { fg = c.Yellow }, --  preprocessor #include
 		-- Define        = { }, --   preprocessor #define
 		-- Macro         = { }, --    same as Define
 		-- PreCondit     = { }, --  preprocessor #if, #else, #endif, etc.
