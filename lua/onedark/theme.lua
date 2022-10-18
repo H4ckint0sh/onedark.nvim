@@ -48,8 +48,8 @@ function M.setup()
 		SignColumn = { bg = c.Back, fg = c.Border }, -- column where |signs| are displayed
 		SignColumnSB = { bg = c.BackDark, fg = c.Front }, -- column where |signs| are displayed
 		Substitute = { bg = c.Red, fg = c.Front }, -- |:substitute| replacement text highlighting
-		LineNr = { fg = c.Purple }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-		CursorLineNr = { fg = c.Back }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+		LineNr = { fg = c.Comment }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+		CursorLineNr = { fg = c.Purple }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		MatchParen = { fg = c.Orange, bold = true }, -- The character under the cursor or just before it, if it is a paiRed bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = c.Front, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MsgArea = { fg = c.Fron }, -- Area for messages and cmdline
@@ -418,25 +418,6 @@ function M.setup()
 		-- BufferLine
 		BufferLineIndicatorSelected = { fg = c.DiffChange },
 
-		-- Barbar
-		BufferCurrent = { bg = c.Front, fg = c.Front },
-		BufferCurrentIndex = { bg = c.Front, fg = c.Info },
-		BufferCurrentMod = { bg = c.Front, fg = c.Warning },
-		BufferCurrentSign = { bg = c.Front, fg = c.Info },
-		BufferCurrentTarget = { bg = c.Front, fg = c.Red },
-		BufferVisible = { bg = c.Back_statusline, fg = c.Front },
-		BufferVisibleIndex = { bg = c.Back_statusline, fg = c.Info },
-		BufferVisibleMod = { bg = c.Back_statusline, fg = c.Warning },
-		BufferVisibleSign = { bg = c.Back_statusline, fg = c.Info },
-		BufferVisibleTarget = { bg = c.Back_statusline, fg = c.Red },
-		BufferInactive = { bg = c.Back_statusline, fg = c.BackDark },
-		BufferInactiveIndex = { bg = c.Back_statusline, fg = c.BackDark },
-		BufferInactiveMod = { bg = c.Back_statusline, fg = util.darken(c.Warning, 0.7) },
-		BufferInactiveSign = { bg = c.Back_statusline, fg = c.Border },
-		BufferInactiveTarget = { bg = c.Back_statusline, fg = c.Red },
-		BufferTabpages = { bg = c.Back_statusline, fg = c.none },
-		BufferTabpage = { bg = c.Back_statusline, fg = c.Border },
-
 		-- Sneak
 		Sneak = { fg = c.Back, bg = c.Purple },
 		SneakScope = { bg = c.Back_visual },
@@ -564,7 +545,6 @@ function M.setup()
 		ScrollbarMisc = { fg = c.Purple, bg = c.none },
 
 		-- StatusLine
-		-- statusline
 		St_NormalMode = { fg = c.Green, bold = true },
 		St_InsertMode = { fg = c.Orange, bold = true },
 		St_VisualMode = { fg = c.Purple, bold = true },
@@ -630,17 +610,6 @@ function M.setup()
 		MiniStarterItemPrefix = { fg = c.Warning },
 		MiniStarterSection = { fg = c.Blue1 },
 		MiniStarterQuery = { fg = c.Info },
-
-		MiniStatuslineDevinfo = { fg = c.Front_dark, bg = c.Back },
-		MiniStatuslineFileinfo = { fg = c.Front_dark, bg = c.Back },
-		MiniStatuslineFilename = { fg = c.Front_dark, bg = c.Front },
-		MiniStatuslineInactive = { fg = c.Blue, bg = c.Back },
-		MiniStatuslineModeCommand = { fg = c.Dark, bg = c.Yellow, bold = true },
-		MiniStatuslineModeInsert = { fg = c.Dark, bg = c.Green, bold = true },
-		MiniStatuslineModeNormal = { fg = c.Dark, bg = c.Blue, bold = true },
-		MiniStatuslineModeOther = { fg = c.Dark, bg = c.Green, bold = true },
-		MiniStatuslineModeReplace = { fg = c.Dark, bg = c.Red, bold = true },
-		MiniStatuslineModeVisual = { fg = c.Dark, bg = c.Purple, bold = true },
 
 		MiniSurround = { bg = c.Orange, fg = c.Dark },
 
