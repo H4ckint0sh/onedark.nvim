@@ -569,11 +569,11 @@ function M.setup()
 
 		-- Notify
 		--- Border
-		NotifyERRORBorder = { fg = util.darken(c.Error, 0.3), bg = options.transparent and c.none or c.Back },
-		NotifyWARNBorder = { fg = util.darken(c.Warning, 0.3), bg = options.transparent and c.none or c.Back },
-		NotifyINFOBorder = { fg = util.darken(c.Info, 0.3), bg = options.transparent and c.none or c.Back },
-		NotifyDEBUGBorder = { fg = util.darken(c.Comment, 0.3), bg = options.transparent and c.none or c.Back },
-		NotifyTRACEBorder = { fg = util.darken(c.Purple, 0.3), bg = options.transparent and c.none or c.Back },
+		NotifyERRORBorder = { fg = util.darken(c.Error, 0.3), bg = c.Back },
+		NotifyWARNBorder = { fg = util.darken(c.Warning, 0.3), bg =  c.Back },
+		NotifyINFOBorder = { fg = util.darken(c.Info, 0.3), bg =  c.Back },
+		NotifyDEBUGBorder = { fg = util.darken(c.Comment, 0.3), bg =  c.Back },
+		NotifyTRACEBorder = { fg = util.darken(c.Purple, 0.3), bg =  c.Back },
 		--- Icons
 		NotifyERRORIcon = { fg = c.Error },
 		NotifyWARNIcon = { fg = c.Warning },
@@ -587,11 +587,11 @@ function M.setup()
 		NotifyDEBUGTitle = { fg = c.Comment },
 		NotifyTRACETitle = { fg = c.Purple },
 		--- Body
-		NotifyERRORBody = { fg = c.Front, bg = options.transparent and c.none or c.Back },
-		NotifyWARNBody = { fg = c.Front, bg = options.transparent and c.none or c.Back },
-		NotifyINFOBody = { fg = c.Front, bg = options.transparent and c.none or c.Back },
-		NotifyDEBUGBody = { fg = c.Front, bg = options.transparent and c.none or c.Back },
-		NotifyTRACEBody = { fg = c.Front, bg = options.transparent and c.none or c.Back },
+		NotifyERRORBody = { fg = c.Front, bg =  c.Back },
+		NotifyWARNBody = { fg = c.Front, bg =c.Back },
+		NotifyINFOBody = { fg = c.Front, bg =c.Back },
+		NotifyDEBUGBody = { fg = c.Front, bg = c.Back },
+		NotifyTRACEBody = { fg = c.Front, bg = c.Back },
 
 		-- Mini
 		MiniCompletionActiveParameter = { underline = true },
@@ -663,23 +663,6 @@ function M.setup()
 	end
 
 	theme.defer = {}
-
-	if options.hide_inactive_statusline then
-		local inactive = { underline = true, bg = c.none, fg = c.Back, sp = c.Border }
-
-		-- StatusLineNC
-		theme.highlights.StatusLineNC = inactive
-
-		-- LuaLine
-		for _, section in ipairs({ "a", "b", "c" }) do
-			theme.defer["lualine_" .. section .. "_inactive"] = inactive
-		end
-
-		-- mini.statusline
-		theme.highlights.MiniStatuslineInactive = inactive
-	end
-
-	options.on_highlights(theme.highlights, theme.colors)
 
 	if config.is_day() then
 		util.invert_colors(theme.colors)
