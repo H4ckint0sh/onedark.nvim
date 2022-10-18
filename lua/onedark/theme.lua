@@ -297,7 +297,7 @@ function M.setup()
 		NeogitHunkHeader = { bg = c.Back, fg = c.Front },
 		NeogitHunkHeaderHighlight = { bg = c.Front, fg = c.Blue },
 		NeogitDiffContextHighlight = { bg = util.darken(c.Front, 0.5), fg = c.Front_dark },
-		NeogitDiffDeleteHighlight = { fg = c.DiffDelete, bg = c.DiffDelete},
+		NeogitDiffDeleteHighlight = { fg = c.DiffDelete, bg = c.DiffDelete },
 		NeogitDiffAddHighlight = { fg = c.DiffAdd, bg = c.DiffAdd },
 
 		-- Neotest
@@ -563,6 +563,21 @@ function M.setup()
 		ScrollbarMiscHandle = { fg = c.Purple, bg = c.Back },
 		ScrollbarMisc = { fg = c.Purple, bg = c.none },
 
+		-- StatusLine
+		-- statusline
+		St_NormalMode = { fg = c.Green, bold = true },
+		St_InsertMode = { fg = c.Orange, bold = true },
+		St_VisualMode = { fg = c.Purple, bold = true },
+		St_ReplaceMode = { fg = c.Red, bold = true },
+		St_CommandMode = { fg = c.Yellow, bold = true },
+		St_TerminalMode = { fg = c.YellowOrange, bold = true },
+		St_NTerminalMode = { fg = c.Green, bold = true },
+		St_CurrentFile = { fg = c.Blue, bold = true },
+		St_AlternateFile = { fg = c.MediumBlue, bold = true },
+		St_git_add = { fg = c.Green },
+		St_git_change = { fg = c.Orange },
+		St_git_delete = { fg = c.Red },
+
 		-- Yanky
 		YankyPut = { link = "IncSearch" },
 		YankyYanked = { link = "IncSearch" },
@@ -570,10 +585,10 @@ function M.setup()
 		-- Notify
 		--- Border
 		NotifyERRORBorder = { fg = util.darken(c.Error, 0.3), bg = c.Back },
-		NotifyWARNBorder = { fg = util.darken(c.Warning, 0.3), bg =  c.Back },
-		NotifyINFOBorder = { fg = util.darken(c.Info, 0.3), bg =  c.Back },
-		NotifyDEBUGBorder = { fg = util.darken(c.Comment, 0.3), bg =  c.Back },
-		NotifyTRACEBorder = { fg = util.darken(c.Purple, 0.3), bg =  c.Back },
+		NotifyWARNBorder = { fg = util.darken(c.Warning, 0.3), bg = c.Back },
+		NotifyINFOBorder = { fg = util.darken(c.Info, 0.3), bg = c.Back },
+		NotifyDEBUGBorder = { fg = util.darken(c.Comment, 0.3), bg = c.Back },
+		NotifyTRACEBorder = { fg = util.darken(c.Purple, 0.3), bg = c.Back },
 		--- Icons
 		NotifyERRORIcon = { fg = c.Error },
 		NotifyWARNIcon = { fg = c.Warning },
@@ -587,9 +602,9 @@ function M.setup()
 		NotifyDEBUGTitle = { fg = c.Comment },
 		NotifyTRACETitle = { fg = c.Purple },
 		--- Body
-		NotifyERRORBody = { fg = c.Front, bg =  c.Back },
-		NotifyWARNBody = { fg = c.Front, bg =c.Back },
-		NotifyINFOBody = { fg = c.Front, bg =c.Back },
+		NotifyERRORBody = { fg = c.Front, bg = c.Back },
+		NotifyWARNBody = { fg = c.Front, bg = c.Back },
+		NotifyINFOBody = { fg = c.Front, bg = c.Back },
 		NotifyDEBUGBody = { fg = c.Front, bg = c.Back },
 		NotifyTRACEBody = { fg = c.Front, bg = c.Back },
 
@@ -609,7 +624,7 @@ function M.setup()
 		MiniStarterCurrent = { nocombine = true },
 		MiniStarterFooter = { fg = c.Yellow, italic = true },
 		MiniStarterHeader = { fg = c.Blue },
-		MiniStarterInactive = { fg = c.Comment, italic = true},
+		MiniStarterInactive = { fg = c.Comment, italic = true },
 		MiniStarterItem = { fg = c.Front, bg = c.Back },
 		MiniStarterItemBullet = { fg = c.Border },
 		MiniStarterItemPrefix = { fg = c.Warning },
@@ -631,10 +646,10 @@ function M.setup()
 
 		MiniTablineCurrent = { fg = c.Front, bg = c.Front },
 		MiniTablineFill = { bg = c.Dark },
-		MiniTablineHidden = { fg = c.BackDark, bg = c.Front},
+		MiniTablineHidden = { fg = c.BackDark, bg = c.Front },
 		MiniTablineModifiedCurrent = { fg = c.Warning, bg = c.Front },
 		MiniTablineModifiedHidden = { bg = c.Back, fg = util.darken(c.Warning, 0.7) },
-		MiniTablineModifiedVisible = { fg = c.Warning, bg = c.Back},
+		MiniTablineModifiedVisible = { fg = c.Warning, bg = c.Back },
 		MiniTablineTabpagesection = { bg = c.Back, fg = c.none },
 		MiniTablineVisible = { fg = c.Front, bg = c.Back },
 
