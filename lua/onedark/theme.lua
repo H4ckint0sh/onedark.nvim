@@ -520,7 +520,7 @@ function M.setup()
 		NavicText = { fg = c.Front, bg = c.none },
 		NavicSeparator = { fg = c.Front, bg = c.none },
 
-		IndentBlanklineChar = { fg = c.Front, nocombine = true },
+		IndentBlanklineChar = { fg = c.Comment, nocombine = true },
 		IndentBlanklineContextChar = { fg = c.Purple, nocombine = true },
 
 		-- Scrollbar
