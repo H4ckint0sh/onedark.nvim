@@ -297,7 +297,7 @@ function M.setup()
 		NeogitHunkHeader = { bg = c.Back_highlight, fg = c.Front },
 		NeogitHunkHeaderHighlight = { bg = c.Front, fg = c.Blue },
 		NeogitDiffContextHighlight = { bg = util.darken(c.Front, 0.5), fg = c.Front_dark },
-		NeogitDiffDeleteHighlight = { fg = c.DiffDelete, bg = c.diff.delete },
+		NeogitDiffDeleteHighlight = { fg = c.DiffDelete, bg = c.DiffDelete},
 		NeogitDiffAddHighlight = { fg = c.DiffAdd, bg = c.diff.add },
 
 		-- Neotest
