@@ -1,1 +1,1 @@
-require("tokyonight").load()
+require("onedark").load()
