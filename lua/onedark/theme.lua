@@ -232,7 +232,7 @@ function M.setup()
 		["@operator"]              = { fg = c.cyan }, -- For any operator: `+`, but also `->` and `*` in C.
 		["@parameter"]             = { fg = c.Orange, italic = true }, -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
-		["@property"]              = { fg = c.Red }, -- Same as `TSField`.
+		["@property"]              = { fg = c.Orange }, -- Same as `TSField`.
 		["@punctuation.delimiter"] = { fg = c.Front }, -- For delimiters ie: `.`
 		["@punctuation.bracket"]   = { fg = c.Blue }, -- For brackets and parens.
 		["@punctuation.special"]   = { fg = c.Yellow }, -- For special punctutation that does not fall in the catagories before.
@@ -246,7 +246,7 @@ function M.setup()
 		["@variable"]              = { fg = c.Front }, -- Any variable name that does not have another highlight.
 		["@variable.builtin"]      = { fg = c.Red }, -- Variable names that are defined by the languages, like `this` or `self`.
 
-		TSTag               = { fg = c.Red }; -- Tags like html tag names.
+		-- TSTag               = { };    -- Tags like html tag names.
 		-- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
 		-- TSText              = { };    -- For strings consideRed text in a markup language.
 		["@text.reference"] = { fg = c.Green },
