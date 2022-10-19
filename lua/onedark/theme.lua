@@ -235,11 +235,11 @@ function M.setup()
 		["@property"]              = { fg = c.Orange }, -- Same as `TSField`.
 		["@punctuation.delimiter"] = { fg = c.Front }, -- For delimiters ie: `.`
 		["@punctuation.bracket"]   = { fg = c.Blue }, -- For brackets and parens.
-		["@punctuation.special"]   = { fg = c.Purple }, -- For special punctutation that does not fall in the catagories before.
+		["@punctuation.special"]   = { fg = c.Yellow }, -- For special punctutation that does not fall in the catagories before.
 		-- TSRepeat            = { };    -- For keywords related to loops.
 		-- TSString            = { };    -- For strings.
 		["@string.regex"]          = { fg = c.Yellow }, -- For regexes.
-		["@string.escape"]         = { fg = c.Yellow }, -- For escape characters within a string.
+		["@string.escape"]         = { fg = c.Purple }, -- For escape characters within a string.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		-- TSType              = { };    -- For types.
 		-- TSTypeBuiltin       = { };    -- For builtin types.
