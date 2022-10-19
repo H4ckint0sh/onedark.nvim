@@ -1,13 +1,50 @@
-local util = require("onedark.utils")
+local onedark = {}
 local theme = require("onedark.theme")
 
-local M = {}
+onedark.setup = function(user_opts)
+	local defaults = {
+		transparent = false,
+		italic_comments = false,
+		color_overrides = {},
+		group_overrides = {},
+		disable_nvimtree_bg = true,
+	}
 
-function M.load()
-  util.load(theme.setup())
+	-- backwards compatibility: let users still set settings with global vars
+	local global_settings_opts = vim.tbl_extend("force", defaults, {
+		transparent = vim.g.onedark_transparency == 1,
+		italic_comments = vim.g.onedark_italic_comment == 1,
+		disable_nvimtree_bg = vim.g.onedark_disable_nvim_tree_bg == true,
+	})
+
+	-- but override global vars settings with setup() settings
+	local opts = vim.tbl_extend("force", global_settings_opts, user_opts)
+
+	-- setting transparent to true removes the default background
+	if opts.transparent then
+		opts.color_overrides.vscBack = "NONE"
+	end
+
+	vim.cmd("hi clear")
+	if vim.fn.exists("syntax_on") then
+		vim.cmd("syntax reset")
+	end
+
+	vim.o.termguicolors = true
+	vim.g.colors_name = "onedark"
+
+	theme.set_highlights(opts)
+	theme.link_highlight()
+
+	for group, val in pairs(opts["group_overrides"]) do
+		vim.api.nvim_set_hl(0, group, val)
+	end
 end
 
--- keep for backward compatibility
-M.colorscheme = M.load
+onedark.change_style = function(style)
+	vim.o.background = style
+	print("Vscode style: ", style)
+	vim.cmd([[colorscheme onedark]])
+end
 
-return M
+return onedark
