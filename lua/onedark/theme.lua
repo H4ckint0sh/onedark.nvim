@@ -22,7 +22,7 @@ function M.setup()
 	local c = theme.colors
 
 	theme.highlights = {
-		Foo = { bg = c.Purple, fg = c.Purple },
+		-- Foo = { bg = c.Purple, fg = c.Purple },
 
 		Comment = { fg = c.Comment, italic = true }, -- any comment
 		ColorColumn = { bg = c.Back }, -- used for the columns set with 'colorcolumn'
@@ -86,73 +86,6 @@ function M.setup()
 		WarningMsg = { fg = c.Warning }, -- warning messages
 		Whitespace = { fg = c.Comment }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		WildMenu = { bg = c.Yellow }, -- current match in 'wildmenu' completion
-
-
-		TSError = { fg = c.Red, bg = "NONE" },
-		TSPunctBracket = { fg = c.Front, bg = "NONE" },
-		TSPunctSpecial = { fg = c.Purple, bg = "NONE" },
-		markdownTSPunctSpecial = { fg = c.YellowOrange, bold = true },
-		TSComment = { fg = c.Comment, bg = "NONE", italic = true },
-		TSConstant = { fg = c.Orange, bg = "NONE" },
-		TSConstBuiltin = { fg = c.Orange, bg = "NONE" },
-		TSPreProc = { fg = c.Purple, bg = "NONE", italic = true },
-		TSConstMacro = { fg = c.Orange, bg = "NONE" },
-		TSStringRegex = { fg = c.Yellow, bg = "NONE" },
-		TSString = { fg = c.Green, bg = "NONE" },
-		TSCharacter = { fg = c.Orange, bg = "NONE" },
-		TSNumber = { fg = c.Yellow, bg = "NONE" },
-		TSBoolean = { fg = c.Orange, bg = "NONE" },
-		TSFloat = { fg = c.Orange, bg = "NONE" },
-		TSAnnotation = { fg = c.Yellow, bg = "NONE" },
-		TSAttribute = { fg = c.Orange, bg = "NONE" },
-		TSNamespace = { fg = c.Blue, bg = "NONE" },
-		TSFuncBuiltin = { fg = c.Red, bg = "NONE" },
-		TSFunction = { fg = c.Blue, bg = "NONE" },
-		TSFuncMacro = { fg = c.Yellow, bg = "NONE" },
-		TSParameter = { fg = c.Orange, bg = "NONE" },
-		TSParameterReference = { fg = c.Cyan, bg = "NONE" },
-		TSMethod = { fg = c.Yellow, bg = "NONE" },
-		TSField = { fg = c.Red, bg = "NONE" },
-		TSProperty = { fg = c.Red, bg = "NONE" },
-		TSConstructor = { fg = c.Yellow, bg = "NONE" },
-		TSConditional = { fg = c.Purple, bg = "NONE", italic = true },
-		TSRepeat = { fg = c.Purple, bg = "NONE", italic = true },
-		TSLabel = { fg = c.Red, bg = "NONE" },
-		TSKeyword = { fg = c.Purple, bg = "NONE", italic = true },
-		TSKeywordFunction = { fg = c.Purple, bg = "NONE", italic = true },
-		TSKeywordOperator = { fg = c.Blue, bg = "NONE" },
-		TSKeywordReturn = { fg = c.Purple, bg = "NONE", italic = true },
-		TSOperator = { fg = c.MediumBlue, bg = "NONE" },
-		TSException = { fg = c.Purple, bg = "NONE" },
-		TSDefine = { fg = c.Orange, bg = "NONE" },
-		TSType = { fg = c.Yellow, bg = "NONE" },
-		TSTypeBuiltin = { fg = c.Yellow, bg = "NONE" },
-		TSStructure = { fg = c.Purple, bg = "NONE" },
-		TSInclude = { fg = c.Purple, bg = "NONE", italic = true },
-		TSVariable = { fg = c.Front, bg = "NONE" },
-		TSVariableBuiltin = { fg = c.Red, bg = "NONE" },
-		TSText = { fg = c.Front, bg = "NONE" },
-		TSUnderline = { fg = c.YellowOrange, bg = "NONE" },
-		TSTag = { fg = c.Red, bg = "NONE" },
-		TSTagDelimiter = { fg = c.Front, bg = "NONE" },
-		TSNone = { fg = c.Front, bg = "NONE" },
-		TSTagAttribute = { fg = c.Orange, bg = "NONE", italic = true },
-
-		TSTitle = { fg = c.Blue, bold = true },
-		TSLiteral = { fg = c.Front, bg = "NONE" },
-		markdownTSLiteral = { fg = c.Orange, bg = "NONE" },
-		markdown_inlineTSLiteral = { fg = c.Orange, bg = "NONE" },
-		TSEmphasis = { fg = c.Front, bg = "NONE", italic = true },
-		TSStrong = { fg = c.Blue, bold = true },
-		TSURI = { fg = c.Front, bg = "NONE" },
-		TSTextReference = { fg = c.Orange },
-		TSPunctDelimiter = { fg = c.Front, bg = "NONE" },
-		TSStringEscape = { fg = c.Green, bold = true },
-
-		TSNote = { fg = c.Blue, bg = "NONE", bold = true },
-		TSWarning = { fg = c.Warning, bg = "NONE", bold = true },
-		TSDanger = { fg = c.Red, bg = "NONE", bold = true },
-
 
 		-- These groups are not listed as default vim groups,
 		-- but they are defacto standard group names for syntax highlighting.
@@ -276,7 +209,7 @@ function M.setup()
 		TSNote                     = { fg = c.Back, bg = c.Info },
 		["@text.warning"]          = { fg = c.Back, bg = c.Warning },
 		["@text.danger"]           = { fg = c.Back, bg = c.Error },
-		["@constructor"]           = { fg = c.Purple }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+		["@constructor"]           = { fg = c.Yellow }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		-- TSConditional       = { };    -- For keywords related to conditionnals.
 		-- TSConstant          = { };    -- For constants
 		-- TSConstBuiltin      = { };    -- For constant that are built in the language: `nil` in Lua.
@@ -289,8 +222,8 @@ function M.setup()
 		-- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
 		-- TSFuncMacro         = { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
 		-- TSInclude           = { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-		["@keyword"]               = { fg = c.Purple, italic = true }, -- For keywords that don't fall in previous categories.
-		["@keyword.function"]      = { fg = c.Purple, italic = true }, -- For keywords used to define a fuction.
+		["@keyword"]               = { fg = c.Yellow, italic = true }, -- For keywords that don't fall in previous categories.
+		["@keyword.function"]      = { fg = c.Yellow, italic = true }, -- For keywords used to define a fuction.
 		["@label"]                 = { fg = c.Blue }, -- For labels: `label:` in C and `:label:` in Lua.
 		-- TSMethod            = { };    -- For method calls and definitions.
 		TSNamespace                = { fg = c.Yellow }; -- For identifiers referring to modules and namespaces.
@@ -302,16 +235,16 @@ function M.setup()
 		["@property"]              = { fg = c.Red }, -- Same as `TSField`.
 		["@punctuation.delimiter"] = { fg = c.Front }, -- For delimiters ie: `.`
 		["@punctuation.bracket"]   = { fg = c.Blue }, -- For brackets and parens.
-		["@punctuation.special"]   = { fg = c.Purple }, -- For special punctutation that does not fall in the catagories before.
+		["@punctuation.special"]   = { fg = c.Yellow }, -- For special punctutation that does not fall in the catagories before.
 		-- TSRepeat            = { };    -- For keywords related to loops.
 		-- TSString            = { };    -- For strings.
 		["@string.regex"]          = { fg = c.Yellow }, -- For regexes.
-		["@string.escape"]         = { fg = c.Purple }, -- For escape characters within a string.
+		["@string.escape"]         = { fg = c.Yellow }, -- For escape characters within a string.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		-- TSType              = { };    -- For types.
 		-- TSTypeBuiltin       = { };    -- For builtin types.
 		["@variable"]              = { fg = c.Front }, -- Any variable name that does not have another highlight.
-		["@variable.builtin"]      = { fg = c.Front }, -- Variable names that are defined by the languages, like `this` or `self`.
+		["@variable.builtin"]      = { fg = c.Red }, -- Variable names that are defined by the languages, like `this` or `self`.
 
 		-- TSTag               = { };    -- Tags like html tag names.
 		-- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
