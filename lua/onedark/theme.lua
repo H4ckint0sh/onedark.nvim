@@ -243,7 +243,7 @@ function M.setup()
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		-- TSType              = { };    -- For types.
 		-- TSTypeBuiltin       = { };    -- For builtin types.
-		["@variable"]              = { fg = c.Front }, -- Any variable name that does not have another highlight.
+		["@variable"]              = { fg = c.Red }, -- Any variable name that does not have another highlight.
 		["@variable.builtin"]      = { fg = c.Red }, -- Variable names that are defined by the languages, like `this` or `self`.
 
 		-- TSTag               = { };    -- Tags like html tag names.
@@ -459,8 +459,8 @@ function M.setup()
 
 		CmpItemAbbr = { fg = c.Front, bg = c.none },
 		CmpItemAbbrDeprecated = { fg = c.Front, bg = c.none, strikethrough = true },
-		CmpItemAbbrMatch = { fg = c.Blue1, bg = c.none },
-		CmpItemAbbrMatchFuzzy = { fg = c.Blue1, bg = c.none },
+		CmpItemAbbrMatch = { fg = c.Orange, bg = c.none },
+		CmpItemAbbrMatchFuzzy = { fg = c.Orange, bg = c.none },
 
 		CmpItemKindDefault = { fg = c.Front_dark, bg = c.none },
 		CmpItemMenu = { fg = c.Comment, bg = c.none },
