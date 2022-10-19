@@ -1,511 +1,657 @@
-local c = require("onedark.colors")
+local util = require("onedark.utils")
+local colors = require("onedark.colors")
 
-local hl = vim.api.nvim_set_hl
+local M = {}
+--
+---@class Highlight
+---@field fg string|nil
+---@field bg string|nil
+---@field sp string|nil
+---@field style string|nil|Highlight
 
-local theme = {}
+---@alias Highlights table<string,Highlight>
 
-theme.set_highlights = function(opts)
-	c = vim.tbl_extend("force", c, opts["color_overrides"])
-	local isDark = vim.o.background == "dark"
+---@return Theme
+function M.setup()
+	---@class Theme
+	---@field highlights Highlights
+	local theme = {
+		colors = colors,
+	}
 
-	hl(0, "Normal", { fg = c.onedarkFront, bg = c.onedarkBack })
-	hl(0, "ColorColumn", { fg = "NONE", bg = c.onedarkCursorDarkDark })
-	hl(0, "Cursor", { fg = c.onedarkCursorDark, bg = c.onedarkCursorLight })
-	hl(0, "CursorLine", { bg = "NONE" })
-	hl(0, "CursorColumn", { fg = "NONE", bg = "NONE" })
-	hl(0, "Directory", { fg = c.onedarkBlue, bg = c.onedarkBack })
-	hl(0, "DiffAdd", { fg = "NONE", bg = c.onedarkDiffGreenDark })
-	hl(0, "DiffChange", { fg = "NONE", bg = c.onedarkDiffOrande })
-	hl(0, "DiffDelete", { fg = "NONE", bg = c.onedarkDiffRedDark })
-	hl(0, "DiffText", { fg = "NONE", bg = c.onedarkFront })
-	hl(0, "EndOfBuffer", { fg = c.onedarkBack, bg = "NONE" })
-	hl(0, "ErrorMsg", { fg = c.onedarkRed, bg = c.onedarkBack })
-	hl(0, "VertSplit", { fg = c.onedarkSplitDark, bg = c.onedarkBack })
-	hl(0, "Folded", { fg = "NONE", bg = c.onedarkFoldBackground })
-	hl(0, "FoldColumn", { fg = c.onedarkPurple, bg = c.onedarkBack })
-	hl(0, "SignColumn", { fg = "NONE", bg = c.onedarkBack })
-	hl(0, "IncSearch", { fg = c.onedarkNone, bg = c.onedarkSearchCurrent })
-	hl(0, "LineNr", { fg = c.onedarkDisabled, bg = c.onedarkBack })
-	hl(0, "CursorLineNr", { fg = c.onedarkPurple, bg = c.onedarkBack })
-	hl(0, "FloatBorder", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "NomalFloat", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "MatchParen", { fg = c.onedarkNone, bg = c.onedarkCursorDark })
-	hl(0, "ModeMsg", { fg = c.onedarkFront, bg = c.onedarkLeftDark })
-	hl(0, "MoreMsg", { fg = c.onedarkFront, bg = c.onedarkLeftDark })
-	hl(0, "NonText", { fg = (isDark and c.onedarkPurple or c.onedarkTabOther), bg = c.onedarkBack })
-	hl(0, "Pmenu", { fg = c.onedarkFront, bg = c.onedarkBack })
-	hl(0, "PmenuSel", { fg = "NONE", bg = c.onedarkLightBlue })
-	hl(0, "PmenuSbar", { fg = c.onedarkFront, bg = c.onedarkPopupBack })
-	hl(0, "PmenuThumb", { fg = c.onedarkFront, bg = c.onedarkFront })
-	hl(0, "Question", { fg = c.onedarkBlue, bg = c.onedarkBack })
-	hl(0, "Search", { fg = c.onedarkNone, bg = c.onedarkSearch })
-	hl(0, "SpecialKey", { fg = c.onedarkBlue, bg = c.onedarkNone })
-	hl(0, "StatusLine", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "StatusLineNC", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "TabLine", { fg = c.onedarkFront, bg = c.onedarkTabOther })
-	hl(0, "TabLineFill", { fg = c.onedarkFront, bg = c.onedarkTabOutside })
-	hl(0, "TabLineSel", { fg = c.onedarkFront, bg = c.onedarkTabCurrent })
-	hl(0, "Title", { fg = c.onedarkNone, bg = c.onedarkNone, bold = true })
-	hl(0, "Visual", { fg = "NONE", bg = c.onedarkSelection })
-	hl(0, "VisualNOS", { fg = c.onedarkNone, bg = c.onedarkSelection })
-	hl(0, "WarningMsg", { fg = c.onedarkRed, bg = c.onedarkBack, bold = true })
-	hl(0, "WildMenu", { fg = c.onedarkNone, bg = c.onedarkLightBlue })
-	hl(0, "Comment", { fg = c.onedarkDisabled, bg = "NONE", italic = true })
-	hl(0, "Constant", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "String", { fg = c.onedarkGreen, bg = "NONE" })
-	hl(0, "Character", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "Number", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "Boolean", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "Float", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "Identifier", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "Function", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "Statement", { fg = c.onedarkPink, bg = "NONE" })
-	hl(0, "Conditional", { fg = c.onedarkPurple, bg = "NONE", italic = true })
-	hl(0, "Repeat", { fg = c.onedarkPurple, bg = "NONE" })
-	hl(0, "Label", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "Operator", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "Keyword", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "Exception", { fg = c.onedarkPink, bg = "NONE" })
-	hl(0, "PreProc", { fg = c.onedarkPurple, bg = "NONE" })
-	hl(0, "Include", { fg = c.onedarkPurple, bg = "NONE" })
-	hl(0, "Define", { fg = c.onedarkPink, bg = "NONE" })
-	hl(0, "Macro", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "Type", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "StorageClass", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "Structure", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "Typedef", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "Special", { fg = c.onedarkYellowOrange, bg = "NONE" })
-	hl(0, "SpecialChar", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "Tag", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "Delimiter", { fg = c.onedarkDisabled, bg = "NONE" })
-	hl(0, "SpecialComment", { fg = c.onedarkDisabled, bg = "NONE" })
-	hl(0, "Debug", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "Underlined", { fg = c.onedarkNone, bg = "NONE", underline = true })
-	hl(0, "Conceal", { fg = c.onedarkFront, bg = c.onedarkBack })
-	hl(0, "Ignore", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "Error", { fg = c.onedarkRed, bg = c.onedarkBack, undercurl = true, sp = c.onedarkRed })
-	hl(0, "Todo", { fg = c.onedarkYellowOrange, bg = c.onedarkBack, bold = true })
-	hl(0, "SpellBad", { fg = c.onedarkRed, bg = c.onedarkBack, undercurl = true, sp = c.onedarkRed })
-	hl(0, "SpellCap", { fg = c.onedarkRed, bg = c.onedarkBack, undercurl = true, sp = c.onedarkRed })
-	hl(0, "SpellRare", { fg = c.onedarkRed, bg = c.onedarkBack, undercurl = true, sp = c.onedarkRed })
-	hl(0, "SpellLocal", { fg = c.onedarkRed, bg = c.onedarkBack, undercurl = true, sp = c.onedarkRed })
-	hl(0, "Whitespace", { fg = c.onedarkDisabled })
+	local c = theme.colors
 
-	-- Treesitter
-	hl(0, [["@error"]], { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, [["@punctuation.bracket"]], { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, [["@punctuation.special"]], { fg = c.onedarkPurple, bg = "NONE" })
-	hl(0, [["@comment"]], { fg = c.onedarkDisabled, bg = "NONE", italic = true })
-	hl(0, [["@constant"]], { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, [["@constant.builtin"]], { fg = c.onedarkOrange, bg = "NONE" })
-	-- hl(0, "TSPreProc", { fg = c.onedarkPurple, bg = "NONE", italic = true })
-	hl(0, [["@constant.macro"]], { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, [["@string.regex"]], { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, [["@string"]], { fg = c.onedarkGreen, bg = "NONE" })
-	hl(0, [["@character"]], { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, [["@number"]], { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, [["@boolean"]], { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, [["@float"]], { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, [["@annotation"]], { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, [["@attribute"]], { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, [["@namespace"]], { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, [["@funcrion.builtin"]], { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, [["@function"]], { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, [["@function.macro"]], { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, [["@parameter"]], { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, [["@parameter.reference"]], { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, [["@method"]], { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, [["@field"]], { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, [["@property"]], { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, [["@constructor"]], { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, [["@conditional"]], { fg = c.onedarkPurple, bg = "NONE", italic = true })
-	hl(0, [["@repeat"]], { fg = c.onedarkPurple, bg = "NONE", italic = true })
-	hl(0, [["@label"]], { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, [["@keyword"]], { fg = c.onedarkPurple, bg = "NONE", italic = true })
-	hl(0, [["@keyword.funcrion"]], { fg = c.onedarkPurple, bg = "NONE", italic = true })
-	hl(0, [["@keyword.operator"]], { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, [["@keyword.return"]], { fg = c.onedarkPurple, bg = "NONE", italic = true })
-	hl(0, [["@operator"]], { fg = c.onedarkMediumBlue, bg = "NONE" })
-	hl(0, [["@exception"]], { fg = c.onedarkPurple, bg = "NONE" })
-	hl(0, [["@define"]], { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, [["@type"]], { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, [["@type.builtin"]], { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, [["@structure"]], { fg = c.onedarkPurple, bg = "NONE" })
-	hl(0, [["@include"]], { fg = c.onedarkPurple, bg = "NONE", italic = true })
-	hl(0, [["@variable"]], { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, [["@variable.builtin"]], { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, [["@text"]], { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, [["@underline"]], { fg = c.onedarkYellowOrange, bg = "NONE" })
-	hl(0, [["@tag"]], { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, [["@tag.delimiter"]], { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, [["@none"]], { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, [["@tag.attribute"]], { fg = c.onedarkOrange, bg = "NONE", italic = true })
+	theme.highlights = {
+		-- Foo = { bg = c.Purple, fg = c.Purple },
 
-	hl(0, [["@title"]], { fg = isDark and c.onedarkBlue or c.onedarkYellowOrange, bold = true })
-	hl(0, [["@literal"]], { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, [["@emphasis"]], { fg = c.onedarkFront, bg = "NONE", italic = true })
-	hl(0, [["@strong"]], { fg = isDark and c.onedarkBlue or c.onedarkViolet, bold = true })
-	hl(0, [["@uri"]], { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, [["@text.refernce"]], { fg = isDark and c.onedarkOrange or c.onedarkYellowOrange })
-	hl(0, [["@puncttuatin.delimiter"]], { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, [["@string.escape"]], { fg = isDark and c.onedarkGreen or c.onedarkGreen, bold = true })
+		Comment = { fg = c.Comment, italic = true }, -- any comment
+		ColorColumn = { bg = c.Back }, -- used for the columns set with 'colorcolumn'
+		Conceal = { fg = c.TabOther }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+		Cursor = { fg = c.Back, bg = c.Front }, -- character under the cursor
+		lCursor = { fg = c.Back, bg = c.Front }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+		CursorIM = { fg = c.Back, bg = c.Front }, -- like Cursor, but used when in IME mode |CursorIM|
+		CursorColumn = { bg = c.None }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+		CursorLine = { bg = c.None }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+		Directory = { fg = c.Blue }, -- directory names (and other special names in listings)
+		DiffAdd = { bg = c.DiffAdd }, -- diff mode: Added line |diff.txt|
+		DiffChange = { bg = c.DiffChange }, -- diff mode: Changed line |diff.txt|
+		DiffDelete = { bg = c.DiffDelete }, -- diff mode: Deleted line |diff.txt|
+		DiffText = { bg = c.Front }, -- diff mode: Changed text within a changed line |diff.txt|
+		EndOfBuffer = { fg = c.Back }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+		-- TermCursor  = { }, -- cursor in a focused terminal
+		-- TermCursorNC= { }, -- cursor in an unfocused terminal
+		ErrorMsg = { fg = c.Error }, -- error messages on the command line
+		VertSplit = { fg = c.Border }, -- the column separating vertically split windows
+		WinSeparator = { fg = c.Border, bold = true }, -- the column separating vertically split windows
+		Folded = { fg = c.Blue, bg = c.Border }, -- line used for closed folds
+		FoldColumn = { bg = c.Back, fg = c.Comment }, -- 'foldcolumn'
+		SignColumn = { bg = c.Back, fg = c.Border }, -- column where |signs| are displayed
+		SignColumnSB = { bg = c.BackDark, fg = c.Front }, -- column where |signs| are displayed
+		Substitute = { bg = c.Red, fg = c.Front }, -- |:substitute| replacement text highlighting
+		LineNr = { fg = c.Comment }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+		CursorLineNr = { fg = c.Purple }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+		MatchParen = { fg = c.Orange, bold = true }, -- The character under the cursor or just before it, if it is a paiRed bracket, and its match. |pi_paren.txt|
+		ModeMsg = { fg = c.Front, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
+		MsgArea = { fg = c.Fron }, -- Area for messages and cmdline
+		-- MsgSeparator= { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
+		MoreMsg = { fg = c.Blue }, -- |more-prompt|
+		NonText = { fg = c.Border }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+		Normal = { fg = c.Fron, bg = c.Back }, -- normal text
+		NormalNC = { fg = c.Front, bg = c.Back }, -- normal text in non-current windows
+		NormalSB = { fg = c.Fron, bg = c.Back }, -- normal text in sidebar
+		NormalFloat = { fg = c.Front, bg = c.None }, -- Normal text in floating windows.
+		FloatBorder = { fg = c.Front, bg = c.None },
+		Pmenu = { bg = c.None, fg = c.Front }, -- Popup menu: normal item.
+		PmenuSel = { bg = util.darken(c.Blue, 0.8) }, -- Popup menu: selected item.
+		PmenuSbar = { bg = util.lighten(c.Blue, 0.95) }, -- Popup menu: scrollbar.
+		PmenuThumb = { bg = c.Front }, -- Popup menu: Thumb of the scrollbar.
+		Question = { fg = c.Blue }, -- |hit-enter| prompt and yes/no questions
+		QuickFixLine = { bg = c.BackDark, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+		Search = { bg = c.Search, fg = c.Front }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+		IncSearch = { bg = c.SearchCurrent, fg = c.Front }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		CurSearch = { link = "IncSearch" },
+		SpecialKey = { fg = c.Comment }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+		SpellBad = { sp = c.Error, undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		SpellCap = { sp = c.Warning, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+		SpellLocal = { sp = c.Info, undercurl = true }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+		SpellRare = { sp = c.Hint, undercurl = true }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+		StatusLine = { fg = c.PopupFront, bg = c.None }, -- status line of current window
+		StatusLineNC = { fg = c.Front, bg = c.None }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		TabLine = { bg = c.None, fg = c.None }, -- tab pages line, not active tab page label
+		TabLineFill = { bg = c.None }, -- tab pages line, where there are no labels
+		TabLineSel = { fg = c.None, bg = c.Blue }, -- tab pages line, active tab page label
+		Title = { fg = c.Blue, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
+		Visual = { bg = c.Selection }, -- Visual mode selection
+		VisualNOS = { bg = c.Selection }, -- Visual mode selection when vim is "Not Owning the Selection".
+		WarningMsg = { fg = c.Warning }, -- warning messages
+		Whitespace = { fg = c.Comment }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+		WildMenu = { bg = c.Yellow }, -- current match in 'wildmenu' completion
 
-	hl(0, [["@note"]], { fg = c.onedarkBlueGreen, bg = "NONE", bold = true })
-	hl(0, [["@warning"]], { fg = c.onedarkYellowOrange, bg = "NONE", bold = true })
-	hl(0, [["@danger"]], { fg = c.onedarkRed, bg = "NONE", bold = true })
+		-- These groups are not listed as default vim groups,
+		-- but they are defacto standard group names for syntax highlighting.
+		-- commented out groups should chain up to their "preferRed" group by
+		-- default,
+		-- Uncomment and edit if you want more specific syntax highlighting.
 
-	-- Markdown
-	hl(0, "markdownBold", { fg = isDark and c.onedarkBlue or c.onedarkYellowOrange, bold = true })
-	hl(0, "markdownCode", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "markdownRule", { fg = isDark and c.onedarkBlue or c.onedarkYellowOrange, bold = true })
-	hl(0, "markdownCodeDelimiter", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "markdownHeadingDelimiter", { fg = isDark and c.onedarkBlue or c.onedarkYellowOrange, bg = "NONE" })
-	hl(0, "markdownFootnote", { fg = isDark and c.onedarkOrange or c.onedarkYellowOrange, bg = "NONE" })
-	hl(0, "markdownFootnoteDefinition", { fg = isDark and c.onedarkOrange or c.onedarkYellowOrange })
-	hl(0, "markdownUrl", { fg = c.onedarkFront, bg = "NONE", underline = true })
-	hl(0, "markdownLinkText", { fg = isDark and c.onedarkOrange or c.onedarkYellowOrange })
-	hl(0, "markdownEscape", { fg = isDark and c.onedarkOrange or c.onedarkYellowOrange })
+		Constant = { fg = c.Yellow }, -- (preferRed) any constant
+		String = { fg = c.Green }, --   a string constant: "this is a string"
+		Character = { fg = c.Green }, --  a character constant: 'c', '\n'
+		-- Number        = { }, --   a number constant: 234, 0xff
+		-- Boolean       = { }, --  a boolean constant: TRUE, false
+		-- Float         = { }, --    a floating point constant: 2.3e10
 
-	-- JSON
-	hl(0, "jsonKeyword", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "jsonEscape", { fg = c.onedarkYellowOrange, bg = "NONE" })
-	hl(0, "jsonNull", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "jsonBoolean", { fg = c.onedarkOrange, bg = "NONE" })
+		Identifier = { fg = c.Yellow }, -- (preferRed) any variable name
+		Function = { fg = c.Blue }, -- function name (also: methods for classes)
 
-	-- HTML
-	hl(0, "htmlTag", { fg = c.onedarkGray, bg = "NONE" })
-	hl(0, "htmlEndTag", { fg = c.onedarkGray, bg = "NONE" })
-	hl(0, "htmlTagName", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "htmlSpecialTagName", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "htmlArg", { fg = c.onedarkLightBlue, bg = "NONE" })
+		Statement = { fg = c.Purple, italic = true }, -- (preferRed) any statement
+		-- Conditional   = { }, --  if, then, else, endif, switch, etc.
+		-- Repeat        = { }, --   for, do, while, etc.
+		Label     = { fg = c.Red }, --    case, default, etc.
+		Operator  = { fg = c.Cyan }, -- "sizeof", "+", "*", etc.
+		Keyword   = { fg = c.Front }, --  any other keyword
+		-- Exception     = { }, --  try, catch, throw
 
-	-- PHP
-	hl(0, "phpStaticClasses", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "phpMethod", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "phpClass", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "phpFunction", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "phpInclude", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "phpUseClass", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "phpRegion", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "phpMethodsVar", { fg = c.onedarkLightBlue, bg = "NONE" })
+		PreProc = { fg = c.Purple, italic = true }, -- (preferRed) generic Preprocessor
+		-- Include       = { }, --  preprocessor #include
+		-- Define        = { }, --   preprocessor #define
+		-- Macro         = { }, --    same as Define
+		-- PreCondit     = { }, --  preprocessor #if, #else, #endif, etc.
 
-	-- CSS
-	hl(0, "cssBraces", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "cssInclude", { fg = c.onedarkPink, bg = "NONE" })
-	hl(0, "cssTagName", { fg = c.onedarkYellowOrange, bg = "NONE" })
-	hl(0, "cssClassName", { fg = c.onedarkYellowOrange, bg = "NONE" })
-	hl(0, "cssPseudoClass", { fg = c.onedarkYellowOrange, bg = "NONE" })
-	hl(0, "cssPseudoClassId", { fg = c.onedarkYellowOrange, bg = "NONE" })
-	hl(0, "cssPseudoClassLang", { fg = c.onedarkYellowOrange, bg = "NONE" })
-	hl(0, "cssIdentifier", { fg = c.onedarkYellowOrange, bg = "NONE" })
-	hl(0, "cssProp", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "cssDefinition", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "cssAttr", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "cssAttrRegion", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "cssColor", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "cssFunction", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "cssFunctionName", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "cssVendor", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "cssValueNumber", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "cssValueLength", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "cssUnitDecorators", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "cssStyle", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "cssImportant", { fg = c.onedarkBlue, bg = "NONE" })
+		Type = { fg = c.Yellow }, -- (preferRed) int, long, char, etc.
+		-- StorageClass  = { }, -- static, register, volatile, etc.
+		-- Structure     = { }, --  struct, union, enum, etc.
+		-- Typedef       = { }, --  A typedef
 
-	-- XML
-	hl(0, "xmlTag", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "xmlTagName", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "xmlEndTag", { fg = c.onedarkBlue, bg = "NONE" })
+		Special = { fg = c.cyan }, -- (preferRed) any special symbol
+		-- SpecialChar   = { }, --  special character in a constant
+		-- Tag           = { }, --    you can use CTRL-] on this
+		-- Delimiter     = { }, --  character that needs attention
+		-- SpecialComment= { }, -- special things inside a comment
+		-- Debug         = { }, --    debugging statements
 
-	-- statusline
-	hl(0, 'St_NormalMode', { fg = c.onedarkGreen, bold = true })
-	hl(0, 'St_InsertMode', { fg = c.onedarkOrange, bold = true })
-	hl(0, 'St_VisualMode', { fg = c.onedarkPurple, bold = true })
-	hl(0, 'St_ReplaceMode', { fg = c.onedarkRed, bold = true })
-	hl(0, 'St_CommandMode', { fg = c.onedarkYellow, bold = true })
-	hl(0, 'St_TerminalMode', { fg = c.onedarkYellowOrange, bold = true })
-	hl(0, 'St_NTerminalMode', { fg = c.onedarkGreen, bold = true })
-	hl(0, 'St_CurrentFile', { fg = c.onedarkBlue, bold = true })
-	hl(0, 'St_AlternateFile', { fg = c.onedarkMediumBlue, bold = true })
-	hl(0, 'St_git_add', { fg = c.onedarkGreen })
-	hl(0, 'St_git_change', { fg = c.onedarkOrange })
-	hl(0, 'St_git_delete', { fg = c.onedarkRed })
+		Underlined = { underline = true }, -- (preferRed) text that stands out, HTML links
+		Bold = { bold = true },
+		Italic = { italic = true },
 
-	-- Noice
-	hl(0, "NoiceCmdlinePopupBorder", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "NoiceCmdlinePopupSearchBorder", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "NoiceConfirmBorder", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "NoiceFormatLevelError", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "NoiceFormatLevelInfo", { fg = c.onedarkGreen, bg = "NONE" })
-	hl(0, "NoiceFormatLevelWarn", { fg = c.onedarkYellow, bg = "NONE" })
+		-- ("Ignore", below, may be invisible...)
+		-- Ignore = { }, -- (preferRed) left blank, hidden  |hl-Ignore|
 
-	-- TS Rainbow
-	hl(0, "rainbowcol1", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "rainbowcol2", { fg = c.onedarkPurple, bg = "NONE" })
-	hl(0, "rainbowcol3", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "rainbowcol4", { fg = c.onedarkOrange, bg = "NONE" })
-	hl(0, "rainbowcol5", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "rainbowcol6", { fg = c.onedarkGreen, bg = "NONE" })
-	hl(0, "rainbowcol7", { fg = c.onedarkRed, bg = "NONE" })
+		Error = { fg = c.Error }, -- (preferRed) any erroneous construct
+		Todo = { bg = c.Yellow, fg = c.Back }, -- (preferRed) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
-	-- Ruby
-	hl(0, "rubyClassNameTag", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "rubyClassName", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "rubyModuleName", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "rubyConstant", { fg = c.onedarkBlueGreen, bg = "NONE" })
+		qfLineNr = { fg = c.BackDark },
+		qfFileName = { fg = c.Blue },
 
-	-- Golang
-	hl(0, "goPackage", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "goImport", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "goVar", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "goConst", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "goStatement", { fg = c.onedarkPink, bg = "NONE" })
-	hl(0, "goType", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "goSignedInts", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "goUnsignedInts", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "goFloats", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "goComplexes", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "goBuiltins", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "goBoolean", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "goPredefinedIdentifiers", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "goTodo", { fg = c.onedarkGreen, bg = "NONE" })
-	hl(0, "goDeclaration", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "goDeclType", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "goTypeDecl", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "goTypeName", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "goVarAssign", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "goVarDefs", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "goReceiver", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "goReceiverType", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "goFunctionCall", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "goMethodCall", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "goSingleDecl", { fg = c.onedarkLightBlue, bg = "NONE" })
+		htmlH1 = { fg = c.Purple, bold = true },
+		htmlH2 = { fg = c.Blue, bold = true },
 
-	-- Python
-	hl(0, "pythonStatement", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "pythonOperator", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "pythonException", { fg = c.onedarkPink, bg = "NONE" })
-	hl(0, "pythonExClass", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "pythonBuiltinObj", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "pythonBuiltinType", { fg = c.onedarkBlueGreen, bg = "NONE" })
-	hl(0, "pythonBoolean", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "pythonNone", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "pythonTodo", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "pythonClassVar", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "pythonClassDef", { fg = c.onedarkBlueGreen, bg = "NONE" })
+		-- mkdHeading = { fg = c.Orange, bold = true },
+		-- mkdCode = { bg = c.terminal_Dark, fg = c.Front },
+		mkdCodeDelimiter = { bg = c.Border, fg = c.Front },
+		mkdCodeStart = { fg = c.Green, bold = true },
+		mkdCodeEnd = { fg = c.Green, bold = true },
+		-- mkdLink = { fg = c.Blue, underline = true },
 
-	-- TeX
-	hl(0, "texStatement", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "texBeginEnd", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "texBeginEndName", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "texOption", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "texBeginEndModifier", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "texDocType", { fg = c.onedarkPink, bg = "NONE" })
-	hl(0, "texDocTypeArgs", { fg = c.onedarkLightBlue, bg = "NONE" })
+		markdownHeadingDelimiter = { fg = c.Orange, bold = true },
+		markdownCode = { fg = c.Green },
+		markdownCodeBlock = { fg = c.Green },
+		markdownH1 = { fg = c.Purple, bold = true },
+		markdownH2 = { fg = c.Blue, bold = true },
+		markdownLinkText = { fg = c.Blue, underline = true },
 
-	-- Git
-	hl(0, "gitcommitHeader", { fg = c.onedarkGray, bg = "NONE" })
-	hl(0, "GitSignsCurrentLineBlame", { fg = c.onedarkDisabled, bg = "NONE", italic = true })
-	hl(0, "gitcommitOnBranch", { fg = c.onedarkGray, bg = "NONE" })
-	hl(0, "gitcommitBranch", { fg = c.onedarkpurple, bg = "NONE" })
-	hl(0, "gitcommitComment", { fg = c.onedarkGray, bg = "NONE" })
-	hl(0, "gitcommitSelectedType", { fg = c.onedarkGreen, bg = "NONE" })
-	hl(0, "gitcommitSelectedFile", { fg = c.onedarkGreen, bg = "NONE" })
-	hl(0, "gitcommitDiscardedType", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "gitcommitDiscardedFile", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "gitcommitOverflow", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "gitcommitSummary", { fg = c.onedarkPink, bg = "NONE" })
-	hl(0, "gitcommitBlank", { fg = c.onedarkPink, bg = "NONE" })
+		["@punctuation.special.markdown"] = { fg = c.Orange, bold = true },
+		["@text.literal.markdown_inline"] = { bg = c.BackDark, fg = c.Front },
 
-	-- Lua
-	hl(0, "luaFuncCall", { fg = c.onedarkPurple, bg = "NONE" })
-	hl(0, "luaFuncArgName", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "luaFuncKeyword", { fg = c.onedarkPurple, bg = "NONE" })
-	hl(0, "luaLocal", { fg = c.onedarkPurple, bg = "NONE" })
-	hl(0, "luaBuiltIn", { fg = c.onedarkBlue, bg = "NONE" })
+		debugPC = { bg = c.BackDark }, -- used for highlighting the current line in terminal-debug
+		debugBreakpoint = { bg = util.darken(c.Error, 0.1), fg = c.Info }, -- used for breakpoint colors in terminal-debug
 
-	-- SH
-	hl(0, "shDeref", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "shVariable", { fg = c.onedarkLightBlue, bg = "NONE" })
+		-- These groups are for the native LSP client. Some other LSP clients may
+		-- use these groups, or use their own. Consult your LSP client's
+		-- documentation.
+		LspReferenceText = { bg = c.Front }, -- used for highlighting "text" references
+		LspReferenceRead = { bg = c.Front }, -- used for highlighting "read" references
+		LspReferenceWrite = { bg = c.Front }, -- used for highlighting "write" references
 
-	-- SQL
-	hl(0, "sqlKeyword", { fg = c.onedarkPink, bg = "NONE" })
-	hl(0, "sqlFunction", { fg = c.onedarkYellowOrange, bg = "NONE" })
-	hl(0, "sqlOperator", { fg = c.onedarkPink, bg = "NONE" })
+		DiagnosticError = { fg = c.Error }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticWarn = { fg = c.Warning }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticInfo = { fg = c.Info }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticHint = { fg = c.Hint }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 
-	-- YAML
-	hl(0, "yamlKey", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "yamlConstant", { fg = c.onedarkBlue, bg = "NONE" })
+		DiagnosticVirtualTextError = { bg = util.darken(c.Error, 0.1), fg = c.Error }, -- Used for "Error" diagnostic virtual text
+		DiagnosticVirtualTextWarn = { bg = util.darken(c.Warning, 0.1), fg = c.Warning }, -- Used for "Warning" diagnostic virtual text
+		DiagnosticVirtualTextInfo = { bg = util.darken(c.Info, 0.1), fg = c.Info }, -- Used for "Information" diagnostic virtual text
+		DiagnosticVirtualTextHint = { bg = util.darken(c.Hint, 0.1), fg = c.Hint }, -- Used for "Hint" diagnostic virtual text
 
-	-- Gitgutter
-	hl(0, "GitGutterAdd", { fg = c.onedarkGreen, bg = "NONE" })
-	hl(0, "GitGutterChange", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "GitGutterDelete", { fg = c.onedarkRed, bg = "NONE" })
+		DiagnosticUnderlineError = { undercurl = true, sp = c.Error }, -- Used to underline "Error" diagnostics
+		DiagnosticUnderlineWarn = { undercurl = true, sp = c.Warning }, -- Used to underline "Warning" diagnostics
+		DiagnosticUnderlineInfo = { undercurl = true, sp = c.Info }, -- Used to underline "Information" diagnostics
+		DiagnosticUnderlineHint = { undercurl = true, sp = c.Hint }, -- Used to underline "Hint" diagnostics
 
-	-- Git Signs
-	hl(0, "GitSignsAdd", { fg = c.onedarkGreen, bg = "NONE" })
-	hl(0, "GitSignsChange", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "GitSignsDelete", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "GitSignsAddLn", { fg = c.onedarkBack, bg = c.onedarkGreen })
-	hl(0, "GitSignsChangeLn", { fg = c.onedarkBack, bg = c.onedarkYellow })
-	hl(0, "GitSignsDeleteLn", { fg = c.onedarkBack, bg = c.onedarkRed })
+		LspSignatureActiveParameter = { fg = c.Orange },
+		LspCodeLens = { fg = c.Comment },
 
-	hl(0, "BufferLineIndicatorSelected", { fg = c.onedarkLeftDark, bg = "NONE" })
-	hl(0, "BufferLineFill", { fg = "NONE", bg = c.onedarkLeftDark })
+		LspInfoBorder = { fg = c.PopupFront, bg = c.None },
 
-	-- BarBar
-	hl(0, "BufferCurrent", { fg = c.onedarkFront, bg = c.onedarkTabCurrent })
-	hl(0, "BufferCurrentIndex", { fg = c.onedarkFront, bg = c.onedarkTabCurrent })
-	hl(0, "BufferCurrentMod", { fg = c.onedarkYellowOrange, bg = c.onedarkTabCurrent })
-	hl(0, "BufferCurrentSign", { fg = c.onedarkFront, bg = c.onedarkTabCurrent })
-	hl(0, "BufferCurrentTarget", { fg = c.onedarkRed, bg = c.onedarkTabCurrent })
-	hl(0, "BufferVisible", { fg = c.onedarkGray, bg = c.onedarkTabCurrent })
-	hl(0, "BufferVisibleIndex", { fg = c.onedarkGray, bg = c.onedarkTabCurrent })
-	hl(0, "BufferVisibleMod", { fg = c.onedarkYellowOrange, bg = c.onedarkTabCurrent })
-	hl(0, "BufferVisibleSign", { fg = c.onedarkGray, bg = c.onedarkTabCurrent })
-	hl(0, "BufferVisibleTarget", { fg = c.onedarkRed, bg = c.onedarkTabCurrent })
-	hl(0, "BufferInactive", { fg = c.onedarkGray, bg = c.onedarkTabOther })
-	hl(0, "BufferInactiveIndex", { fg = c.onedarkGray, bg = c.onedarkTabOther })
-	hl(0, "BufferInactiveMod", { fg = c.onedarkYellowOrange, bg = c.onedarkTabOther })
-	hl(0, "BufferInactiveSign", { fg = c.onedarkGray, bg = c.onedarkTabOther })
-	hl(0, "BufferInactiveTarget", { fg = c.onedarkRed, bg = c.onedarkTabOther })
-	hl(0, "BufferTabpages", { fg = c.onedarkFront, bg = c.onedarkTabOther })
-	hl(0, "BufferTabpagesFill", { fg = c.onedarkFront, bg = c.onedarkTabOther })
+		ALEErrorSign = { fg = c.Error },
+		ALEWarningSign = { fg = c.Warning },
 
-	-- IndentBlankLine
-	hl(0, "IndentBlanklineContextChar", { fg = c.onedarkPurple, bg = "NONE", nocombine = true })
-	hl(0, "IndentBlanklineContextStart", { fg = c.onedarkPurple, bg = "NONE", nocombine = true })
-	hl(0, "IndentBlanklineChar", { fg = c.onedarkDisabled, bg = "NONE", nocombine = true })
-	hl(0, "IndentBlanklineSpaceChar", { fg = c.onedarkDisabled, bg = "NONE", nocombine = true })
-	hl(0, "IndentBlanklineSpaceCharBlankline", { fg = c.onedarkDisabled, bg = "NONE", nocombine = true })
+		-- These groups are for the neovim tree-sitter highlights.
+		-- As of writing, tree-sitter support is a WIP, group names may change.
+		-- By default, most of these groups link to an appropriate Vim group,
+		-- TSError -> Error for example, so you do not have to define these unless
+		-- you explicitly want to support Treesitter's improved syntax awareness.
 
-	-- LSP
-	hl(0, "DiagnosticError", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "DiagnosticWarn", { fg = c.onedarkYellow, bg = "NONE" })
-	hl(0, "DiagnosticInfo", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "DiagnosticHint", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "DiagnosticUnderlineError", { fg = "NONE", bg = "NONE", undercurl = true, sp = c.onedarkRed })
-	hl(0, "DiagnosticUnderlineWarn", { fg = "NONE", bg = "NONE", undercurl = true, sp = c.onedarkYellow })
-	hl(0, "DiagnosticUnderlineInfo", { fg = "NONE", bg = "NONE", undercurl = true, sp = c.onedarkBlue })
-	hl(0, "DiagnosticUnderlineHint", { fg = "NONE", bg = "NONE", undercurl = true, sp = c.onedarkBlue })
-	hl(
-		0,
-		"LspReferenceText",
-		{ fg = "NONE", bg = isDark and c.onedarkDisabled or c.onedarkDisabled }
-	)
-	hl(
-		0,
-		"LspReferenceRead",
-		{ fg = "NONE", bg = isDark and c.onedarkDisabled or c.onedarkDisabled }
-	)
-	hl(
-		0,
-		"LspReferenceWrite",
-		{ fg = "NONE", bg = isDark and c.onedarkDisabled or c.onedarkDisabled }
-	)
+		-- TSAnnotation        = { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+		-- TSAttribute         = { };    -- (unstable) TODO: docs
+		-- TSBoolean           = { };    -- For booleans.
+		-- TSCharacter         = { };    -- For characters.
+		-- TSComment           = { };    -- For comment blocks.
+		TSNote                     = { fg = c.Back, bg = c.Info },
+		["@text.warning"]          = { fg = c.Back, bg = c.Warning },
+		["@text.danger"]           = { fg = c.Back, bg = c.Error },
+		["@constructor"]           = { fg = c.Yellow }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+		-- TSConditional       = { };    -- For keywords related to conditionnals.
+		-- TSConstant          = { };    -- For constants
+		-- TSConstBuiltin      = { };    -- For constant that are built in the language: `nil` in Lua.
+		-- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in C.
+		-- TSError             = { };    -- For syntax/parser errors.
+		-- TSException         = { };    -- For exception related keywords.
+		["@field"]                 = { fg = c.Red }, -- For fields.
+		-- TSFloat             = { };    -- For floats.
+		-- TSFunction          = { };    -- For function (calls and definitions).
+		-- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
+		-- TSFuncMacro         = { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+		-- TSInclude           = { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+		["@keyword"]               = { fg = c.Purple, italic = true }, -- For keywords that don't fall in previous categories.
+		["@keyword.function"]      = { fg = c.Purple, italic = true }, -- For keywords used to define a fuction.
+		["@label"]                 = { fg = c.Blue }, -- For labels: `label:` in C and `:label:` in Lua.
+		-- TSMethod            = { };    -- For method calls and definitions.
+		-- TSNamespace                = { fg = c.Yellow }; -- For identifiers referring to modules and namespaces.
+		-- TSNone              = { };    -- TODO: docs
+		-- TSNumber            = { };    -- For all numbers
+		["@operator"]              = { fg = c.cyan }, -- For any operator: `+`, but also `->` and `*` in C.
+		["@parameter"]             = { fg = c.Orange, italic = true }, -- For parameters of a function.
+		-- TSParameterReference= { };    -- For references to parameters of a function.
+		["@property"]              = { fg = c.Orange, italic = true }, -- Same as `TSField`.
+		["@punctuation.delimiter"] = { fg = c.Front }, -- For delimiters ie: `.`
+		["@punctuation.bracket"]   = { fg = c.Blue }, -- For brackets and parens.
+		["@punctuation.special"]   = { fg = c.Yellow }, -- For special punctutation that does not fall in the catagories before.
+		-- TSRepeat            = { };    -- For keywords related to loops.
+		-- TSString            = { };    -- For strings.
+		["@string.regex"]          = { fg = c.Yellow }, -- For regexes.
+		["@string.escape"]         = { fg = c.Purple }, -- For escape characters within a string.
+		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
+		-- TSType              = { };    -- For types.
+		-- TSTypeBuiltin       = { };    -- For builtin types.
+		["@variable"]              = { fg = c.Front }, -- Any variable name that does not have another highlight.
+		["@variable.builtin"]      = { fg = c.Red }, -- Variable names that are defined by the languages, like `this` or `self`.
 
-	-- Nvim compe
-	hl(0, "CmpItemKindVariable", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "CmpItemKindInterface", { fg = c.onedarkLightBlue, bg = "NONE" })
-	hl(0, "CmpItemKindText", { fg = c.onedarkPurple, bg = "NONE" })
-	hl(0, "CmpItemKindFunction", { fg = c.onedarkPurple, bg = "NONE" })
-	hl(0, "CmpItemKindMethod", { fg = c.onedarkPurple, bg = "NONE" })
-	hl(0, "CmpItemKindKeyword", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "CmpItemKindProperty", { fg = c.onedarkRed, bg = "NONE" })
-	hl(0, "CmpItemKindUnit", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "CmpItemKindConstructor", { fg = c.onedarkUiOrange, bg = "NONE" })
-	hl(0, "CmpItemMenu", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "CmpItemAbbr", { fg = c.onedarkFront, bg = "NONE" })
-	hl(0, "CmpItemAbbrDeprecated", { fg = c.onedarkCursorDark, bg = c.onedarkPopupBack, strikethrough = true })
-	hl(0, "CmpItemAbbrMatch", { fg = isDark and c.onedarkYellow or c.onedarkYellow, bg = "NONE", bold = true })
-	hl(0, "CmpItemAbbrMatchFuzzy", { fg = isDark and c.onedarkYellow or c.onedarkYellow, bg = "NONE", bold = true })
+		TSTag               = { fg = c.Red }; -- Tags like html tag names.
+		-- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
+		-- TSText              = { };    -- For strings consideRed text in a markup language.
+		["@text.reference"] = { fg = c.Green },
+		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
+		-- TSUnderline         = { };    -- For text to be represented with an underline.
+		-- TSStrike            = { };    -- For strikethrough text.
+		-- TSTitle             = { };    -- Text that is part of a title.
+		-- TSLiteral           = { };    -- Literal text.
+		-- TSURI               = { };    -- Any URI like a link or email.
 
-	-- Dashboard
-	hl(0, "DashboardHeader", { fg = c.onedarkBlue, bg = "NONE" })
-	hl(0, "DashboardCenter", { fg = c.onedarkYellowOrange, bg = "NONE" })
-	hl(0, "DashboardCenterIcon", { fg = c.onedarkYellowOrange, bg = "NONE" })
-	hl(0, "DashboardShortCut", { fg = c.onedarkPink, bg = "NONE" })
-	hl(0, "DashboardFooter", { fg = c.onedarkBlue, bg = "NONE", italic = true })
+		-- Lua
+		-- luaTSProperty = { fg = c.Red }, -- Same as `TSField`.
 
-	if isDark then
-		hl(0, "NvimTreeFolderIcon", { fg = c.onedarkYellow, bg = "NONE" })
-		hl(0, "NvimTreeFolderName", { fg = c.onedarkBlue, bg = "NONE" })
-		hl(0, "NvimTreeIndentMarker", { fg = c.onedarkDisabled, bg = "NONE" })
-		hl(0, "NvimTreeCursorLine", { fg = "NONE", bg = "NONE" })
-		hl(0, "LspFloatWinNormal", { fg = c.onedarkFront, bg = "NONE" })
-		hl(0, "LspFloatWinBorder", { fg = c.onedarkFront, bg = "NONE" })
-		hl(0, "LspSagaHoverBorder", { fg = c.onedarkPurple, bg = "NONE" })
-		hl(0, "LspSagaSignatureHelpBorder", { fg = c.onedarkPurple, bg = "NONE" })
-		hl(0, "LspSagaCodeActionBorder", { fg = c.onedarkPurple, bg = "NONE" })
-		hl(0, "LspSagaDefPreviewBorder", { fg = c.onedarkPurple, bg = "NONE" })
-		hl(0, "LspInlayHint", { fg = c.onedarkDisabled, bg = "NONE" })
-		hl(0, "LspLinesDiagBorder", { fg = c.onedarkPurple, bg = "NONE" })
-		hl(0, "LspSagaRenameBorder", { fg = c.onedarkPurple, bg = "NONE" })
-		hl(0, "LspSagaBorderTitle", { fg = c.onedarkCursorDark, bg = "NONE" })
-		hl(0, "LSPSagaDiagnosticTruncateLine", { fg = c.onedarkPurple, bg = "NONE" })
-		hl(0, "LspSagaDiagnosticBorder", { fg = c.onedarkPurple, bg = "NONE" })
-		hl(0, "LspSagaDiagnosticBorder", { fg = c.onedarkPurple, bg = "NONE" })
-		hl(0, "LspSagaShTruncateLine", { fg = c.onedarkPurple, bg = "NONE" })
-		hl(0, "LspSagaShTruncateLine", { fg = c.onedarkPurple, bg = "NONE" })
-		hl(0, "LspSagaDocTruncateLine", { fg = c.onedarkPurple, bg = "NONE" })
-		hl(0, "LspSagaRenameBorder", { fg = c.onedarkPurple, bg = "NONE" })
-		hl(0, "LspSagaLspFinderBorder", { fg = c.onedarkPurple, bg = "NONE" })
-		-- symbols-outline
-		-- white fg and lualine blue bg
-		hl(0, "FocusedSymbol", { fg = "#ffffff", bg = c.onedarkUiBlue })
-		hl(0, "SymbolsOutlineConnector", { fg = c.onedarkPurple, bg = "NONE" })
-	else
-		hl(0, "NvimTreeFolderIcon", { fg = c.onedarkDarkBlue, bg = "NONE" })
-		hl(0, "NvimTreeFolderName", { fg = c.onedarkDarkBlue, bg = "NONE" })
-		hl(0, "NvimTreeIndentMarker", { fg = c.onedarkDisabled, bg = "NONE" })
-		hl(0, "NvimTreeCursorLine", { fg = "NONE", bg = "NONE" })
-		hl(0, "LspFloatWinNormal", { fg = c.onedarkFront, bg = "NONE" })
-		hl(0, "LspInlayHint", { fg = c.onedarkDisabled, bg = "NONE" })
-		hl(0, "LspFloatWinBorder", { fg = c.onedarkTabOther, bg = "NONE" })
-		hl(0, "LspSagaHoverBorder", { fg = c.onedarkTabOther, bg = "NONE" })
-		hl(0, "LspSagaSignatureHelpBorder", { fg = c.onedarkTabOther, bg = "NONE" })
-		hl(0, "LspSagaCodeActionBorder", { fg = c.onedarkTabOther, bg = "NONE" })
-		hl(0, "LspSagaDefPreviewBorder", { fg = c.onedarkTabOther, bg = "NONE" })
-		hl(0, "LspLinesDiagBorder", { fg = c.onedarkTabOther, bg = "NONE" })
-		hl(0, "LspSagaRenameBorder", { fg = c.onedarkTabOther, bg = "NONE" })
-		hl(0, "LspSagaBorderTitle", { fg = c.onedarkCursorDark, bg = "NONE" })
-		hl(0, "LSPSagaDiagnosticTruncateLine", { fg = c.onedarkTabOther, bg = "NONE" })
-		hl(0, "LspSagaDiagnosticBorder", { fg = c.onedarkTabOther, bg = "NONE" })
-		hl(0, "LspSagaDiagnosticBorder", { fg = c.onedarkTabOther, bg = "NONE" })
-		hl(0, "LspSagaShTruncateLine", { fg = c.onedarkTabOther, bg = "NONE" })
-		hl(0, "LspSagaShTruncateLine", { fg = c.onedarkTabOther, bg = "NONE" })
-		hl(0, "LspSagaDocTruncateLine", { fg = c.onedarkTabOther, bg = "NONE" })
-		hl(0, "LspSagaRenameBorder", { fg = c.onedarkTabOther, bg = "NONE" })
-		hl(0, "LspSagaLspFinderBorder", { fg = c.onedarkTabOther, bg = "NONE" })
+		-- ts-rainbow
+		rainbowcol1 = { fg = c.Purple },
+		rainbowcol2 = { fg = c.Yellow },
+		rainbowcol3 = { fg = c.Blue },
+		rainbowcol4 = { fg = c.Green },
+		rainbowcol5 = { fg = c.Blue },
+		rainbowcol6 = { fg = c.Purple },
+		rainbowcol7 = { fg = c.Red },
 
-		-- symbols-outline
-		-- white fg and lualine blue bg
-		hl(0, "FocusedSymbol", { fg = c.onedarkBack, bg = "#AF00DB" })
-		hl(0, "SymbolsOutlineConnector", { fg = c.onedarkTabOther, bg = "NONE" })
+		-- LspTrouble
+		TroubleText = { fg = c.Front },
+		TroubleCount = { fg = c.Purple, bg = c.Front },
+		TroubleNormal = { fg = c.Front, bg = c.Back },
+
+		-- Illuminate
+		illuminatedWord = { bg = c.Front },
+		illuminatedCurWord = { bg = c.Front },
+		IlluminatedWordText = { bg = c.Front },
+		IlluminatedWordRead = { bg = c.Front },
+		IlluminatedWordWrite = { bg = c.Front },
+
+		-- diff
+		diffAdded = { fg = c.DiffAdd },
+		diffRemoved = { fg = c.DiffDelete },
+		diffChanged = { fg = c.DiffChange },
+		diffOldFile = { fg = c.Yellow },
+		diffNewFile = { fg = c.Orange },
+		diffFile = { fg = c.Blue },
+		diffLine = { fg = c.Comment },
+		diffIndexLine = { fg = c.Purple },
+
+		-- Neogit
+		NeogitBranch = { fg = c.Purple },
+		NeogitRemote = { fg = c.Purple },
+		NeogitHunkHeader = { bg = c.Back, fg = c.Front },
+		NeogitHunkHeaderHighlight = { bg = c.Front, fg = c.Blue },
+		NeogitDiffContextHighlight = { bg = util.darken(c.Front, 0.5), fg = c.Front_dark },
+		NeogitDiffDeleteHighlight = { fg = c.DiffDelete, bg = c.DiffDelete },
+		NeogitDiffAddHighlight = { fg = c.DiffAdd, bg = c.DiffAdd },
+
+		-- Neotest
+		NeotestPassed = { fg = c.Green },
+		NeotestRunning = { fg = c.Yellow },
+		NeotestFailed = { fg = c.Red },
+		NeotestSkipped = { fg = c.Blue },
+		NeotestTest = { fg = c.PopupFront },
+		NeotestNamespace = { fg = c.Green },
+		NeotestFocused = { fg = c.Yellow },
+		NeotestFile = { fg = c.Green },
+		NeotestDir = { fg = c.Blue },
+		NeotestBorder = { fg = c.Blue },
+		NeotestIndent = { fg = c.PopupFront },
+		NeotestExpandMarker = { fg = c.PopupFront },
+		NeotestAdapterName = { fg = c.Purple, bold = true },
+		NeotestWinSelect = { fg = c.Blue },
+		NeotestMarked = { fg = c.Blue },
+		NeotestTarget = { fg = c.Blue },
+		--[[ NeotestUnknown = {}, ]]
+
+		-- GitGutter
+		GitGutterAdd = { fg = c.DiffAdd }, -- diff mode: Added line |diff.txt|
+		GitGutterChange = { fg = c.DiffChange }, -- diff mode: Changed line |diff.txt|
+		GitGutterDelete = { fg = c.DiffDelete }, -- diff mode: Deleted line |diff.txt|
+
+		-- GitSigns
+		GitSignsAdd = { fg = c.DiffAdd }, -- diff mode: Added line |diff.txt|
+		GitSignsChange = { fg = c.DiffChange }, -- diff mode: Changed line |diff.txt|
+		GitSignsDelete = { fg = c.DiffDelete }, -- diff mode: Deleted line |diff.txt|
+
+		-- Telescope
+		TelescopeBorder = { fg = c.Front, bg = c.None },
+		TelescopeNormal = { fg = c.Front, bg = c.None },
+
+		-- InlayHints
+		LspInlayHint = { fg = c.Comment, bg = c.None },
+
+		-- NvimTree
+		NvimTreeNormal = { fg = c.PopupFront, bg = c.Back },
+		NvimTreeWinSeparator = {
+			fg = c.Comment,
+			bg = c.None,
+		},
+		NvimTreeNormalNC = { fg = c.PopupFront, bg = c.PopupBack },
+		NvimTreeRootFolder = { fg = c.Blue, bold = true },
+		NvimTreeGitDirty = { fg = c.DiffChange },
+		NvimTreeGitNew = { fg = c.DiffAdd },
+		NvimTreeGitDeleted = { fg = c.DiffDelete },
+		NvimTreeOpenedFile = { bg = c.Back },
+		NvimTreeSpecialFile = { fg = c.Purple, underline = true },
+		NvimTreeIndentMarker = { fg = c.Front },
+		NvimTreeImageFile = { fg = c.PopupFront },
+		NvimTreeSymlink = { fg = c.Blue },
+		NvimTreeFolderIcon = { bg = c.none, fg = c.Yellow },
+		-- NvimTreeFolderName= { fg = c.Front_float },
+
+		NeoTreeNormal = { fg = c.PopupFront, bg = c.PopupBack },
+		NeoTreeNormalNC = { fg = c.PopupFront, bg = c.PopupBack },
+
+		-- Fern
+		FernBranchText = { fg = c.Blue },
+
+		-- glyph palette
+		GlyphPalette1 = { fg = c.Red },
+		GlyphPalette2 = { fg = c.Green },
+		GlyphPalette3 = { fg = c.Yellow },
+		GlyphPalette4 = { fg = c.Blue },
+		GlyphPalette6 = { fg = c.Green },
+		GlyphPalette7 = { fg = c.Front },
+		GlyphPalette9 = { fg = c.Red },
+
+		-- Dashboard
+		DashboardShortCut = { fg = c.cyan },
+		DashboardHeader = { fg = c.Blue },
+		DashboardCenter = { fg = c.Purple },
+		DashboardFooter = { fg = c.Yellow, italic = true },
+
+		-- Alpha
+		AlphaShortcut = { fg = c.cyan },
+		AlphaHeader = { fg = c.Blue },
+		AlphaHeaderLabel = { fg = c.Orange },
+		AlphaFooter = { fg = c.Yellow, italic = true },
+		AlphaButtons = { fg = c.Purple },
+
+		-- WhichKey
+		WhichKey = { fg = c.cyan },
+		WhichKeyGroup = { fg = c.Blue },
+		WhichKeyDesc = { fg = c.Purple },
+		WhichKeySeperator = { fg = c.Comment },
+		WhichKeySeparator = { fg = c.Comment },
+		WhichKeyFloat = { bg = c.PopupBack },
+		WhichKeyValue = { fg = c.BackDark },
+
+		-- LspSaga
+		DiagnosticWarning = { link = "DiagnosticWarn" },
+		DiagnosticInformation = { link = "DiagnosticInfo" },
+
+		LspFloatWinNormal = { bg = c.PopupBack },
+		LspFloatWinBorder = { fg = c.Border },
+		LspSagaBorderTitle = { fg = c.cyan },
+		LspSagaHoverBorder = { fg = c.Blue },
+		LspSagaRenameBorder = { fg = c.Green },
+		LspSagaDefPreviewBorder = { fg = c.Green },
+		LspSagaCodeActionBorder = { fg = c.Blue },
+		LspSagaFinderSelection = { fg = c.Back_visual },
+		LspSagaCodeActionTitle = { fg = c.Blue1 },
+		LspSagaCodeActionContent = { fg = c.Purple },
+		LspSagaSignatureHelpBorder = { fg = c.Red },
+		ReferencesCount = { fg = c.Purple },
+		DefinitionCount = { fg = c.Purple },
+		DefinitionIcon = { fg = c.Blue },
+		ReferencesIcon = { fg = c.Blue },
+		TargetWord = { fg = c.cyan },
+
+		-- NeoVim
+		healthError = { fg = c.Error },
+		healthSuccess = { fg = c.Green },
+		healthWarning = { fg = c.Warning },
+
+		-- BufferLine
+		BufferLineIndicatorSelected = { fg = c.DiffChange },
+
+		-- Sneak
+		Sneak = { fg = c.Back, bg = c.Purple },
+		SneakScope = { bg = c.Back_visual },
+
+		-- Hop
+		HopNextKey = { fg = c.Purple, bold = true },
+		HopNextKey1 = { fg = c.Blue, bold = true },
+		HopNextKey2 = { fg = util.darken(c.Blue, 0.6) },
+		HopUnmatched = { fg = c.dark3 },
+
+		TSNodeKey = { fg = c.Purple, bold = true },
+		TSNodeUnmatched = { fg = c.dark3 },
+
+		LeapMatch = { bg = c.Purple, fg = c.Front, bold = true },
+		LeapLabelPrimary = { fg = c.Purple, bold = true },
+		LeapLabelSecondary = { fg = c.Green, bold = true },
+		LeapBackdrop = { fg = c.dark3 },
+
+		LightspeedGreyWash = { fg = c.dark3 },
+		-- LightspeedCursor = { link = "Cursor" },
+		LightspeedLabel = { fg = c.Purple, bold = true, underline = true },
+		LightspeedLabelDistant = { fg = c.Green, bold = true, underline = true },
+		LightspeedLabelDistantOverlapped = { fg = c.Green2, underline = true },
+		LightspeedLabelOverlapped = { fg = c.Purple, underline = true },
+		LightspeedMaskedChar = { fg = c.Orange },
+		LightspeedOneCharMatch = { bg = c.Purple, fg = c.Front, bold = true },
+		LightspeedPendingOpArea = { bg = c.Purple, fg = c.Front },
+		LightspeedShortcut = { bg = c.Purple, fg = c.Front, bold = true, underline = true },
+		-- LightspeedShortcutOverlapped = { link = "LightspeedShortcut" },
+		-- LightspeedUniqueChar = { link = "LightspeedUnlabeledMatch" },
+		LightspeedUnlabeledMatch = { fg = c.Blue, bold = true },
+
+		-- Cmp
+		CmpDocumentation = { fg = c.Front, bg = c.PopupBack },
+		CmpDocumentationBorder = { fg = c.Border, bg = c.PopupBack },
+
+		CmpItemAbbr = { fg = c.Front, bg = c.none },
+		CmpItemAbbrDeprecated = { fg = c.Front, bg = c.none, strikethrough = true },
+		CmpItemAbbrMatch = { fg = c.Orange, bg = c.none },
+		CmpItemAbbrMatchFuzzy = { fg = c.Orange, bg = c.none },
+
+		CmpItemKindDefault = { fg = c.Front_dark, bg = c.none },
+		CmpItemMenu = { fg = c.Comment, bg = c.none },
+
+		CmpItemKindKeyword = { fg = c.cyan, bg = c.none },
+
+		CmpItemKindVariable = { fg = c.Purple, bg = c.none },
+		CmpItemKindConstant = { fg = c.Purple, bg = c.none },
+		CmpItemKindReference = { fg = c.Purple, bg = c.none },
+		CmpItemKindValue = { fg = c.Purple, bg = c.none },
+
+		CmpItemKindFunction = { fg = c.Blue, bg = c.none },
+		CmpItemKindMethod = { fg = c.Blue, bg = c.none },
+		CmpItemKindConstructor = { fg = c.Blue, bg = c.none },
+
+		CmpItemKindClass = { fg = c.Orange, bg = c.none },
+		CmpItemKindInterface = { fg = c.Orange, bg = c.none },
+		CmpItemKindStruct = { fg = c.Orange, bg = c.none },
+		CmpItemKindEvent = { fg = c.Orange, bg = c.none },
+		CmpItemKindEnum = { fg = c.Orange, bg = c.none },
+		CmpItemKindUnit = { fg = c.Orange, bg = c.none },
+
+		CmpItemKindModule = { fg = c.Yellow, bg = c.none },
+
+		CmpItemKindProperty = { fg = c.Green, bg = c.none },
+		CmpItemKindField = { fg = c.Green, bg = c.none },
+		CmpItemKindTypeParameter = { fg = c.Green, bg = c.none },
+		CmpItemKindEnumMember = { fg = c.Green, bg = c.none },
+		CmpItemKindOperator = { fg = c.Green, bg = c.none },
+		CmpItemKindSnippet = { fg = c.BackDark, bg = c.none },
+
+		-- navic
+		NavicIconsFile = { fg = c.Front, bg = c.none },
+		NavicIconsModule = { fg = c.Yellow, bg = c.none },
+		NavicIconsNamespace = { fg = c.Front, bg = c.none },
+		NavicIconsPackage = { fg = c.Front, bg = c.none },
+		NavicIconsClass = { fg = c.Orange, bg = c.none },
+		NavicIconsMethod = { fg = c.Blue, bg = c.none },
+		NavicIconsProperty = { fg = c.Green, bg = c.none },
+		NavicIconsField = { fg = c.Green, bg = c.none },
+		NavicIconsConstructor = { fg = c.Orange, bg = c.none },
+		NavicIconsEnum = { fg = c.Orange, bg = c.none },
+		NavicIconsInterface = { fg = c.Orange, bg = c.none },
+		NavicIconsFunction = { fg = c.Blue, bg = c.none },
+		NavicIconsVariable = { fg = c.Purple, bg = c.none },
+		NavicIconsConstant = { fg = c.Purple, bg = c.none },
+		NavicIconsString = { fg = c.Green, bg = c.none },
+		NavicIconsNumber = { fg = c.Orange, bg = c.none },
+		NavicIconsBoolean = { fg = c.Orange, bg = c.none },
+		NavicIconsArray = { fg = c.Orange, bg = c.none },
+		NavicIconsObject = { fg = c.Orange, bg = c.none },
+		NavicIconsKey = { fg = c.Purple, bg = c.none },
+		NavicIconsKeyword = { fg = c.Purple, bg = c.none },
+		NavicIconsNull = { fg = c.Orange, bg = c.none },
+		NavicIconsEnumMember = { fg = c.Green, bg = c.none },
+		NavicIconsStruct = { fg = c.Orange, bg = c.none },
+		NavicIconsEvent = { fg = c.Orange, bg = c.none },
+		NavicIconsOperator = { fg = c.Front, bg = c.none },
+		NavicIconsTypeParameter = { fg = c.Green, bg = c.none },
+		NavicText = { fg = c.Front, bg = c.none },
+		NavicSeparator = { fg = c.Front, bg = c.none },
+
+		IndentBlanklineChar = { fg = c.Comment, nocombine = true },
+		IndentBlanklineContextChar = { fg = c.Purple, nocombine = true },
+
+		-- Scrollbar
+		ScrollbarHandle = { fg = c.none, bg = c.Back },
+
+		ScrollbarSearchHandle = { fg = c.Orange, bg = c.Back },
+		ScrollbarSearch = { fg = c.Orange, bg = c.none },
+
+		ScrollbarErrorHandle = { fg = c.Error, bg = c.Back },
+		ScrollbarError = { fg = c.Error, bg = c.none },
+
+		ScrollbarWarnHandle = { fg = c.Warning, bg = c.Back },
+		ScrollbarWarn = { fg = c.Warning, bg = c.none },
+
+		ScrollbarInfoHandle = { fg = c.Info, bg = c.Back },
+		ScrollbarInfo = { fg = c.Info, bg = c.none },
+
+		ScrollbarHintHandle = { fg = c.Hint, bg = c.Back },
+		ScrollbarHint = { fg = c.Hint, bg = c.none },
+
+		ScrollbarMiscHandle = { fg = c.Purple, bg = c.Back },
+		ScrollbarMisc = { fg = c.Purple, bg = c.none },
+
+		-- StatusLine
+		St_NormalMode = { fg = c.Green, bold = true },
+		St_InsertMode = { fg = c.Orange, bold = true },
+		St_VisualMode = { fg = c.Purple, bold = true },
+		St_ReplaceMode = { fg = c.Red, bold = true },
+		St_CommandMode = { fg = c.Yellow, bold = true },
+		St_TerminalMode = { fg = c.YellowOrange, bold = true },
+		St_NTerminalMode = { fg = c.Green, bold = true },
+		St_CurrentFile = { fg = c.Blue, bold = true },
+		St_AlternateFile = { fg = c.MediumBlue, bold = true },
+		St_git_add = { fg = c.Green },
+		St_git_change = { fg = c.Orange },
+		St_git_delete = { fg = c.Red },
+
+		-- Yanky
+		YankyPut = { link = "IncSearch" },
+		YankyYanked = { link = "IncSearch" },
+
+		-- Notify
+		--- Border
+		NotifyERRORBorder = { fg = util.darken(c.Error, 0.3), bg = c.Back },
+		NotifyWARNBorder = { fg = util.darken(c.Warning, 0.3), bg = c.Back },
+		NotifyINFOBorder = { fg = util.darken(c.Info, 0.3), bg = c.Back },
+		NotifyDEBUGBorder = { fg = util.darken(c.Comment, 0.3), bg = c.Back },
+		NotifyTRACEBorder = { fg = util.darken(c.Purple, 0.3), bg = c.Back },
+		--- Icons
+		NotifyERRORIcon = { fg = c.Error },
+		NotifyWARNIcon = { fg = c.Warning },
+		NotifyINFOIcon = { fg = c.Info },
+		NotifyDEBUGIcon = { fg = c.Comment },
+		NotifyTRACEIcon = { fg = c.Purple },
+		--- Title
+		NotifyERRORTitle = { fg = c.Error },
+		NotifyWARNTitle = { fg = c.Warning },
+		NotifyINFOTitle = { fg = c.Info },
+		NotifyDEBUGTitle = { fg = c.Comment },
+		NotifyTRACETitle = { fg = c.Purple },
+		--- Body
+		NotifyERRORBody = { fg = c.Front, bg = c.Back },
+		NotifyWARNBody = { fg = c.Front, bg = c.Back },
+		NotifyINFOBody = { fg = c.Front, bg = c.Back },
+		NotifyDEBUGBody = { fg = c.Front, bg = c.Back },
+		NotifyTRACEBody = { fg = c.Front, bg = c.Back },
+
+		-- Mini
+		MiniCompletionActiveParameter = { underline = true },
+
+		MiniCursorword = { bg = c.Front },
+		MiniCursorwordCurrent = { bg = c.Front },
+
+		MiniIndentscopeSymbol = { fg = c.Blue1 },
+		MiniIndentscopePrefix = { nocombine = true }, -- Make it invisible
+
+		MiniJump = { bg = c.Purple, fg = "#ffffff" },
+
+		MiniJump2dSpot = { fg = c.Purple, bold = true, nocombine = true },
+
+		MiniStarterCurrent = { nocombine = true },
+		MiniStarterFooter = { fg = c.Yellow, italic = true },
+		MiniStarterHeader = { fg = c.Blue },
+		MiniStarterInactive = { fg = c.Comment, italic = true },
+		MiniStarterItem = { fg = c.Front, bg = c.Back },
+		MiniStarterItemBullet = { fg = c.Border },
+		MiniStarterItemPrefix = { fg = c.Warning },
+		MiniStarterSection = { fg = c.Blue1 },
+		MiniStarterQuery = { fg = c.Info },
+
+		MiniSurround = { bg = c.Orange, fg = c.Dark },
+
+		MiniTablineCurrent = { fg = c.Front, bg = c.Front },
+		MiniTablineFill = { bg = c.Dark },
+		MiniTablineHidden = { fg = c.BackDark, bg = c.Front },
+		MiniTablineModifiedCurrent = { fg = c.Warning, bg = c.Front },
+		MiniTablineModifiedHidden = { bg = c.Back, fg = util.darken(c.Warning, 0.7) },
+		MiniTablineModifiedVisible = { fg = c.Warning, bg = c.Back },
+		MiniTablineTabpagesection = { bg = c.Back, fg = c.none },
+		MiniTablineVisible = { fg = c.Front, bg = c.Back },
+
+		MiniTestEmphasis = { bold = true },
+		MiniTestFail = { fg = c.Red, bold = true },
+		MiniTestPass = { fg = c.Green, bold = true },
+
+		MiniTrailspace = { bg = c.Red },
+	}
+
+	if not vim.diagnostic then
+		local severity_map = {
+			Error = "Error",
+			Warn = "Warning",
+			Info = "Information",
+			Hint = "Hint",
+		}
+		local types = { "Default", "VirtualText", "Underline" }
+		for _, type in ipairs(types) do
+			for snew, sold in pairs(severity_map) do
+				theme.highlights["LspDiagnostics" .. type .. sold] = {
+					link = "Diagnostic" .. (type == "Default" and "" or type) .. snew,
+				}
+			end
+		end
 	end
+
+	theme.defer = {}
+
+	return theme
 end
 
-theme.link_highlight = function()
-	-- Nvim compe
-	hl(0, "CmpItemKindClass", { link = "CmpItemKindConstructor" })
-	hl(0, "CmpItemKindModule", { link = "CmpItemKindKeyword" })
-	hl(0, "CmpItemKindOperator", { link = "TSOperator" })
-	hl(0, "CmpItemKindReference", { link = "TSParameterReference" })
-	hl(0, "CmpItemKindValue", { link = "TSField" })
-	hl(0, "CmpItemKindField", { link = "TSField" })
-	hl(0, "CmpItemKindEnum", { link = "TSField" })
-	hl(0, "CmpItemKindSnippet", { link = "TSText" })
-	hl(0, "CmpItemKindColor", { link = "cssColor" })
-	hl(0, "CmpItemKindFile", { link = "TSURI" })
-	hl(0, "CmpItemKindFolder", { link = "TSURI" })
-	hl(0, "CmpItemKindEvent", { link = "TSConstant" })
-	hl(0, "CmpItemKindEnumMember", { link = "TSField" })
-	hl(0, "CmpItemKindConstant", { link = "TSConstant" })
-	hl(0, "CmpItemKindStruct", { link = "TSStructure" })
-	hl(0, "CmpItemKindTypeParameter", { link = "TSParameter" })
-
-	-- TypeScript
-	hl(0, "typescriptIdentifierName", { link = "TSText" })
-end
-
-return theme
+return M
