@@ -106,9 +106,9 @@ function M.setup()
 		Statement = { fg = c.Purple, italic = true }, -- (preferRed) any statement
 		-- Conditional   = { }, --  if, then, else, endif, switch, etc.
 		-- Repeat        = { }, --   for, do, while, etc.
-		-- Label         = { }, --    case, default, etc.
-		Operator = { fg = c.Cyan }, -- "sizeof", "+", "*", etc.
-		Keyword = { fg = c.Front }, --  any other keyword
+		Label     = { fg = c.Red }, --    case, default, etc.
+		Operator  = { fg = c.Cyan }, -- "sizeof", "+", "*", etc.
+		Keyword   = { fg = c.Front }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
 
 		PreProc = { fg = c.Purple, italic = true }, -- (preferRed) generic Preprocessor
