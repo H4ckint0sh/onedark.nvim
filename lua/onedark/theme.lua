@@ -106,9 +106,9 @@ function M.setup()
 		Statement = { fg = c.Purple, italic = true }, -- (preferRed) any statement
 		-- Conditional   = { }, --  if, then, else, endif, switch, etc.
 		-- Repeat        = { }, --   for, do, while, etc.
-		Label     = { fg = c.Red }, --    case, default, etc.
-		Operator  = { fg = c.Cyan }, -- "sizeof", "+", "*", etc.
-		Keyword   = { fg = c.Front }, --  any other keyword
+		-- Label         = { }, --    case, default, etc.
+		Operator = { fg = c.Cyan }, -- "sizeof", "+", "*", etc.
+		Keyword = { fg = c.Front }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
 
 		PreProc = { fg = c.Purple, italic = true }, -- (preferRed) generic Preprocessor
@@ -231,7 +231,7 @@ function M.setup()
 		-- TSNumber            = { };    -- For all numbers
 		["@operator"]              = { fg = c.cyan }, -- For any operator: `+`, but also `->` and `*` in C.
 		["@parameter"]             = { fg = c.Orange, italic = true }, -- For parameters of a function.
-		["@parameter.reference"]   = { fg = c.Orange, italic = true }, -- For references to parameters of a function.
+		-- TSParameterReference= { };    -- For references to parameters of a function.
 		["@property"]              = { fg = c.Orange, italic = true }, -- Same as `TSField`.
 		["@punctuation.delimiter"] = { fg = c.Front }, -- For delimiters ie: `.`
 		["@punctuation.bracket"]   = { fg = c.Blue }, -- For brackets and parens.
@@ -243,11 +243,11 @@ function M.setup()
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		-- TSType              = { };    -- For types.
 		-- TSTypeBuiltin       = { };    -- For builtin types.
-		["@variable"]              = { fg = c.Front }, -- Any variable name that does not have another highlight.
+		["@variable"]              = { fg = c.Red }, -- Any variable name that does not have another highlight.
 		["@variable.builtin"]      = { fg = c.Red }, -- Variable names that are defined by the languages, like `this` or `self`.
 
-		["@tag"]            = { fg = c.Red }; -- Tags like html tag names.
-		["@tag.delimiter"]  = { fg = c.Comment }; -- Tag delimiter like `<` `>` `/`
+		-- TSTag               = { };    -- Tags like html tag names.
+		-- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
 		-- TSText              = { };    -- For strings consideRed text in a markup language.
 		["@text.reference"] = { fg = c.Green },
 		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
