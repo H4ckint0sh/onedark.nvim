@@ -223,10 +223,10 @@ function M.setup()
 		-- TSFuncMacro         = { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
 		-- TSInclude           = { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		["@keyword"]               = { fg = c.Yellow, italic = true }, -- For keywords that don't fall in previous categories.
-		["@keyword.function"]      = { fg = c.Yellow, italic = true }, -- For keywords used to define a fuction.
+		["@keyword.function"]      = { fg = c.Purple, italic = true }, -- For keywords used to define a fuction.
 		["@label"]                 = { fg = c.Blue }, -- For labels: `label:` in C and `:label:` in Lua.
 		-- TSMethod            = { };    -- For method calls and definitions.
-		TSNamespace                = { fg = c.Yellow }; -- For identifiers referring to modules and namespaces.
+		-- TSNamespace                = { fg = c.Yellow }; -- For identifiers referring to modules and namespaces.
 		-- TSNone              = { };    -- TODO: docs
 		-- TSNumber            = { };    -- For all numbers
 		["@operator"]              = { fg = c.cyan }, -- For any operator: `+`, but also `->` and `*` in C.
