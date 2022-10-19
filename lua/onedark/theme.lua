@@ -246,7 +246,7 @@ function M.setup()
 		["@variable"]              = { fg = c.Front }, -- Any variable name that does not have another highlight.
 		["@variable.builtin"]      = { fg = c.Red }, -- Variable names that are defined by the languages, like `this` or `self`.
 
-		TSTag               = { fg = c.Red }; -- Tags like html tag names.
+		["@tag"]            = { fg = c.Red }; -- Tags like html tag names.
 		-- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
 		-- TSText              = { };    -- For strings consideRed text in a markup language.
 		["@text.reference"] = { fg = c.Green },
