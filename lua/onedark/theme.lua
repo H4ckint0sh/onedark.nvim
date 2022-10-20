@@ -234,7 +234,7 @@ function M.setup()
 		["@parameter"]             = { fg = c.Orange, italic = true }, -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		["@property"]              = { fg = c.Orange, italic = true }, -- Same as `TSField`.
-		["@punctuation.delimiter"] = { fg = c.Front }, -- For delimiters ie: `.`
+		["@punctuation.delimiter"] = { fg = c.Cyan }, -- For delimiters ie: `.`
 		["@punctuation.bracket"]   = { fg = c.Blue }, -- For brackets and parens.
 		["@punctuation.special"]   = { fg = c.Yellow }, -- For special punctutation that does not fall in the catagories before.
 		-- TSRepeat            = { };    -- For keywords related to loops.
