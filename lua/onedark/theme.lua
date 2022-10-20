@@ -202,11 +202,12 @@ function M.setup()
 		-- you explicitly want to support Treesitter's improved syntax awareness.
 
 		-- TSAnnotation        = { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-		-- TSAttribute         = { };    -- (unstable) TODO: docs
+		["@attribute"] = { fg = c.Front }; -- (unstable) TODO: docs
+
 		-- TSBoolean           = { };    -- For booleans.
 		-- TSCharacter         = { };    -- For characters.
 		-- TSComment           = { };    -- For comment blocks.
-		TSNote                     = { fg = c.Back, bg = c.Info },
+		["@note"]                  = { fg = c.Back, bg = c.Info },
 		["@text.warning"]          = { fg = c.Back, bg = c.Warning },
 		["@text.danger"]           = { fg = c.Back, bg = c.Error },
 		["@constructor"]           = { fg = c.Yellow }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
