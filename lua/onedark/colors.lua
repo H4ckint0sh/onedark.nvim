@@ -27,7 +27,7 @@ if vim.o.background == "dark" then
 		CursorDark = "#51504F",
 		CursorLight = "#c8c8c8",
 		Selection = "#383e4a",
-		SelectioNFg = "#FFFFFF",
+		SelectionFg = "#FFFFFF",
 
 		DiffDelete = "#9a353d",
 		DiffDeleteLight = "#ffebe9",
