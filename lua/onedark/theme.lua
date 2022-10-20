@@ -440,8 +440,8 @@ function M.setup()
 		TSNodeUnmatched = { fg = c.dark3 },
 
 		LeapMatch = { bg = c.Purple, fg = c.Front, bold = true },
-		LeapLabelPrimary = { fg = c.Purple, bold = true },
-		LeapLabelSecondary = { fg = c.Green, bold = true },
+		LeapLabelPrimary = { bg = c.Purple, bold = true },
+		LeapLabelSecondary = { bg = c.Green, bold = true },
 		LeapBackdrop = { fg = c.Front },
 
 		LightspeedGreyWash = { fg = c.dark3 },
