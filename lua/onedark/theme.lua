@@ -108,7 +108,7 @@ function M.setup()
 		-- Repeat        = { }, --   for, do, while, etc.
 		-- Label         = { }, --    case, default, etc.
 		Operator = { fg = c.Cyan }, -- "sizeof", "+", "*", etc.
-		Keyword = { fg = c.Front }, --  any other keyword
+		Keyword = { fg = c.Cyan }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
 
 		PreProc = { fg = c.Purple, italic = true }, -- (preferRed) generic Preprocessor
