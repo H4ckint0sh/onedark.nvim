@@ -442,7 +442,7 @@ function M.setup()
 		LeapMatch = { bg = c.Purple, fg = c.Front, bold = true },
 		LeapLabelPrimary = { fg = c.Purple, bold = true },
 		LeapLabelSecondary = { fg = c.Green, bold = true },
-		LeapBackdrop = { fg = c.Selection },
+		LeapBackdrop = { fg = c.Front },
 
 		LightspeedGreyWash = { fg = c.dark3 },
 		-- LightspeedCursor = { link = "Cursor" },
