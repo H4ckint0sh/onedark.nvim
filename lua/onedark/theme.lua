@@ -47,7 +47,7 @@ function M.setup()
 		FoldColumn = { bg = c.Back, fg = c.Comment }, -- 'foldcolumn'
 		SignColumn = { bg = c.Back, fg = c.Border }, -- column where |signs| are displayed
 		SignColumnSB = { bg = c.BackDark, fg = c.Front }, -- column where |signs| are displayed
-		-- Substitute = { bg = c.Red, fg = c.Front }, -- |:substitute| replacement text highlighting
+		Substitute = { bg = c.Red, fg = c.Front }, -- |:substitute| replacement text highlighting
 		LineNr = { fg = c.Comment }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		CursorLineNr = { fg = c.Purple }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		MatchParen = { fg = c.Orange, bold = true }, -- The character under the cursor or just before it, if it is a paiRed bracket, and its match. |pi_paren.txt|
@@ -218,6 +218,7 @@ function M.setup()
 		-- TSError             = { };    -- For syntax/parser errors.
 		-- TSException         = { };    -- For exception related keywords.
 		["@field"]                 = { fg = c.Orange }, -- For fields.
+		["@define"]                = { fg = c.Orange }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
 		["@function"]              = { fg = c.Blue }; -- For function (calls and definitions).
 		-- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
