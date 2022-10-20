@@ -25,8 +25,8 @@ function M.setup()
 		-- Foo = { bg = c.Purple, fg = c.Purple },
 
 		Comment = { fg = c.Comment, italic = true }, -- any comment
-		ColorColumn = { bg = c.Back }, -- used for the columns set with 'colorcolumn'
-		Conceal = { fg = c.TabOther }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+		ColorColumn = { fg = "NONE", bg = c.Back }, -- used for the columns set with 'colorcolumn'
+		Conceal = { fg = c.Front, bg = c.Back }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = c.Back, bg = c.Front }, -- character under the cursor
 		lCursor = { fg = c.Back, bg = c.Front }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM = { fg = c.Back, bg = c.Front }, -- like Cursor, but used when in IME mode |CursorIM|
@@ -47,7 +47,7 @@ function M.setup()
 		FoldColumn = { bg = c.Back, fg = c.Comment }, -- 'foldcolumn'
 		SignColumn = { bg = c.Back, fg = c.Border }, -- column where |signs| are displayed
 		SignColumnSB = { bg = c.BackDark, fg = c.Front }, -- column where |signs| are displayed
-		Substitute = { bg = c.Red, fg = c.Front }, -- |:substitute| replacement text highlighting
+		-- Substitute = { bg = c.Red, fg = c.Front }, -- |:substitute| replacement text highlighting
 		LineNr = { fg = c.Comment }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		CursorLineNr = { fg = c.Purple }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		MatchParen = { fg = c.Orange, bold = true }, -- The character under the cursor or just before it, if it is a paiRed bracket, and its match. |pi_paren.txt|
@@ -219,7 +219,7 @@ function M.setup()
 		-- TSException         = { };    -- For exception related keywords.
 		["@field"]                 = { fg = c.Orange }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
-		-- TSFunction          = { };    -- For function (calls and definitions).
+		["@function"]              = { fg = c.Blue }; -- For function (calls and definitions).
 		-- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
 		-- TSFuncMacro         = { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
 		-- TSInclude           = { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
