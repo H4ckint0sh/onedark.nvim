@@ -358,10 +358,10 @@ function M.setup()
 		NvimTreeImageFile = { fg = c.Front },
 		NvimTreeSymlink = { fg = c.Blue },
 		NvimTreeFolderIcon = { bg = c.none, fg = c.Yellow },
-		-- NvimTreeFolderName= { fg = c.Front_float },
+		NvimTreeFolderName = { fg = c.Front },
 
-		NeoTreeNormal = { fg = c.PopupFront, bg = c.PopupBack },
-		NeoTreeNormalNC = { fg = c.PopupFront, bg = c.PopupBack },
+		NeoTreeNormal = { fg = c.Front, bg = c.Back },
+		NeoTreeNormalNC = { fg = c.Front, bg = c.Back },
 
 		-- Fern
 		FernBranchText = { fg = c.Blue },
