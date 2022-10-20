@@ -266,10 +266,10 @@ function M.setup()
 		rainbowcol1 = { fg = c.Purple },
 		rainbowcol2 = { fg = c.Yellow },
 		rainbowcol3 = { fg = c.Blue },
-		rainbowcol4 = { fg = c.Green },
-		rainbowcol5 = { fg = c.Blue },
+		rainbowcol4 = { fg = c.Orange },
+		rainbowcol5 = { fg = c.Front },
 		rainbowcol6 = { fg = c.Purple },
-		rainbowcol7 = { fg = c.Red },
+		rainbowcol7 = { fg = c.Blue },
 
 		-- LspTrouble
 		TroubleText = { fg = c.Front },
