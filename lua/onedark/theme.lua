@@ -339,12 +339,12 @@ function M.setup()
 		LspInlayHint = { fg = c.Comment, bg = c.None },
 
 		-- NvimTree
-		NvimTreeNormal = { fg = c.PopupFront, bg = c.Back },
+		NvimTreeNormal = { fg = c.Front, bg = c.Back },
 		NvimTreeWinSeparator = {
 			fg = c.Comment,
 			bg = c.None,
 		},
-		NvimTreeNormalNC = { fg = c.PopupFront, bg = c.PopupBack },
+		NvimTreeNormalNC = { fg = c.Front, bg = c.Back },
 		NvimTreeRootFolder = { fg = c.Blue, bold = true },
 		NvimTreeGitDirty = { fg = c.DiffChange },
 		NvimTreeGitNew = { fg = c.DiffAdd },
@@ -352,7 +352,7 @@ function M.setup()
 		NvimTreeOpenedFile = { bg = c.Back },
 		NvimTreeSpecialFile = { fg = c.Purple, underline = true },
 		NvimTreeIndentMarker = { fg = c.Front },
-		NvimTreeImageFile = { fg = c.PopupFront },
+		NvimTreeImageFile = { fg = c.Front },
 		NvimTreeSymlink = { fg = c.Blue },
 		NvimTreeFolderIcon = { bg = c.none, fg = c.Yellow },
 		-- NvimTreeFolderName= { fg = c.Front_float },
@@ -492,7 +492,7 @@ function M.setup()
 		CmpItemKindTypeParameter = { fg = c.Green, bg = c.none },
 		CmpItemKindEnumMember = { fg = c.Green, bg = c.none },
 		CmpItemKindOperator = { fg = c.Green, bg = c.none },
-		CmpItemKindSnippet = { fg = c.BackDark, bg = c.none },
+		CmpItemKindSnippet = { fg = c.Orange, bg = c.none },
 
 		-- navic
 		NavicIconsFile = { fg = c.Front, bg = c.none },
