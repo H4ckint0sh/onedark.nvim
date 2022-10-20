@@ -338,6 +338,9 @@ function M.setup()
 		-- InlayHints
 		LspInlayHint = { fg = c.Comment, bg = c.None },
 
+		-- Current Line Blame
+		GitSignsCurrentLineBlame = { fg = c.Comment, bg = c.None },
+
 		-- NvimTree
 		NvimTreeNormal = { fg = c.Front, bg = c.Back },
 		NvimTreeWinSeparator = {
