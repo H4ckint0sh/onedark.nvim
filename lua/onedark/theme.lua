@@ -439,10 +439,10 @@ function M.setup()
 		TSNodeKey = { fg = c.Purple, bold = true },
 		TSNodeUnmatched = { fg = c.dark3 },
 
-		LeapMatch = { bg = c.Purple, fg = c.Front, bold = true },
-		LeapLabelPrimary = { bg = c.Purple, bold = true },
-		LeapLabelSecondary = { bg = c.Green, bold = true },
-		LeapBackdrop = { fg = c.Front },
+		LeapMatch = { bg = c.Green, fg = c.PopupFront },
+		LeapLabelPrimary = { bg = c.Purple, fg = c.PopupFront },
+		LeapLabelSecondary = { bg = c.Green, fg = c.PopupFront },
+		LeapBackdrop = { fg = c.Front, bg = c.Selection },
 
 		LightspeedGreyWash = { fg = c.dark3 },
 		-- LightspeedCursor = { link = "Cursor" },
