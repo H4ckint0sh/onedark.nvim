@@ -218,7 +218,6 @@ function M.setup()
 		-- TSError             = { };    -- For syntax/parser errors.
 		-- TSException         = { };    -- For exception related keywords.
 		["@field"]                 = { fg = c.Orange }, -- For fields.
-		["@define"]                = { fg = c.Orange }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
 		["@function"]              = { fg = c.Blue }; -- For function (calls and definitions).
 		-- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
@@ -248,7 +247,7 @@ function M.setup()
 		["@variable"]              = { fg = c.Front }, -- Any variable name that does not have another highlight.
 		["@variable.builtin"]      = { fg = c.Red }, -- Variable names that are defined by the languages, like `this` or `self`.
 
-		["@tag"]            = { fg = c.Red }; -- Tags like html tag names.
+		["@tag"]            = { fg = c.Yellow }; -- Tags like html tag names.
 		["@tag.delimiter"]  = { fg = c.Comment }; -- Tag delimiter like `<` `>` `/`
 		-- TSText              = { };    -- For strings consideRed text in a markup language.
 		["@text.reference"] = { fg = c.Green },
