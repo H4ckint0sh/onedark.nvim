@@ -439,9 +439,9 @@ function M.setup()
 		TSNodeKey = { fg = c.Purple, bold = true },
 		TSNodeUnmatched = { fg = c.dark3 },
 
-		LeapMatch = { bg = c.Green, fg = c.PopupFront },
-		LeapLabelPrimary = { bg = c.Purple, fg = c.PopupFront },
-		LeapLabelSecondary = { bg = c.Green, fg = c.PopupFront },
+		LeapMatch = { bg = c.Green, fg = "#ffffff" },
+		LeapLabelPrimary = { bg = c.Purple, fg = "#ffffff" },
+		LeapLabelSecondary = { bg = c.Green, fg = "#ffffff" },
 		LeapBackdrop = { fg = c.Front, bg = c.Selection },
 
 		LightspeedGreyWash = { fg = c.dark3 },
