@@ -248,6 +248,7 @@ function M.setup()
 		["@variable.builtin"]      = { fg = c.Red }, -- Variable names that are defined by the languages, like `this` or `self`.
 
 		["@tag"]            = { fg = c.Yellow }; -- Tags like html tag names.
+		["@tag.attribute"]  = { fg = c.Red };
 		["@tag.delimiter"]  = { fg = c.Comment }; -- Tag delimiter like `<` `>` `/`
 		-- TSText              = { };    -- For strings consideRed text in a markup language.
 		["@text.reference"] = { fg = c.Green },
