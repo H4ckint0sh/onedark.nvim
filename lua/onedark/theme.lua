@@ -230,11 +230,11 @@ function M.setup()
 		-- TSNamespace                = { fg = c.Yellow }; -- For identifiers referring to modules and namespaces.
 		-- TSNone              = { };    -- TODO: docs
 		-- TSNumber            = { };    -- For all numbers
-		["@operator"]              = { fg = c.Cyan }, -- For any operator: `+`, but also `->` and `*` in C.
+		["@operator"]              = { fg = c.Purple }, -- For any operator: `+`, but also `->` and `*` in C.
 		["@parameter"]             = { fg = c.Orange, italic = true }, -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		["@property"]              = { fg = c.Orange, italic = true }, -- Same as `TSField`.
-		["@punctuation.delimiter"] = { fg = c.Cyan }, -- For delimiters ie: `.`
+		["@punctuation.delimiter"] = { fg = c.Purple }, -- For delimiters ie: `.`
 		["@punctuation.bracket"]   = { fg = c.Blue }, -- For brackets and parens.
 		["@punctuation.special"]   = { fg = c.Yellow }, -- For special punctutation that does not fall in the catagories before.
 		-- TSRepeat            = { };    -- For keywords related to loops.
