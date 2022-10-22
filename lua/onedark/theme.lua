@@ -246,6 +246,7 @@ function M.setup()
 		-- TSType              = { };    -- For types.
 		-- TSTypeBuiltin       = { };    -- For builtin types.
 		["@variable"]              = { fg = c.Front }, -- Any variable name that does not have another highlight.
+		["@variable.builtin"]      = { fg = c.Red }, -- Any variable name that does not have another highlight.
 		["@tag"]                   = { fg = c.Red }; -- Tags like html tag names.
 		["@tag.attribute"]         = { fg = c.Orange };
 		["@tag.delimiter"]         = { fg = c.Comment }; -- Tag delimiter like `<` `>` `/`
