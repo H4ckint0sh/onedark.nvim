@@ -207,7 +207,7 @@ function M.setup()
 		-- TSBoolean           = { };    -- For booleans.
 		-- TSCharacter         = { };    -- For characters.
 		-- TSComment           = { };    -- For comment blocks.
-		["@note"]                  = { fg = c.Back, bg = c.Info },
+		TSNote                     = { fg = c.Back, bg = c.Info },
 		["@text.warning"]          = { fg = c.Back, bg = c.Warning },
 		["@text.danger"]           = { fg = c.Back, bg = c.Error },
 		["@constructor"]           = { fg = c.Yellow }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
@@ -234,8 +234,8 @@ function M.setup()
 		["@parameter"]             = { fg = c.Orange, italic = true }, -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		["@property"]              = { fg = c.Orange, italic = true }, -- Same as `TSField`.
-		["@punctuation.delimiter"] = { fg = c.Purple }, -- For delimiters ie: `.`
-		["@punctuation.bracket"]   = { fg = c.Blue }, -- For brackets and parens.
+		["@punctuation.delimiter"] = { fg = c.Front }, -- For delimiters ie: `.`
+		["@punctuation.bracket"]   = { fg = c.Purple }, -- For brackets and parens.
 		["@punctuation.special"]   = { fg = c.Yellow }, -- For special punctutation that does not fall in the catagories before.
 		-- TSRepeat            = { };    -- For keywords related to loops.
 		-- TSString            = { };    -- For strings.
@@ -248,7 +248,7 @@ function M.setup()
 		["@variable.builtin"]      = { fg = c.Red }, -- Variable names that are defined by the languages, like `this` or `self`.
 
 		["@tag"]            = { fg = c.Red }; -- Tags like html tag names.
-		["@tag.attribute"]  = { fg = c.Hint };
+		["@tag.attribute"]  = { fg = c.Orange };
 		["@tag.delimiter"]  = { fg = c.Comment }; -- Tag delimiter like `<` `>` `/`
 		-- TSText              = { };    -- For strings consideRed text in a markup language.
 		["@text.reference"] = { fg = c.Green },
