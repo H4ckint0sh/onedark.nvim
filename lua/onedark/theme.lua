@@ -100,7 +100,7 @@ function M.setup()
 		-- Boolean       = { }, --  a boolean constant: TRUE, false
 		-- Float         = { }, --    a floating point constant: 2.3e10
 
-		Identifier = { fg = c.Yellow }, -- (preferRed) any variable name
+		Identifier = { fg = c.Front }, -- (preferRed) any variable name
 		Function = { fg = c.Blue }, -- function name (also: methods for classes)
 
 		Statement = { fg = c.Purple, italic = true }, -- (preferRed) any statement
