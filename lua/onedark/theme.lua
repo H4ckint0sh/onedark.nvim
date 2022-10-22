@@ -237,22 +237,20 @@ function M.setup()
 		["@property.builtin"]      = { fg = c.Front, italic = true }, -- Same as `TSField`.
 		["@punctuation.delimiter"] = { fg = c.Front }, -- For delimiters ie: `.`
 		["@punctuation.bracket"]   = { fg = c.Purple }, -- For brackets and parens.
-		["@punctuation.special"]   = { fg = c.Yellow }, -- For special punctutation that does not fall in the catagories before.
+		["@punctuation.special"]   = { fg = c.Purple }, -- For special punctutation that does not fall in the catagories before.
 		-- TSRepeat            = { };    -- For keywords related to loops.
 		-- TSString            = { };    -- For strings.
 		["@string.regex"]          = { fg = c.Yellow }, -- For regexes.
-		["@string.escape"]         = { fg = c.Purple }, -- For escape characters within a string.
+		["@string.escape"]         = { fg = c.Front }, -- For escape characters within a string.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		-- TSType              = { };    -- For types.
 		-- TSTypeBuiltin       = { };    -- For builtin types.
 		["@variable"]              = { fg = c.Front }, -- Any variable name that does not have another highlight.
-		["@variable.builtin"]      = { fg = c.Front }, -- Any variable name that does not have another highlight.
-
-		["@tag"]            = { fg = c.Red }; -- Tags like html tag names.
-		["@tag.attribute"]  = { fg = c.Orange };
-		["@tag.delimiter"]  = { fg = c.Comment }; -- Tag delimiter like `<` `>` `/`
+		["@tag"]                   = { fg = c.Red }; -- Tags like html tag names.
+		["@tag.attribute"]         = { fg = c.Orange };
+		["@tag.delimiter"]         = { fg = c.Comment }; -- Tag delimiter like `<` `>` `/`
 		-- TSText              = { };    -- For strings consideRed text in a markup language.
-		["@text.reference"] = { fg = c.Green },
+		["@text.reference"]        = { fg = c.Green },
 		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
 		-- TSUnderline         = { };    -- For text to be represented with an underline.
 		-- TSStrike            = { };    -- For strikethrough text.
