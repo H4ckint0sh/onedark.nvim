@@ -231,7 +231,7 @@ function M.setup()
 		-- TSNone              = { };    -- TODO: docs
 		-- TSNumber            = { };    -- For all numbers
 		["@operator"]              = { fg = c.Purple }, -- For any operator: `+`, but also `->` and `*` in C.
-		["@parameter"]             = { fg = c.Orange, italic = true }, -- For parameters of a function.
+		["@parameter"]             = { fg = c.Front }, -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		["@property"]              = { fg = c.Orange, italic = true }, -- Same as `TSField`.
 		["@punctuation.delimiter"] = { fg = c.Front }, -- For delimiters ie: `.`
