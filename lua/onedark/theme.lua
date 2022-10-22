@@ -230,7 +230,7 @@ function M.setup()
 		-- TSNamespace                = { fg = c.Yellow }; -- For identifiers referring to modules and namespaces.
 		-- TSNone              = { };    -- TODO: docs
 		-- TSNumber            = { };    -- For all numbers
-		["@operator"]              = { fg = c.cyan }, -- For any operator: `+`, but also `->` and `*` in C.
+		["@operator"]              = { fg = c.Cyan }, -- For any operator: `+`, but also `->` and `*` in C.
 		["@parameter"]             = { fg = c.Orange, italic = true }, -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		["@property"]              = { fg = c.Orange, italic = true }, -- Same as `TSField`.
