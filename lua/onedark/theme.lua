@@ -56,7 +56,7 @@ function M.setup()
 		-- MsgSeparator= { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		MoreMsg = { fg = c.Blue }, -- |more-prompt|
 		NonText = { fg = c.Border }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Normal = { fg = c.Fron, bg = c.Back }, -- normal text
+		Normal = { fg = c.Fron, bg = c.None }, -- normal text
 		NormalNC = { fg = c.Front, bg = c.Back }, -- normal text in non-current windows
 		NormalSB = { fg = c.Fron, bg = c.Back }, -- normal text in sidebar
 		NormalFloat = { fg = c.Front, bg = c.None }, -- Normal text in floating windows.
