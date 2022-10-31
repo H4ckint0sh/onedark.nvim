@@ -4,7 +4,7 @@ if vim.o.background == "dark" then
 	colors = {
 		None = "NONE",
 		Front = "#abb2bf",
-		Back = "#282c34",
+		Back = "#202d39",
 		White = "#bbbbbb",
 		Comment = "#5c6370",
 
@@ -39,22 +39,22 @@ if vim.o.background == "dark" then
 		FoldBackground = "#202d39",
 
 		-- Syntax colors
-		Gray      = "#65717d",
-		Violet    = "#c678dd",
-		Blue      = "#61afef",
-		Dark      = "#223E55",
-		Cyan      = "#56b6c2",
-		Hint      = "#52adf2",
-		Green     = "#89ca78",
+		Gray = "#65717d",
+		Violet = "#c678dd",
+		Blue = "#61afef",
+		Dark = "#223E55",
+		Cyan = "#56b6c2",
+		Hint = "#52adf2",
+		Green = "#89ca78",
 		BlueGreen = "#89ddff",
-		Info      = "#98c379",
-		Red       = "#f65866",
-		Orange    = "#d18c4e",
-		Error     = "#f65866",
-		Warning   = "#cd9731",
-		Yellow    = "#e5c07b",
-		Pink      = "#c679dd",
-		Purple    = "#c678dd",
+		Info = "#98c379",
+		Red = "#f65866",
+		Orange = "#d18c4e",
+		Error = "#f65866",
+		Warning = "#cd9731",
+		Yellow = "#e5c07b",
+		Pink = "#c679dd",
+		Purple = "#c678dd",
 	}
 end
 
