@@ -122,7 +122,7 @@ function M.setup()
 		-- Structure     = { }, --  struct, union, enum, etc.
 		-- Typedef       = { }, --  A typedef
 
-		Special = { fg = c.cyan }, -- (preferRed) any special symbol
+		Special = { fg = c.Yellow }, -- (preferRed) any special symbol
 		-- SpecialChar   = { }, --  special character in a constant
 		-- Tag           = { }, --    you can use CTRL-] on this
 		-- Delimiter     = { }, --  character that needs attention
