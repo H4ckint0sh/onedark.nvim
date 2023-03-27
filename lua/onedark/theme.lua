@@ -56,9 +56,9 @@ function M.setup()
 		-- MsgSeparator= { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		MoreMsg = { fg = c.Blue }, -- |more-prompt|
 		NonText = { fg = c.Border }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Normal = { fg = c.Fron, bg = c.Back }, -- normal text
-		NormalNC = { fg = c.Front, bg = c.Back }, -- normal text in non-current windows
-		NormalSB = { fg = c.Fron, bg = c.Back }, -- normal text in sidebar
+		Normal = { fg = c.Fron, bg = c.None }, -- normal text
+		NormalNC = { fg = c.Front, bg = c.None }, -- normal text in non-current windows
+		NormalSB = { fg = c.Fron, bg = c.None }, -- normal text in sidebar
 		NormalFloat = { fg = c.Front, bg = c.None }, -- Normal text in floating windows.
 		FloatBorder = { fg = c.Front, bg = c.None },
 		Pmenu = { bg = c.None, fg = c.Front }, -- Popup menu: normal item.
@@ -274,7 +274,7 @@ function M.setup()
 		-- LspTrouble
 		TroubleText = { fg = c.Front },
 		TroubleCount = { fg = c.Purple, bg = c.Front },
-		TroubleNormal = { fg = c.Front, bg = c.Back },
+		TroubleNormal = { fg = c.Front, bg = c.None },
 
 		-- Illuminate
 		illuminatedWord = { bg = c.Front },
@@ -342,12 +342,12 @@ function M.setup()
 		GitSignsCurrentLineBlame = { fg = c.Comment, bg = c.None },
 
 		-- NvimTree
-		NvimTreeNormal = { fg = c.Front, bg = c.Back },
+		NvimTreeNormal = { fg = c.Front, bg = c.None },
 		NvimTreeWinSeparator = {
 			fg = c.Comment,
 			bg = c.None,
 		},
-		NvimTreeNormalNC = { fg = c.Front, bg = c.Back },
+		NvimTreeNormalNC = { fg = c.Front, bg = c.None },
 		NvimTreeRootFolder = { fg = c.Blue, bold = true },
 		NvimTreeGitDirty = { fg = c.DiffChange },
 		NvimTreeGitNew = { fg = c.DiffAdd },
@@ -401,7 +401,7 @@ function M.setup()
 		DiagnosticWarning = { link = "DiagnosticWarn" },
 		DiagnosticInformation = { link = "DiagnosticInfo" },
 
-		LspFloatWinNormal = { bg = c.PopupBack },
+		LspFloatWinNormal = { bg = c.None },
 		LspFloatWinBorder = { fg = c.Border },
 		LspSagaBorderTitle = { fg = c.cyan },
 		LspSagaHoverBorder = { fg = c.Blue },
