@@ -159,21 +159,21 @@ function M.setup()
 		-- These groups are for the native LSP client. Some other LSP clients may
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
-		LspReferenceText                  = { bg = c.Front },                               -- used for highlighting "text" references
-		LspReferenceRead                  = { bg = c.Front },                               -- used for highlighting "read" references
-		LspReferenceWrite                 = { bg = c.Front },                               -- used for highlighting "write" references
-		DiagnosticError                   = { fg = c.Error },                               -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticWarn                    = { fg = c.Warning },                             -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticInfo                    = { fg = c.Info },                                -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticHint                    = { fg = c.Hint },                                -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticVirtualTextError        = { bg = util.darken(c.Error, 0.1), fg = c.Error }, -- Used for "Error" diagnostic virtual text
-		DiagnosticVirtualTextWarn         = { bg = util.darken(c.Warning, 0.1), fg = c.Warning }, -- Used for "Warning" diagnostic virtual text
-		DiagnosticVirtualTextInfo         = { bg = util.darken(c.Info, 0.1), fg = c.Info }, -- Used for "Information" diagnostic virtual text
-		DiagnosticVirtualTextHint         = { bg = util.darken(c.Hint, 0.1), fg = c.Hint }, -- Used for "Hint" diagnostic virtual text
-		DiagnosticUnderlineError          = { undercurl = true, sp = c.Error },             -- Used to underline "Error" diagnostics
-		DiagnosticUnderlineWarn           = { undercurl = true, sp = c.Warning },           -- Used to underline "Warning" diagnostics
-		DiagnosticUnderlineInfo           = { undercurl = true, sp = c.Info },              -- Used to underline "Information" diagnostics
-		DiagnosticUnderlineHint           = { undercurl = true, sp = c.Hint },              -- Used to underline "Hint" diagnostics
+		LspReferenceText                  = { bg = c.Front },               -- used for highlighting "text" references
+		LspReferenceRead                  = { bg = c.Front },               -- used for highlighting "read" references
+		LspReferenceWrite                 = { bg = c.Front },               -- used for highlighting "write" references
+		DiagnosticError                   = { fg = c.Error },               -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticWarn                    = { fg = c.Warning },             -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticInfo                    = { fg = c.Info },                -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticHint                    = { fg = c.Hint },                -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticVirtualTextError        = { bg = c.None, fg = c.Error },  -- Used for "Error" diagnostic virtual text
+		DiagnosticVirtualTextWarn         = { bg = c.None, fg = c.Warning }, -- Used for "Warning" diagnostic virtual text
+		DiagnosticVirtualTextInfo         = { bg = c.None, fg = c.Info },   -- Used for "Information" diagnostic virtual text
+		DiagnosticVirtualTextHint         = { bg = c.None, fg = c.Hint },   -- Used for "Hint" diagnostic virtual text
+		DiagnosticUnderlineError          = { undercurl = true, sp = c.Error }, -- Used to underline "Error" diagnostics
+		DiagnosticUnderlineWarn           = { undercurl = true, sp = c.Warning }, -- Used to underline "Warning" diagnostics
+		DiagnosticUnderlineInfo           = { undercurl = true, sp = c.Info }, -- Used to underline "Information" diagnostics
+		DiagnosticUnderlineHint           = { undercurl = true, sp = c.Hint }, -- Used to underline "Hint" diagnostics
 		LspSignatureActiveParameter       = { fg = c.Orange },
 		LspCodeLens                       = { fg = c.Comment },
 		LspInfoBorder                     = { fg = c.Front, bg = c.None },
