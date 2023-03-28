@@ -45,7 +45,7 @@ function M.setup()
 		WinSeparator                      = { fg = c.Border, bold = true },   -- the column separating vertically split windows
 		Folded                            = { fg = c.Blue, bg = c.Border },   -- line used for closed folds
 		FoldColumn                        = { bg = c.Back, fg = c.Comment },  -- 'foldcolumn'
-		SignColumn                        = { bg = c.Back, fg = c.Border },   -- column where |signs| are displayed
+		SignColumn                        = { bg = c.None, fg = c.Border },   -- column where |signs| are displayed
 		SignColumnSB                      = { bg = c.BackDark, fg = c.Front }, -- column where |signs| are displayed
 		Substitute                        = { bg = c.Red, fg = c.Front },     -- |:substitute| replacement text highlighting
 		LineNr                            = { fg = c.Comment },               -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
