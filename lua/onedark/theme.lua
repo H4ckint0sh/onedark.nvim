@@ -30,62 +30,62 @@ function M.setup()
 		Cursor                            = { fg = c.Back, bg = c.Front }, -- character under the cursor
 		lCursor                           = { fg = c.Back, bg = c.Front }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM                          = { fg = c.Back, bg = c.Front }, -- like Cursor, but used when in IME mode |CursorIM|
-		CursorColumn                      = { bg = c.None }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-		CursorLine                        = { bg = c.None }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-		Directory                         = { fg = c.Blue }, -- directory names (and other special names in listings)
-		DiffAdd                           = { bg = c.DiffAdd }, -- diff mode: Added line |diff.txt|
-		DiffChange                        = { bg = c.DiffChange }, -- diff mode: Changed line |diff.txt|
-		DiffDelete                        = { bg = c.DiffDelete }, -- diff mode: Deleted line |diff.txt|
-		DiffText                          = { bg = c.Front }, -- diff mode: Changed text within a changed line |diff.txt|
-		EndOfBuffer                       = { fg = c.Back }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+		CursorColumn                      = { bg = c.None },             -- Screen-column at the cursor, when 'cursorcolumn' is set.
+		CursorLine                        = { bg = c.None },             -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+		Directory                         = { fg = c.Blue },             -- directory names (and other special names in listings)
+		DiffAdd                           = { bg = c.DiffAdd },          -- diff mode: Added line |diff.txt|
+		DiffChange                        = { bg = c.DiffChange },       -- diff mode: Changed line |diff.txt|
+		DiffDelete                        = { bg = c.DiffDelete },       -- diff mode: Deleted line |diff.txt|
+		DiffText                          = { bg = c.Front },            -- diff mode: Changed text within a changed line |diff.txt|
+		EndOfBuffer                       = { fg = c.Back },             -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		-- TermCursor  = { }, -- cursor in a focused terminal
 		-- TermCursorNC= { }, -- cursor in an unfocused terminal
-		ErrorMsg                          = { fg = c.Error }, -- error messages on the command line
-		VertSplit                         = { fg = c.Border }, -- the column separating vertically split windows
-		WinSeparator                      = { fg = c.Border, bold = true }, -- the column separating vertically split windows
-		Folded                            = { fg = c.Blue, bg = c.Border }, -- line used for closed folds
-		FoldColumn                        = { bg = c.Back, fg = c.Comment }, -- 'foldcolumn'
-		SignColumn                        = { bg = c.Back, fg = c.Border }, -- column where |signs| are displayed
+		ErrorMsg                          = { fg = c.Error },                 -- error messages on the command line
+		VertSplit                         = { fg = c.Border },                -- the column separating vertically split windows
+		WinSeparator                      = { fg = c.Border, bold = true },   -- the column separating vertically split windows
+		Folded                            = { fg = c.Blue, bg = c.Border },   -- line used for closed folds
+		FoldColumn                        = { bg = c.Back, fg = c.Comment },  -- 'foldcolumn'
+		SignColumn                        = { bg = c.Back, fg = c.Border },   -- column where |signs| are displayed
 		SignColumnSB                      = { bg = c.BackDark, fg = c.Front }, -- column where |signs| are displayed
-		Substitute                        = { bg = c.Red, fg = c.Front }, -- |:substitute| replacement text highlighting
-		LineNr                            = { fg = c.Comment }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-		CursorLineNr                      = { fg = c.Purple }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-		MatchParen                        = { fg = c.Orange, bold = true }, -- The character under the cursor or just before it, if it is a paiRed bracket, and its match. |pi_paren.txt|
-		ModeMsg                           = { fg = c.Front, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
-		MsgArea                           = { fg = c.Fron }, -- Area for messages and cmdline
+		Substitute                        = { bg = c.Red, fg = c.Front },     -- |:substitute| replacement text highlighting
+		LineNr                            = { fg = c.Comment },               -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+		CursorLineNr                      = { fg = c.Purple },                -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+		MatchParen                        = { fg = c.Orange, bold = true },   -- The character under the cursor or just before it, if it is a paiRed bracket, and its match. |pi_paren.txt|
+		ModeMsg                           = { fg = c.Front, bold = true },    -- 'showmode' message (e.g., "-- INSERT -- ")
+		MsgArea                           = { fg = c.Fron },                  -- Area for messages and cmdline
 		-- MsgSeparator= { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
-		MoreMsg                           = { fg = c.Blue }, -- |more-prompt|
-		NonText                           = { fg = c.Border }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Normal                            = { fg = c.Fron, bg = c.None }, -- normal text
-		NormalNC                          = { fg = c.Front, bg = c.None }, -- normal text in non-current windows
-		NormalSB                          = { fg = c.Fron, bg = c.None }, -- normal text in sidebar
-		NormalFloat                       = { fg = c.Front, bg = c.None }, -- Normal text in floating windows.
+		MoreMsg                           = { fg = c.Blue },                  -- |more-prompt|
+		NonText                           = { fg = c.Border },                -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+		Normal                            = { fg = c.Fron, bg = c.None },     -- normal text
+		NormalNC                          = { fg = c.Front, bg = c.None },    -- normal text in non-current windows
+		NormalSB                          = { fg = c.Fron, bg = c.None },     -- normal text in sidebar
+		NormalFloat                       = { fg = c.Front, bg = c.None },    -- Normal text in floating windows.
 		FloatBorder                       = { fg = c.Front, bg = c.None },
-		Pmenu                             = { bg = c.None, fg = c.Front }, -- Popup menu: normal item.
+		Pmenu                             = { bg = c.None, fg = c.Front },    -- Popup menu: normal item.
 		PmenuSel                          = { bg = util.darken(c.Blue, 0.8) }, -- Popup menu: selected item.
-		PmenuSbar                         = { bg = c.None }, -- Popup menu: scrollbar.
-		PmenuThumb                        = { bg = c.Front }, -- Popup menu: Thumb of the scrollbar.
-		Question                          = { fg = c.Blue }, -- |hit-enter| prompt and yes/no questions
+		PmenuSbar                         = { bg = c.None },                  -- Popup menu: scrollbar.
+		PmenuThumb                        = { bg = c.Front },                 -- Popup menu: Thumb of the scrollbar.
+		Question                          = { fg = c.Blue },                  -- |hit-enter| prompt and yes/no questions
 		QuickFixLine                      = { bg = c.BackDark, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Search                            = { bg = c.Search, fg = c.Front }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+		Search                            = { bg = c.Search, fg = c.Front },  -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		IncSearch                         = { bg = c.SearchCurrent, fg = c.Front }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		CurSearch                         = { link = "IncSearch" },
-		SpecialKey                        = { fg = c.Comment }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+		SpecialKey                        = { fg = c.Comment },               -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		SpellBad                          = { sp = c.Error, undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap                          = { sp = c.Warning, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal                        = { sp = c.Info, undercurl = true }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare                         = { sp = c.Hint, undercurl = true }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine                        = { fg = c.Front, bg = c.None }, -- status line of current window
-		StatusLineNC                      = { fg = c.Front, bg = c.None }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		TabLine                           = { bg = c.None, fg = c.None }, -- tab pages line, not active tab page label
-		TabLineFill                       = { bg = c.None }, -- tab pages line, where there are no labels
-		TabLineSel                        = { fg = c.None, bg = c.None }, -- tab pages line, active tab page label
-		Title                             = { fg = c.Blue, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
-		Visual                            = { bg = c.Selection }, -- Visual mode selection
-		VisualNOS                         = { bg = c.Selection }, -- Visual mode selection when vim is "Not Owning the Selection".
-		WarningMsg                        = { fg = c.Warning }, -- warning messages
-		Whitespace                        = { fg = c.Comment }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-		WildMenu                          = { bg = c.Yellow }, -- current match in 'wildmenu' completion
+		StatusLine                        = { fg = c.Front, bg = c.None },    -- status line of current window
+		StatusLineNC                      = { fg = c.Front, bg = c.None },    -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		TabLine                           = { bg = c.None, fg = c.None },     -- tab pages line, not active tab page label
+		TabLineFill                       = { bg = c.None },                  -- tab pages line, where there are no labels
+		TabLineSel                        = { fg = c.None, bg = c.None },     -- tab pages line, active tab page label
+		Title                             = { fg = c.Blue, bold = true },     -- titles for output from ":set all", ":autocmd" etc.
+		Visual                            = { bg = c.Selection },             -- Visual mode selection
+		VisualNOS                         = { bg = c.Selection },             -- Visual mode selection when vim is "Not Owning the Selection".
+		WarningMsg                        = { fg = c.Warning },               -- warning messages
+		Whitespace                        = { fg = c.Comment },               -- "nbsp", "space", "tab" and "trail" in 'listchars'
+		WildMenu                          = { bg = c.Yellow },                -- current match in 'wildmenu' completion
 		-- These groups are not listed as default vim groups,
 		-- but they are defacto standard group names for syntax highlighting.
 		-- commented out groups should chain up to their "preferRed" group by
@@ -99,8 +99,8 @@ function M.setup()
 		-- Boolean       = { }, --  a boolean constant: TRUE, false
 		-- Float         = { }, --    a floating point constant: 2.3e10
 
-		Identifier                        = { fg = c.Front }, -- (preferRed) any variable name
-		Function                          = { fg = c.Blue }, -- function name (also: methods for classes)
+		Identifier                        = { fg = c.Front },           -- (preferRed) any variable name
+		Function                          = { fg = c.Blue },            -- function name (also: methods for classes)
 		Statement                         = { fg = c.Purple, italic = true }, -- (preferRed) any statement
 		-- Conditional   = { }, --  if, then, else, endif, switch, etc.
 		-- Repeat        = { }, --   for, do, while, etc.
@@ -133,7 +133,7 @@ function M.setup()
 		-- ("Ignore", below, may be invisible...)
 		-- Ignore = { }, -- (preferRed) left blank, hidden  |hl-Ignore|
 
-		Error                             = { fg = c.Error }, -- (preferRed) any erroneous construct
+		Error                             = { fg = c.Error },         -- (preferRed) any erroneous construct
 		Todo                              = { bg = c.Yellow, fg = c.Back }, -- (preferRed) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		qfLineNr                          = { fg = c.BackDark },
 		qfFileName                        = { fg = c.Blue },
@@ -154,26 +154,26 @@ function M.setup()
 		markdownLinkText                  = { fg = c.Blue, underline = true },
 		["@punctuation.special.markdown"] = { fg = c.Orange, bold = true },
 		["@text.literal.markdown_inline"] = { bg = c.BackDark, fg = c.Front },
-		debugPC                           = { bg = c.BackDark },     -- used for highlighting the current line in terminal-debug
+		debugPC                           = { bg = c.BackDark },                       -- used for highlighting the current line in terminal-debug
 		debugBreakpoint                   = { bg = util.darken(c.Error, 0.1), fg = c.Info }, -- used for breakpoint colors in terminal-debug
 		-- These groups are for the native LSP client. Some other LSP clients may
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
-		LspReferenceText                  = { bg = c.Front },                       -- used for highlighting "text" references
-		LspReferenceRead                  = { bg = c.Front },                       -- used for highlighting "read" references
-		LspReferenceWrite                 = { bg = c.Front },                       -- used for highlighting "write" references
-		DiagnosticError                   = { fg = c.Error },                       -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticWarn                    = { fg = c.Warning },                     -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticInfo                    = { fg = c.Info },                        -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticHint                    = { fg = c.Hint },                        -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		LspReferenceText                  = { bg = c.Front },                               -- used for highlighting "text" references
+		LspReferenceRead                  = { bg = c.Front },                               -- used for highlighting "read" references
+		LspReferenceWrite                 = { bg = c.Front },                               -- used for highlighting "write" references
+		DiagnosticError                   = { fg = c.Error },                               -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticWarn                    = { fg = c.Warning },                             -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticInfo                    = { fg = c.Info },                                -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticHint                    = { fg = c.Hint },                                -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticVirtualTextError        = { bg = util.darken(c.Error, 0.1), fg = c.Error }, -- Used for "Error" diagnostic virtual text
 		DiagnosticVirtualTextWarn         = { bg = util.darken(c.Warning, 0.1), fg = c.Warning }, -- Used for "Warning" diagnostic virtual text
 		DiagnosticVirtualTextInfo         = { bg = util.darken(c.Info, 0.1), fg = c.Info }, -- Used for "Information" diagnostic virtual text
 		DiagnosticVirtualTextHint         = { bg = util.darken(c.Hint, 0.1), fg = c.Hint }, -- Used for "Hint" diagnostic virtual text
-		DiagnosticUnderlineError          = { undercurl = true, sp = c.Error },     -- Used to underline "Error" diagnostics
-		DiagnosticUnderlineWarn           = { undercurl = true, sp = c.Warning },   -- Used to underline "Warning" diagnostics
-		DiagnosticUnderlineInfo           = { undercurl = true, sp = c.Info },      -- Used to underline "Information" diagnostics
-		DiagnosticUnderlineHint           = { undercurl = true, sp = c.Hint },      -- Used to underline "Hint" diagnostics
+		DiagnosticUnderlineError          = { undercurl = true, sp = c.Error },             -- Used to underline "Error" diagnostics
+		DiagnosticUnderlineWarn           = { undercurl = true, sp = c.Warning },           -- Used to underline "Warning" diagnostics
+		DiagnosticUnderlineInfo           = { undercurl = true, sp = c.Info },              -- Used to underline "Information" diagnostics
+		DiagnosticUnderlineHint           = { undercurl = true, sp = c.Hint },              -- Used to underline "Hint" diagnostics
 		LspSignatureActiveParameter       = { fg = c.Orange },
 		LspCodeLens                       = { fg = c.Comment },
 		LspInfoBorder                     = { fg = c.Front, bg = c.None },
@@ -208,19 +208,19 @@ function M.setup()
 		-- TSInclude           = { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		["@keyword"]                      = { fg = c.Purple, italic = true }, -- For keywords that don't fall in previous categories.
 		["@keyword.function"]             = { fg = c.Purple, italic = true }, -- For keywords used to define a fuction.
-		["@label"]                        = { fg = c.Blue },     -- For labels: `label:` in C and `:label:` in Lua.
+		["@label"]                        = { fg = c.Blue },            -- For labels: `label:` in C and `:label:` in Lua.
 		-- TSMethod            = { };    -- For method calls and definitions.
 		-- TSNamespace                = { fg = c.Yellow }; -- For identifiers referring to modules and namespaces.
 		-- TSNone              = { };    -- TODO: docs
 		-- TSNumber            = { };    -- For all numbers
-		["@operator"]                     = { fg = c.Purple },  -- For any operator: `+`, but also `->` and `*` in C.
-		["@parameter"]                    = { fg = c.Front },   -- For parameters of a function.
+		["@operator"]                     = { fg = c.Purple },         -- For any operator: `+`, but also `->` and `*` in C.
+		["@parameter"]                    = { fg = c.Front },          -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		["@property"]                     = { fg = c.Red, italic = true }, -- Same as `TSField`.
 		["@property.builtin"]             = { fg = c.Front, italic = true }, -- Same as `TSField`.
-		["@punctuation.delimiter"]        = { fg = c.Front },   -- For delimiters ie: `.`
-		["@punctuation.bracket"]          = { fg = c.Purple },  -- For brackets and parens.
-		["@punctuation.special"]          = { fg = c.Purple },  -- For special punctutation that does not fall in the catagories before.
+		["@punctuation.delimiter"]        = { fg = c.Front },          -- For delimiters ie: `.`
+		["@punctuation.bracket"]          = { fg = c.Purple },         -- For brackets and parens.
+		["@punctuation.special"]          = { fg = c.Purple },         -- For special punctutation that does not fall in the catagories before.
 		-- TSRepeat            = { };    -- For keywords related to loops.
 		-- TSString            = { };    -- For strings.
 		["@string.regex"]                 = { fg = c.Yellow }, -- For regexes.
@@ -304,7 +304,7 @@ function M.setup()
 		GitGutterChange = { fg = c.DiffChange }, -- diff mode: Changed line |diff.txt|
 		GitGutterDelete = { fg = c.DiffDelete }, -- diff mode: Deleted line |diff.txt|
 		-- GitSigns
-		GitSignsAdd = { fg = c.DiffAdd }, -- diff mode: Added line |diff.txt|
+		GitSignsAdd = { fg = c.DiffAdd },  -- diff mode: Added line |diff.txt|
 		GitSignsChange = { fg = c.DiffChange }, -- diff mode: Changed line |diff.txt|
 		GitSignsDelete = { fg = c.DiffDelete }, -- diff mode: Deleted line |diff.txt|
 		-- Telescope
@@ -509,11 +509,11 @@ function M.setup()
 		YankyYanked = { link = "IncSearch" },
 		-- Notify
 		--- Border
-		NotifyERRORBorder = { fg = util.darken(c.Error, 0.3), bg = c.Back },
-		NotifyWARNBorder = { fg = util.darken(c.Warning, 0.3), bg = c.Back },
-		NotifyINFOBorder = { fg = util.darken(c.Info, 0.3), bg = c.Back },
-		NotifyDEBUGBorder = { fg = util.darken(c.Comment, 0.3), bg = c.Back },
-		NotifyTRACEBorder = { fg = util.darken(c.Purple, 0.3), bg = c.Back },
+		NotifyERRORBorder = { fg = util.darken(c.Error, 0.3), bg = c.None },
+		NotifyWARNBorder = { fg = util.darken(c.Warning, 0.3), bg = c.None },
+		NotifyINFOBorder = { fg = util.darken(c.Info, 0.3), bg = c.None },
+		NotifyDEBUGBorder = { fg = util.darken(c.Comment, 0.3), bg = c.None },
+		NotifyTRACEBorder = { fg = util.darken(c.Purple, 0.3), bg = c.None },
 		--- Icons
 		NotifyERRORIcon = { fg = c.Error },
 		NotifyWARNIcon = { fg = c.Warning },
@@ -527,11 +527,11 @@ function M.setup()
 		NotifyDEBUGTitle = { fg = c.Comment },
 		NotifyTRACETitle = { fg = c.Purple },
 		--- Body
-		NotifyERRORBody = { fg = c.Front, bg = c.Back },
-		NotifyWARNBody = { fg = c.Front, bg = c.Back },
-		NotifyINFOBody = { fg = c.Front, bg = c.Back },
-		NotifyDEBUGBody = { fg = c.Front, bg = c.Back },
-		NotifyTRACEBody = { fg = c.Front, bg = c.Back },
+		NotifyERRORBody = { fg = c.Front, bg = c.None },
+		NotifyWARNBody = { fg = c.Front, bg = c.None },
+		NotifyINFOBody = { fg = c.Front, bg = c.None },
+		NotifyDEBUGBody = { fg = c.Front, bg = c.None },
+		NotifyTRACEBody = { fg = c.Front, bg = c.None },
 		-- Mini
 		MiniCompletionActiveParameter = { underline = true },
 		MiniCursorword = { bg = c.Front },
