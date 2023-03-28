@@ -361,7 +361,7 @@ function M.setup()
 		WhichKeyDesc = { fg = c.Purple },
 		WhichKeySeperator = { fg = c.Comment },
 		WhichKeySeparator = { fg = c.Comment },
-		WhichKeyFloat = { bg = c.PopupBack },
+		WhichKeyFloat = { bg = c.None },
 		WhichKeyValue = { fg = c.BackDark },
 		-- LspSaga
 		DiagnosticWarning = { link = "DiagnosticWarn" },
