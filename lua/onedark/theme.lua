@@ -509,11 +509,11 @@ function M.setup()
 		YankyYanked = { link = "IncSearch" },
 		-- Notify
 		--- Border
-		NotifyERRORBorder = { fg = util.darken(c.Error, 0.3), bg = c.None },
-		NotifyWARNBorder = { fg = util.darken(c.Warning, 0.3), bg = c.None },
-		NotifyINFOBorder = { fg = util.darken(c.Info, 0.3), bg = c.None },
-		NotifyDEBUGBorder = { fg = util.darken(c.Comment, 0.3), bg = c.None },
-		NotifyTRACEBorder = { fg = util.darken(c.Purple, 0.3), bg = c.None },
+		NotifyERRORBorder = { fg = c.Error, bg = c.None },
+		NotifyWARNBorder = { fg = c.Warning, bg = c.None },
+		NotifyINFOBorder = { fg = c.Info, bg = c.None },
+		NotifyDEBUGBorder = { fg = c.Comment, bg = c.None },
+		NotifyTRACEBorder = { fg = c.Purple, bg = c.None },
 		--- Icons
 		NotifyERRORIcon = { fg = c.Error },
 		NotifyWARNIcon = { fg = c.Warning },
