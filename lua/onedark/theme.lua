@@ -387,7 +387,7 @@ function M.setup()
 		healthSuccess = { fg = c.Green },
 		healthWarning = { fg = c.Warning },
 		-- BufferLine
-		BufferLineIndicatorSelected = { fg = c.DiffChange },
+		BufferLineIndicatorSelected = { fg = c.Back, bg = c.None },
 		-- Sneak
 		Sneak = { fg = c.Back, bg = c.Purple },
 		SneakScope = { bg = c.Back_visual },
